@@ -9,31 +9,36 @@ export const categories = [
   {
     _id: uuid(),
     categoryName: "Fantasy",
+    imgUrl:"https://ik.imagekit.io/pb97gg2as/E-Commerce-Assets/Categories/Fantasy.jpg?updatedAt=1684597532959",
     description:
-      "Fantasy books typically involve elements such as magical powers, mythical creatures like dragons or elves, quests, prophecies, and battles between good and evil.",
+      "Fantasy books involves magic, creatures, quests, and battles between good and evil.",
   },
   {
     _id: uuid(),
     categoryName: "Drama",
+    imgUrl: "https://ik.imagekit.io/pb97gg2as/E-Commerce-Assets/Categories/Drama.jpg?updatedAt=1684597531793",
     description:
       "Drama often portray complex and conflicting human emotions, relationships, and situations.",
   },
   {
     _id: uuid(),
     categoryName: "Biography",
+    imgUrl: "https://ik.imagekit.io/pb97gg2as/E-Commerce-Assets/Categories/Biography.jpg?updatedAt=1684597528467",
     description:
-      "Biography books aim to present an accurate and comprehensive portrayal of the subject, often based on extensive research and interviews with the person or those who knew them.",
+      "Biography books aim to present an accurate and comprehensive portrayal of the subject.",
   },
   {
     _id: uuid(),
     categoryName: "Non-fiction",
+    imgUrl: "https://ik.imagekit.io/pb97gg2as/E-Commerce-Assets/Categories/Non-Fiction.jpg?updatedAt=1684597533100",
     description:
-      "Non-fiction is writing that gives information or describes real events, rather than telling a story.",
+      "Non-fiction describes real events, rather than telling a story.",
   },
   {
     _id: uuid(),
     categoryName: "Horror",
+    imgUrl: "https://ik.imagekit.io/pb97gg2as/E-Commerce-Assets/Categories/Horror.jpg?updatedAt=1684597532830",
     description:
-      "Meant to cause discomfort and fear for both the character and readers, horror writers often make use of supernatural and paranormal elements in morbid stories that are sometimes a little too realistic.",
+      "Horror is meant to cause discomfort and fear for readers.",
   },
 ];
