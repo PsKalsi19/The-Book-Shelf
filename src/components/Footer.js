@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 const Footer = () => {
     return (
 
-        <footer className="inset-x-0 bottom-0 mt-auto bg-gray-900 shadow">
+        <footer className="inset-x-0 bottom-0 mt-auto bg-gray-900 border-t border-gray-600 shadow">
             <div className="w-full max-w-screen-xl p-4 mx-auto md:flex md:items-center md:justify-between">
                 <span className="text-sm font-semibold text-gray-400 sm:text-center">No © Free to Replicate.
                 </span>
