@@ -6,13 +6,13 @@ const CategoryCard = ({ category }) => {
         >
             <div className="relative">
                 <img src={imgUrl} className='w-full h-auto max-w-lg p-2'  alt={description} />
-                <div className="absolute px-4 ml-4 text-sm leading-7 text-white bg-gray-600 bottom-3 backdrop-blur-md backdrop-filter bg-clip-padding bg-opacity-20 lg:gap-x-10 md:flex rounded-xl">
+                <div className="absolute px-4 ml-4 text-sm leading-7 text-gray-100 bg-gray-600 bottom-3 backdrop-blur-md backdrop-filter bg-clip-padding bg-opacity-20 lg:gap-x-10 md:flex rounded-xl">
                     <span className="cursor-pointer" >
                         {categoryName}
                     </span>
                 </div>
             </div>
-                <p className="mx-4 text-sm text-white dm:text-xm">{description}</p>
+                <p className="mx-4 text-sm text-gray-100 dm:text-xm">{description}</p>
         </NavLink>
     );
 };
