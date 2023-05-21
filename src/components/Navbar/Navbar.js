@@ -1,82 +1,24 @@
 import React, { useRef, useState } from "react";
 import { Transition } from "@headlessui/react";
 import { NavLink } from "react-router-dom";
-import "./Navbar.css"
-import logonobackground from "../../assets/logo-no-background.png"
+import "./Navbar.css";
+import { ShoppingBagIcon,HeartIcon } from "@heroicons/react/24/outline";
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const ref = useRef()
+  const ref = useRef();
   return (
-    <nav className="fixed top-0 left-0 z-20 w-full bg-gray-900 border-b border-gray-600">
-      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex items-center">
-            <div className="flex-shrink-0">
-              <NavLink to="/">
-                <img
-                  className="h-10 w-28"
-                  src={logonobackground}
-                  alt="book-freaks-logo"
-                />
-              </NavLink>
-            </div>
-
-            <div className="hidden w-40 mx-10 md:block">
-              <label htmlFor="default-search" className="mb-2 text-sm font-medium text-white sr-only">Search</label>
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                  <svg aria-hidden="true" className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                </div>
-                <input type="search" id="default-search" className="block w-full p-2 pl-10 text-sm text-white placeholder-gray-400 bg-gray-700 border border-gray-600 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Search Products" />
-              </div>
-            </div>
-          </div>
-          <div>
-            <div className="hidden md:block">
-              <div className="flex items-baseline ml-10 space-x-4">
-                <NavLink
-                  to="/mocks"
-                  className="px-3 py-2 text-sm font-medium text-gray-300 rounded-md hover:bg-gray-700"
-                >
-                  Mockman
-                </NavLink>
-
-                <NavLink
-
-                  className="px-3 py-2 text-sm font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white"
-                >
-                  Team
-                </NavLink>
-
-                <NavLink
-
-                  className="px-3 py-2 text-sm font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white"
-                >
-                  Projects
-                </NavLink>
-
-                <NavLink
-
-                  className="px-3 py-2 text-sm font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white"
-                >
-                  Calendar
-                </NavLink>
-
-                <NavLink
-
-                  className="px-3 py-2 text-sm font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white"
-                >
-                  Reports
-                </NavLink>
-              </div>
-            </div>
-
-          </div>
-          <div className="flex -mr-2 md:hidden">
+    <header>
+      <div className="fixed top-0 left-0 right-0 z-30 overflow-hidden bg-gray-900">
+        <div
+          aria-label="Top"
+          className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8"
+        >
+          <div className="flex items-center h-16">
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
-              className="inline-flex items-center justify-center p-2 text-gray-400 bg-gray-900 rounded-md hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+              className="p-2 text-gray-700 bg-gray-900 rounded-md lg:hidden"
               aria-controls="mobile-menu"
               aria-expanded="false"
             >
@@ -115,6 +57,94 @@ const Navbar = () => {
                 </svg>
               )}
             </button>
+            <div className="flex items-center">
+              <div className="flex ml-4 overflow-hidden lg:ml-0">
+                <NavLink to="/">
+                  <span className="sr-only">The Book Shelf</span>
+                  <img
+                    className="h-28 w-30"
+                    src="https://ik.imagekit.io/pb97gg2as/E-Commerce-Assets/logo-color.png?updatedAt=16845975291388"
+                    alt="THE BOOK SHELF"
+                  />
+                </NavLink>
+              </div>
+              <div class="flex items-center ml-auto">
+                {/* Search bar */}
+                <div className="hidden w-40 mx-10 md:block">
+                  <label
+                    htmlFor="default-search"
+                    className="mb-2 text-sm font-medium text-gray-100 sr-only"
+                  >
+                    Search
+                  </label>
+                  <div className="relative">
+                    <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                      <svg
+                        aria-hidden="true"
+                        className="w-5 h-5 text-gray-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <input
+                      type="search"
+                      id="default-search"
+                      className="border  text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-gray-100"
+                      placeholder="Search Products"
+                    />
+                  </div>
+                </div>
+                <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
+                  <NavLink
+                    to="login"
+                    className="text-sm font-medium text-gray-100 hover:text-white"
+                  >
+                    Login
+                  </NavLink>
+                  <span className="w-px h-6 bg-gray-700" aria-hidden="true" />
+                  <NavLink
+                    to="sign-up"
+                    className="text-sm font-medium text-gray-100 hover:text-white"
+                  >
+                    Create account
+                  </NavLink>
+                </div>
+                <div className="flow-root ml-4 lg:ml-6">
+                  <NavLink to="wishlist" className="flex items-center p-2 -m-2 group">
+                    <HeartIcon
+                      className="flex-shrink-0 w-6 h-6 text-gray-100 group-hover:text-white"
+                      aria-hidden="true"
+                    />
+                    <span className="ml-2 text-sm font-medium text-gray-100 group-hover:text-white">
+                      0
+                    </span>
+                    <span className="sr-only">favorite items view</span>
+                  </NavLink>
+                </div>
+                <span className="w-px h-6 ml-4 bg-gray-700" aria-hidden="true" />
+                <div className="flow-root ml-4 lg:ml-6">
+                  <NavLink to="cart" className="flex items-center p-2 -m-2 group">
+                    <ShoppingBagIcon
+                      className="flex-shrink-0 w-6 h-6 text-gray-100 group-hover:text-gray-50"
+                      aria-hidden="true"
+                    />
+                    <span className="ml-2 text-sm font-medium text-gray-100 group-hover:text-gray-50">
+                      0
+                    </span>
+                    <span className="sr-only">items in cart, view bag</span>
+                  </NavLink>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -128,49 +158,32 @@ const Navbar = () => {
         leaveFrom="opacity-100 scale-100"
         leaveTo="opacity-0 scale-95"
       >
-
         <div className="md:hidden" id="mobile-menu">
           <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <NavLink
-
-              className="block px-3 py-2 text-base font-medium text-white rounded-md hover:bg-gray-700"
-            >
+            <NavLink className="block px-3 py-2 text-base font-medium text-gray-100 rounded-md hover:bg-gray-700">
               Dashboard
             </NavLink>
 
-            <NavLink
-
-              className="block px-3 py-2 text-base font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white"
-            >
+            <NavLink className="block px-3 py-2 text-base font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-gray-100">
               Team
             </NavLink>
 
-            <NavLink
-
-              className="block px-3 py-2 text-base font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white"
-            >
+            <NavLink className="block px-3 py-2 text-base font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-gray-100">
               Projects
             </NavLink>
 
-            <NavLink
-
-              className="block px-3 py-2 text-base font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white"
-            >
+            <NavLink className="block px-3 py-2 text-base font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-gray-100">
               Calendar
             </NavLink>
 
-            <NavLink
-
-              className="block px-3 py-2 text-base font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white"
-            >
+            <NavLink className="block px-3 py-2 text-base font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-gray-100">
               Reports
             </NavLink>
           </div>
         </div>
-
       </Transition>
-    </nav>
+    </header>
   );
-}
+};
 
 export default Navbar;

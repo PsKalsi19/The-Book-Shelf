@@ -5,9 +5,9 @@ const Footer = () => {
 
         <footer className="inset-x-0 bottom-0 mt-auto bg-gray-900 border-t border-gray-600 shadow">
             <div className="w-full max-w-screen-xl p-4 mx-auto md:flex md:items-center md:justify-between">
-                <span className="text-sm font-semibold text-gray-400 sm:text-center">No © Free to Replicate.
+                <span className="text-sm font-semibold text-gray-100 sm:text-center">No ©, Feel Free to Replicate.
                 </span>
-                <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-400 sm:mt-0">
+                <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-100 sm:mt-0">
                     <li>
                         <NavLink target='blank' to="https://github.com/PsKalsi19" className="mr-4 hover:underline md:mr-6 "> Github </NavLink>
                     </li>
