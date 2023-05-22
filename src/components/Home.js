@@ -11,7 +11,7 @@ const links = [
 
 
 export default function Home() {
-    const {categories}=useContext(BooksContext)
+    const {booksState}=useContext(BooksContext)
     return (
         <div className='relative flex flex-col'>
             <div className="relative py-24 overflow-hidden bg-gray-900 isolate sm:pt-24 sm:pb-16">
@@ -69,7 +69,7 @@ export default function Home() {
                             
                         </div> */}
                         <dl className="grid grid-cols-1 gap-6 mt-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-5">
-                            {categories.map((category) => <CategoryCard key={category._id} category={category}/>)}
+                            {booksState.categories.length>0 && booksState.categories.map((category) => <CategoryCard key={category._id} category={category}/>)}
                         </dl>
                     </div>
                 </div>

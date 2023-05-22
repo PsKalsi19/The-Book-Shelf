@@ -3,9 +3,9 @@ import Footer from '../components/Footer';
 import Navbar from "../components/Navbar/Navbar";
 const RootLayout = () => {
     return (
-       <div className="bg-gray-900">
+       <div>
        <Navbar/>
-       <main>
+       <main className="min-h-[calc(100vh-4rem)]">
         <Outlet/>
        </main>
         <Footer/>
