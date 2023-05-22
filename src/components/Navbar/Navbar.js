@@ -9,7 +9,7 @@ const Navbar = () => {
   const ref = useRef();
   return (
     <header>
-      <div className="fixed top-0 left-0 right-0 z-30 overflow-hidden bg-gray-900">
+      <div className="fixed top-0 left-0 right-0 z-30 py-2 overflow-hidden bg-gray-900">
         <div
           aria-label="Top"
           className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8"
@@ -58,19 +58,18 @@ const Navbar = () => {
               )}
             </button>
             <div className="flex items-center">
-              <div className="flex ml-4 overflow-hidden lg:ml-0">
-                <NavLink to="/">
+              <div className="flex w-1/5 ml-4 overflow-hidden lg:ml-0">
+                <NavLink  to="/">
                   <span className="sr-only">The Book Shelf</span>
                   <img
-                    className="h-28 w-30"
                     src="https://ik.imagekit.io/pb97gg2as/E-Commerce-Assets/logo-color.png?updatedAt=16845975291388"
                     alt="THE BOOK SHELF"
                   />
                 </NavLink>
               </div>
-              <div class="flex items-center ml-auto">
+              <div className="flex items-center w-4/5">
                 {/* Search bar */}
-                <div className="hidden w-40 mx-10 md:block">
+                <div className="hidden w-1/2 mx-10 md:block">
                   <label
                     htmlFor="default-search"
                     className="mb-2 text-sm font-medium text-gray-100 sr-only"
@@ -103,17 +102,17 @@ const Navbar = () => {
                     />
                   </div>
                 </div>
-                <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
+                <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-4">
                   <NavLink
                     to="login"
-                    className="text-sm font-medium text-gray-100 hover:text-white"
+                    className="px-3 py-2 text-sm font-medium text-gray-100 rounded-lg hover:bg-gray-50 hover:bg-opacity-10 hover:text-white"
                   >
                     Login
                   </NavLink>
                   <span className="w-px h-6 bg-gray-700" aria-hidden="true" />
                   <NavLink
                     to="sign-up"
-                    className="text-sm font-medium text-gray-100 hover:text-white"
+                    className="px-3 py-2 text-sm font-medium text-gray-100 rounded-lg hover:bg-gray-50 hover:bg-opacity-10 hover:text-white"
                   >
                     Create account
                   </NavLink>
@@ -130,7 +129,7 @@ const Navbar = () => {
                     <span className="sr-only">favorite items view</span>
                   </NavLink>
                 </div>
-                <span className="w-px h-6 ml-4 bg-gray-700" aria-hidden="true" />
+                <span className="w-px h-6 ml-4 bg-gray-700 lg:ml-6" aria-hidden="true" />
                 <div className="flow-root ml-4 lg:ml-6">
                   <NavLink to="cart" className="flex items-center p-2 -m-2 group">
                     <ShoppingBagIcon
