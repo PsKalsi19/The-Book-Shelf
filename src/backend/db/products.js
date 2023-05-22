@@ -547,7 +547,7 @@ export const products = [
     author: "Daniel Kahneman",
     category: "Non-Fiction",
     price: 350,
-    imgUrl: "https://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow#/media/File:Thinking,_Fast_and_Slow.jpg",
+    imgUrl: "https://upload.wikimedia.org/wikipedia/en/c/c1/Thinking%2C_Fast_and_Slow.jpg",
     pages: 499,
     rating: 4.8,
     isBestSeller: true,

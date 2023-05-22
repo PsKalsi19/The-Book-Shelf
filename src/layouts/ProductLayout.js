@@ -70,7 +70,7 @@ const ProductLayout = () => {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="mx-auto max-w-7xl">
       {/* Mobile filter dialog */}
       <Transition.Root show={mobileFiltersOpen} as={Fragment}>
         <Dialog
@@ -192,8 +192,8 @@ const ProductLayout = () => {
         </Dialog>
       </Transition.Root>
 
-      <main className="px-4 sm:ml-72 relative mt-18 mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <div className="flex sticky top-0 bg-gray-900 items-baseline justify-between pt-24 pb-6 border-b border-gray-200 mb-30">
+      <main className="relative px-4 mx-auto md:ml-36 mt-18 max-w-7xl sm:px-6 lg:px-8">
+        <div className="sticky top-0 z-20 flex items-baseline justify-between pt-24 pb-6 bg-gray-900 border-b border-gray-200 mb-30">
           <h1 className="text-4xl font-bold tracking-tight text-gray-100">
             Books
           </h1>
@@ -260,7 +260,7 @@ const ProductLayout = () => {
           </h2>
 
             {/* Filters */}
-            <aside id="default-sidebar" aria-label="Sidebar" className="fixed left-32 w-64 mx-6 h-screen sm:top-16 transition-transform -translate-x-full sm:translate-x-0">
+            <aside id="default-sidebar" aria-label="Sidebar" className="fixed left-0 w-64 h-screen mx-6 transition-transform -translate-x-full sm:top-16 sm:translate-x-0">
                 <div className="h-full px-3 py-4 overflow-y-auto">
                     <form className="hidden lg:block">
                       <div className="flex items-center justify-between my-4 text-gray-400">

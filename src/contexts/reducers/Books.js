@@ -6,7 +6,6 @@ const books=(state,{type,payload})=>{
             return({...state,categories:payload})
         case BOOKS_ACTIONS.SAVE_BOOKS_DATA:
             return({...state,booksData:payload})
-    
         default:
             return state
     }
