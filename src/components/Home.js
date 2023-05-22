@@ -14,7 +14,7 @@ export default function Home() {
     const {booksState}=useContext(BooksContext)
     return (
         <div className='relative flex flex-col'>
-            <div className="relative py-24 overflow-hidden bg-gray-900 isolate sm:pt-24 sm:pb-16">
+            <div className="relative py-24 overflow-hidden bg-gray-900 isolate sm:pt-32 sm:pb-16">
                 <img
                     src="https://ik.imagekit.io/pb97gg2as/E-Commerce-Assets/boksbg.png?updatedAt=1684597529803"
                     alt="header-books"
