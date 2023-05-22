@@ -1,30 +1,25 @@
-
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Mockman from "mockman-js";
-import Products from "./components/Products"
+import RootLayout from "./layouts/RootLayout";
+import Products from "./components/Products/Products";
+import ProductLayout from "./layouts/ProductLayout";
 
 function App() {
   return (
-   <>
- 
-   <div>
-     <nav>
-      <Navbar/>
-     </nav>
-     <main>
-      <Products/>
-       <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="mocks" element={<Mockman/>}/>
-       </Routes>
-     </main>
-   </div>
-   </>
+    <Routes>
+      <Route path="/" element={<RootLayout />}>
+        <Route index element={<Home />} />
+        <Route path="mocks" element={<Mockman />} />
+        <Route path="products" element={<ProductLayout/>}>
+          <Route index element={<Products/>} />
+          <Route path=":category" element={<Products/>} />
+          <Route path="best-sellers" element={<Products/>} />
+        </Route>
 
-    
+      </Route>
+    </Routes>
   );
 }
 
