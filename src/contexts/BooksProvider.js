@@ -16,10 +16,13 @@ const BooksProvider = ({ children }) => {
     filtersInitialState
   );
   const [booksState, booksDispatch] = useReducer(books, booksInitialState);
+
+
   useEffect(() => {
     getCategories("/api/categories", booksDispatch);
     getBooks("/api/products", booksDispatch);
   }, []);
+  
   return (
     <BooksContext.Provider
       value={{ filtersState, filtersDispatch, booksState, booksDispatch }}
