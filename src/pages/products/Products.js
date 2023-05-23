@@ -5,7 +5,6 @@ import { BooksContext } from "../../contexts/BooksProvider";
 import ProductCard from "../../components/Products/ProductCard"
 const Products = () => {
   const {booksState:{booksData}}=useContext(BooksContext);
-
   return (
     <div className="grid grid-cols-2 gap-2 lg:grid-cols-4">
       {
