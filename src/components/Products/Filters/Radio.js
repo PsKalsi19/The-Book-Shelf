@@ -1,21 +1,20 @@
 import React from 'react';
 
 
-const radioInputClasses='w-4 h-4 text-blue-600 bg-gray-700 focus:ring-blue-600 ring-offset-gray-700 focus:ring-offset-gray-700 focus:ring-2 border-gray-500'
 
 const Radio = () => {
     return (
-        <fieldset>
-            <legend className='text-base text-gray-100'>Price:</legend>
+        <fieldset className='pb-4 border-b border-gray-500'>
+            <legend className='text-base text-gray-100'>Price</legend>
               <ul className="text-sm font-medium text-gray-100 ">
-                  <li className="w-full border-b border-gray-600">
+                  <li className="w-full">
                     <div className="flex items-center pl-3">
                       <input
                         id="desc"
                         type="radio"
                         value="desc"
                         name="price-sort-radio"
-                        className={radioInputClasses}
+                        className="w-4 h-4 text-blue-600 bg-gray-700 border-gray-500 focus:ring-blue-600 ring-offset-gray-700 focus:ring-offset-gray-700 focus:ring-2"
                       />
                       <label
                         htmlFor="desc"
@@ -32,7 +31,7 @@ const Radio = () => {
                         type="radio"
                         value="asc"
                         name="price-sort-radio"
-                        className={radioInputClasses}
+                        className="w-4 h-4 text-blue-600 bg-gray-700 border-gray-500 focus:ring-blue-600 ring-offset-gray-700 focus:ring-offset-gray-700 focus:ring-2"
                       />
                       <label
                         htmlFor="asc"

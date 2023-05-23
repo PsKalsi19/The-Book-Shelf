@@ -1,12 +1,10 @@
 import { useContext } from 'react'
 // import Banner from "./Banner"
 import { NavLink } from 'react-router-dom'
-import { BooksContext } from '../contexts/BooksProvider'
-import CategoryCard from './CategoryCard'
+import { BooksContext } from '../../contexts/BooksProvider'
+import CategoryCard from '../../components/CategoryCard'
 const links = [
-   
     { name: 'Explore', to: 'products' },
-    { name: 'Our Best Sellers', to: 'products/best-sellers' },
 ]
 
 
