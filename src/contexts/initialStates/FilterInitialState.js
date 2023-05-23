@@ -1,5 +1,6 @@
 export const filtersInitialState = {
   priceSort: "",
   category: "All",
-  price: "",
+  priceSlider:0,
+  ratingSlider:0
 };

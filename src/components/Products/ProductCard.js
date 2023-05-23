@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 const ProductCard = ({ product }) => {
-  const { category, imgUrl, isBestSeller, price, rating, title, _id } = product;
+  const { imgUrl, price, rating, title } = product;
   return (
     <div className="flex flex-col items-center border border-gray-900 rounded-lg hover:bg-gray-800 hover:border hover:border-gray-700 ">
       <Link className="relative" to="#">
-        <img className="w-56 p-4 rounded-t-lg h-80" src={imgUrl} alt={title} />
+        <img className="w-40 h-56 p-4 rounded-t-lg lg:w-56 lg:h-80" src={imgUrl} alt={title} />
         <button className="absolute right-0 w-12 h-12 text-pink-600 rounded-full top-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -23,19 +23,19 @@ const ProductCard = ({ product }) => {
         </button>
       </Link>
       <div className="flex flex-col flex-wrap content-between justify-center px-5 pb-5 align-middle">
-        <h5 className="w-48 text-lg font-semibold tracking-tight text-gray-900 h-14 line-clamp-2 dark:text-white">
+        <h5 title={title} className="w-32 h-12 text-base font-semibold tracking-tight text-gray-100 lg:w-48 lg:text-lg lg:h-14 line-clamp-2">
           {title}
         </h5>
         <div className="flex flex-col space-y-2">
-          <div className="text-2xl relative before:mr-1 before:content-['₹'] font-bold text-white">
+          <div className="text-lg lg:text-2xl relative before:mr-1 before:content-['₹'] font-bold text-gray-100">
             {price}
             <span className=" absolute text-xs right-0 bottom-1.5 font-semibold px-2.5 py-0.5 rounded bg-cyan-900 bg-opacity-80 text-gray-100">
-              5.0
+              {rating}
             </span>
           </div>
           <button
             type="button"
-            className="w-full px-5 py-2.5 text-sm font-medium text-center text-white rounded-lg bg-cyan-900 focus:ring-4 focus:outline-none hover:bg-cyan-950 focus:ring-cyan-950"
+            className="w-full px-5 py-2.5 text-xs lg:text-sm font-medium text-center text-gray-100 rounded-lg bg-cyan-900 focus:ring-4 focus:outline-none hover:bg-cyan-950 focus:ring-cyan-950"
           >
             {" "}
             <svg
@@ -44,7 +44,7 @@ const ProductCard = ({ product }) => {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="inline-block w-6 h-6 mr-2"
+              className="hidden w-6 h-6 mr-2 lg:inline-block"
             >
               <path
                 strokeLinecap="round"
