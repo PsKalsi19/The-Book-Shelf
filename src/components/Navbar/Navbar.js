@@ -1,8 +1,18 @@
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
-import { ShoppingBagIcon, HeartIcon } from "@heroicons/react/24/outline";
-
+import { ShoppingBagIcon, HeartIcon,UserCircleIcon } from "@heroicons/react/24/outline";
+import { useContext, useEffect } from "react";
+import { AuthContext } from "../../contexts/AuthProvider";
+import { getUser } from "../../services/localstorage-service";
+import isValidUser from "../../services/auth-service"
 const Navbar = () => {
+  const {userState:{isUserValid},setUserState}=useContext(AuthContext)
+  useEffect(()=>{
+    setUserState({
+      user:getUser(),
+      isUserValid:isValidUser()
+    })
+  },[setUserState])
   return (
     <header>
       <div className="fixed top-0 left-0 right-0 z-30 py-2 overflow-hidden bg-gray-900">
@@ -23,7 +33,7 @@ const Navbar = () => {
               </div>
               <div className="flex items-center justify-end w-4/5 md:justify-normal">
                 {/* Search bar */}
-                <div className="hidden w-1/2 mx-10 md:block">
+                <div className={`hidden ${isUserValid?'w-full':'w-1/2'} mx-10 md:block`}>
                   <label
                     htmlFor="default-search"
                     className="mb-2 text-sm font-medium text-gray-100 sr-only"
@@ -56,7 +66,7 @@ const Navbar = () => {
                     />
                   </div>
                 </div>
-                <div className="flex order-last sm:order-none lg:flex-1 lg:items-center lg:justify-end lg:space-x-4">
+               {!isUserValid && <div className="flex order-last sm:order-none lg:flex-1 lg:items-center lg:justify-end lg:space-x-4">
                   <NavLink
                     to="login"
                     className="px-3 py-2 text-sm font-medium text-gray-100 rounded-lg hover:bg-gray-50 hover:bg-opacity-10 hover:text-white"
@@ -70,7 +80,7 @@ const Navbar = () => {
                   >
                     Create account
                   </NavLink>
-                </div>
+                </div>}
                 <div className="flow-root ml-4 lg:ml-6">
                   <NavLink
                     to="wishlist"
@@ -105,6 +115,24 @@ const Navbar = () => {
                     <span className="sr-only">items in cart, view bag</span>
                   </NavLink>
                 </div>
+
+                {isUserValid && <> <span
+                  className="hidden w-px h-6 ml-4 bg-gray-700 md:block lg:ml-6"
+                  aria-hidden="true"
+                /> <div className="flow-root ml-4 lg:ml-6">
+                
+                  <NavLink
+                    to="user"
+                    className="flex items-center p-2 -m-2 group"
+                  >
+                    <UserCircleIcon
+                      className="flex-shrink-0 w-6 h-6 text-gray-100 group-hover:text-white"
+                      aria-hidden="true"
+                    />
+                   
+                    <span className="sr-only">user profile view</span>
+                  </NavLink>
+                </div> </>}
               </div>
             </div>
           </div>
