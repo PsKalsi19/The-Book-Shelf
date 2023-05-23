@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 const CategoryCard = ({ category }) => {
     const { imgUrl, categoryName, _id, description } = category
     return (
-        <NavLink to={`/products/${categoryName}`} id={_id} title={description} className="w-full h-full pb-2 bg-gray-600 border shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px] border-gray-400 transition-all duration-200 rounded-lg cursor-pointer filter grayscale hover:grayscale-0 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-60"
+        <NavLink to={`/products/${categoryName}`} id={_id} title={description} className="w-full h-full pb-2 bg-gray-700 border shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px] border-gray-400 transition-all duration-200 rounded-lg cursor-pointer backdrop-filter backdrop-blur-md hover:bg-gray-600 hover:bg-opacity-60 bg-opacity-60"
         >
             <div className="relative">
                 <img src={imgUrl} className='w-full h-auto max-w-lg p-2'  alt={description} />
