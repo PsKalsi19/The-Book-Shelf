@@ -1,8 +1,8 @@
 import { useContext,useLayoutEffect,useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
-import isValidUser from "../../services/auth-service";
 import { authInitialState } from "../../contexts/initialStates/AuthInitialState";
+import { getAuth } from "../../services/localStorage-service";
 
 const testUser = {
   email: "adarshbalika@gmail.com",
@@ -19,7 +19,7 @@ const Login = () => {
   const navigate=useNavigate()
 
   useLayoutEffect(()=>{
-    isValidUser()?
+    getAuth()!==null?
     navigate("/"):
     setUserState(authInitialState)
   },[navigate, setUserState])
