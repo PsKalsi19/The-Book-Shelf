@@ -2,6 +2,7 @@ import { useContext,useLayoutEffect,useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
 import isValidUser from "../../services/auth-service";
+import { authInitialState } from "../../contexts/initialStates/AuthInitialState";
 
 const testUser = {
   email: "adarshbalika@gmail.com",
@@ -9,7 +10,7 @@ const testUser = {
 };
 
 const Login = () => {
-  const { handleLoginFn } = useContext(AuthContext);
+  const { handleLoginFn,setUserState } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
   const [loginState, setLoginState] = useState({
     email: "",
@@ -18,10 +19,10 @@ const Login = () => {
   const navigate=useNavigate()
 
   useLayoutEffect(()=>{
-    if(isValidUser())
-    navigate("/")
-  
-  },[navigate])
+    isValidUser()?
+    navigate("/"):
+    setUserState(authInitialState)
+  },[navigate, setUserState])
 
   const submitHandlerFn = (e) => {
     e.preventDefault();

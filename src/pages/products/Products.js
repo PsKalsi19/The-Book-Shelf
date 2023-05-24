@@ -2,7 +2,7 @@
 import { useContext } from "react";
 import { BooksContext } from "../../contexts/BooksProvider";
 
-import ProductCard from "../../components/Products/ProductCard"
+import ProductCard from "../../components/products/ProductCard"
 const Products = () => {
   const {booksState:{booksData}}=useContext(BooksContext);
   return (

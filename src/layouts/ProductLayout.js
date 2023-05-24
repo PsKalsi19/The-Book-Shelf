@@ -5,12 +5,12 @@ import {
   ChevronDownIcon,
   FunnelIcon,
 } from "@heroicons/react/20/solid";
-import Radio from "../components/Products/Filters/Radio";
-import Checkbox from "../components/Products/Filters/Checkbox";
+import Radio from "../components/products/filters/Radio";
+import Checkbox from "../components/products/filters/Checkbox";
+import Range from "../components/products/filters/Range";
 
 import { Outlet } from "react-router-dom";
 import  { BooksContext } from "../contexts/BooksProvider";
-import Range from "../components/Products/Filters/Range";
 
 const sortOptions = [
   { name: "A to Z", href: "#", current: true },
