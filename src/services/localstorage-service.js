@@ -13,7 +13,7 @@ export const getUser=()=>{
     return JSON.parse(localStorage.getItem(USER))?? {}
 }
 
-export const HandlelocalStorageLogOut = () => {
+export const handleLocalStorageLogOut = () => {
     localStorage.removeItem(AUTH_TOKEN)
     localStorage.removeItem(USER)
 };

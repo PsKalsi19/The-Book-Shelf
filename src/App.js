@@ -13,25 +13,39 @@ import Login from "./pages/login/Login";
 import SignUp from "./pages/signUp/SignUp";
 import User from "./pages/user/User";
 import Cart from "./pages/cart/Cart";
-import Wishlist from "./pages/wishlist/Wishlist"
+import Wishlist from "./pages/wishlist/Wishlist";
+import CanActivate from "./components/routegurad/CanActivate";
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<RootLayout />}>
         <Route index element={<Home />} />
-        <Route path="login" element={<Login/>}/>
-        <Route path="create-account" element={<SignUp/>}/>
-        <Route path="cart" element={<Cart/>}/>
-        <Route path="wishlist" element={<Wishlist/>}/>
-        <Route path="user" element={<User/>}/>
-        <Route path="products" element={<ProductLayout/>}>
-          <Route index element={<Products/>} />
-          <Route path=":category" element={<Products/>} />
+        <Route path="login" element={<Login />} />
+        <Route path="create-account" element={<SignUp />} />
+        <Route
+          path="cart"
+          element={
+            <CanActivate>
+              <Cart />
+            </CanActivate>
+          }
+        />
+        <Route
+          path="wishlist"
+          element={
+            <CanActivate>
+              <Wishlist />
+            </CanActivate>
+          }
+        />
+        <Route path="user" element={<User />} />
+        <Route path="products" element={<ProductLayout />}>
+          <Route index element={<Products />} />
+          <Route path=":category" element={<Products />} />
         </Route>
-
       </Route>
-        <Route path="mocks" element={<Mockman />} />
+      <Route path="mocks" element={<Mockman />} />
     </Routes>
   );
 }
