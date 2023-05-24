@@ -1,37 +1,40 @@
 import { createContext, useState } from "react";
 import getLoginDetails from "../services/login-service";
-import { setAuth, setUser } from "../services/localstorage-service";
+import { handleLocalStorageLogOut, setAuth, setUser } from "../services/localstorage-service";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router";
 import signupUser from "../services/signup-service";
+import { authInitialState } from "./initialStates/AuthInitialState";
 
 export const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
-  const [userState, setUserState] = useState({
-    user: {},
-    isUserValid:false
-  });
+  const [userState, setUserState] = useState(authInitialState);
 
-  const setAuths = (foundUser, encodedToken) => {
+  const logInState = (foundUser, encodedToken) => {
     setAuth(encodedToken);
     setUser(foundUser);
     setUserState({
-      auth: encodedToken,
       user: foundUser,
       isUserValid:true
     });
   };
+
+  const logOutState =()=>{
+    handleLocalStorageLogOut();
+    setUserState(authInitialState)
+  }
+
   const handleLoginFn = async (payload) => {
     try {
       const {
         data: { foundUser, encodedToken },
       } = await getLoginDetails(payload);
-      setAuths(foundUser, encodedToken);
+      logInState(foundUser, encodedToken);
       navigate("/");
     } catch (error) {
-        console.log(error);
+        console.error(error);
         toast.error("Something Went Wrong. Try Later");
     }
 };
@@ -41,17 +44,17 @@ const AuthProvider = ({ children }) => {
           const {
         data: { createdUser, encodedToken },
     } = await signupUser(payload);
-      setAuths(createdUser, encodedToken);
+      logInState(createdUser, encodedToken);
       toast.success("Account Created!")
       navigate("/");
     } catch (error) {
-        console.log(error);
+        console.error(error);
       toast.error("Something Went Wrong. Try Later");
     }
   };
 
   return (
-    <AuthContext.Provider value={{ userState,setUserState, handleLoginFn, handleSignUpFn }}>
+    <AuthContext.Provider value={{ userState,setUserState,logOutState, handleLoginFn, handleSignUpFn }}>
       {children}
     </AuthContext.Provider>
   );
