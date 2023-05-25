@@ -1,4 +1,6 @@
 export const booksInitialState={
     categories:[],
-    booksData:[]
+    booksData:[],
+    wishlist:[],
+    cart:[]
 }
