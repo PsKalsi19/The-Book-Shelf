@@ -1,8 +1,10 @@
-import { useContext,useLayoutEffect,useState } from "react";
+import { useContext,useEffect,useLayoutEffect,useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
 import { authInitialState } from "../../contexts/initialStates/AuthInitialState";
-import { getAuth } from "../../services/localStorage-service";
+import { getAuth, getWishlist } from "../../services/localStorage-service";
+import { BooksContext } from "../../contexts/BooksProvider";
+import { BOOKS_ACTIONS } from "../../constants/dispatchTypes";
 
 const testUser = {
   email: "adarshbalika@gmail.com",
@@ -10,7 +12,8 @@ const testUser = {
 };
 
 const Login = () => {
-  const { handleLoginFn,setUserState } = useContext(AuthContext);
+  const { handleLoginFn,setUserState,userState, } = useContext(AuthContext);
+  const {booksDispatch}=useContext(BooksContext)
   const [showPassword, setShowPassword] = useState(false);
   const [loginState, setLoginState] = useState({
     email: "",
@@ -23,6 +26,10 @@ const Login = () => {
     navigate("/"):
     setUserState(authInitialState)
   },[navigate, setUserState])
+
+  useEffect(() => {
+    booksDispatch({ type: BOOKS_ACTIONS.SAVE_WISHLIST, payload: [...getWishlist()] });
+  }, [ booksDispatch, userState]);
 
   const submitHandlerFn = (e) => {
     e.preventDefault();

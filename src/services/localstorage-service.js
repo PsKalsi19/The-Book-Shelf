@@ -29,12 +29,12 @@ export const handleLocalStorageLogOut = () => {
   localStorage.removeItem(USER);
 };
 
-// export const updateCart = (payload) => {
-//   const userData = getUser();
-//   setUser({ ...userData, [CART]: payload });
-// };
+export const updateCart = (payload) => {
+  const userData = getUser();
+  setUser({ ...userData, [CART]: payload });
+};
 
-// export const updateWishlist = (payload) => {
-//   const userData = getUser();
-//   setUser({ ...userData, [WISHLIST]: payload });
-// };
+export const updateWishlist = (payload) => {
+  const userData = getUser();
+  setUser({ ...userData, [WISHLIST]: payload });
+};
