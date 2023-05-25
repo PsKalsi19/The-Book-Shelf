@@ -4,7 +4,7 @@ import { BooksContext } from "../../../contexts/BooksProvider";
 const Checkbox = () => {
   const {
     booksState: { categories },
-    filtersState: { category },
+    // filtersState: { category },
   } = useContext(BooksContext);
   return (
     <fieldset className='pb-4'>

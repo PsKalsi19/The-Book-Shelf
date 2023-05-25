@@ -1,34 +1,35 @@
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 import {
   ShoppingBagIcon,
   HeartIcon,
   UserCircleIcon,
 } from "@heroicons/react/24/outline";
-import { BiLogOut, BiLogIn } from "react-icons/bi";
+import { BiLogIn } from "react-icons/bi";
 import { useContext, useEffect } from "react";
 import { AuthContext } from "../../contexts/AuthProvider";
-import { getUser } from "../../services/localstorage-service";
-import isValidUser from "../../services/auth-service";
+import { getAuth,  getUser } from "../../services/localstorage-service";
+import Logout from "./logout/Logout";
+import { BooksContext } from "../../contexts/BooksProvider";
+
 const Navbar = () => {
-  const navigate = useNavigate();
   const {
     userState: { isUserValid },
     setUserState,
-    logOutState,
   } = useContext(AuthContext);
 
+
+  const {booksState:{wishlist,cart}}=useContext(BooksContext)
+
   useEffect(() => {
+    if(isUserValid) return
     setUserState({
       user: getUser(),
-      isUserValid: isValidUser(),
+      isUserValid: !!getAuth(),
     });
-  }, [setUserState]);
 
-  const handleLogout = () => {
-    logOutState();
-    navigate("/");
-  };
+  }, [isUserValid, setUserState]);
+ 
 
   return (
     <header>
@@ -94,7 +95,7 @@ const Navbar = () => {
                       aria-hidden="true"
                     />
                     <span className="ml-2 text-sm font-medium text-gray-100 group-hover:text-white">
-                      0
+                      {wishlist.length}
                     </span>
                     <span className="sr-only">favorite items view</span>
                   </NavLink>
@@ -113,7 +114,7 @@ const Navbar = () => {
                       aria-hidden="true"
                     />
                     <span className="ml-2 text-sm font-medium text-gray-100 group-hover:text-gray-50">
-                      0
+                      {cart.length}
                     </span>
                     <span className="sr-only">items in cart, view bag</span>
                   </NavLink>
@@ -143,22 +144,7 @@ const Navbar = () => {
                       aria-hidden="true"
                     />
                     <div className="flow-root ml-4 lg:ml-6">
-                      <button
-                        type="button"
-                        onClick={handleLogout}
-                        className="flex items-center p-2 px-3 py-2 -m-2 text-sm font-medium text-gray-100 rounded-lg hover:bg-gray-50 hover:bg-opacity-10 hover:text-white group"
-                      >
-                        <span className="hidden mr-2 md:block">
-                          Log Out
-                        </span>
-                        <BiLogOut
-                          title="log out"
-                          className="flex-shrink-0 w-6 h-6 text-gray-100 group-hover:text-white"
-                          aria-hidden="true"
-                        />
-
-                        <span className="sr-only">log out</span>
-                      </button>
+                     <Logout/>
                     </div>
                   </>
                 )}
