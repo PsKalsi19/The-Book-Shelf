@@ -16,7 +16,7 @@ import {
   getCart,
   getWishlist,
   updateWishlist,
-} from "../services/localStorage-service";
+} from "../services/localstorage-service";
 import { getProducts } from "../services/products-service";
 
 export const BooksContext = createContext();

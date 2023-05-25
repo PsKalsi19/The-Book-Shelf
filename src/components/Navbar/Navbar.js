@@ -8,7 +8,7 @@ import {
 import { BiLogIn } from "react-icons/bi";
 import { useContext, useEffect } from "react";
 import { AuthContext } from "../../contexts/AuthProvider";
-import { getAuth,  getUser } from "../../services/localStorage-service";
+import { getAuth,  getUser } from "../../services/localstorage-service";
 import Logout from "./logout/Logout";
 import { BooksContext } from "../../contexts/BooksProvider";
 

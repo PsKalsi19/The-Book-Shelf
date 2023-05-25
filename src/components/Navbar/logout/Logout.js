@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { BiLogOut } from "react-icons/bi";
-import { handleLocalStorageLogOut } from '../../../services/localStorage-service';
+import { handleLocalStorageLogOut } from '../../../services/localstorage-service';
 import { BooksContext } from '../../../contexts/BooksProvider';
 import { AuthContext } from '../../../contexts/AuthProvider';
 import { authInitialState } from '../../../contexts/initialStates/AuthInitialState';

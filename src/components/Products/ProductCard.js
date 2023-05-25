@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { BooksContext } from "../../contexts/BooksProvider";
 import { toast } from "react-hot-toast";
-import { getAuth } from "../../services/localStorage-service";
+import { getAuth } from "../../services/localstorage-service";
 
 
 const ProductCard = ({ product,fromWishlist }) => {

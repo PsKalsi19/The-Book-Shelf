@@ -1,5 +1,5 @@
 import { Navigate, useLocation } from "react-router-dom";
-import { getAuth } from "../../services/localStorage-service";
+import { getAuth } from "../../services/localstorage-service";
 const CanActivate = ({ children }) => {
   const location = useLocation();
   return getAuth() !== null ? (

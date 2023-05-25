@@ -2,7 +2,7 @@ import { useContext,useEffect,useLayoutEffect,useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
 import { authInitialState } from "../../contexts/initialStates/AuthInitialState";
-import { getAuth, getWishlist } from "../../services/localStorage-service";
+import { getAuth, getWishlist } from "../../services/localstorage-service";
 import { BooksContext } from "../../contexts/BooksProvider";
 import { BOOKS_ACTIONS } from "../../constants/dispatchTypes";
 

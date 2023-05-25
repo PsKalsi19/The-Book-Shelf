@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 import getLoginDetails from "../services/login-service";
-import { getAuth, setAuth, setUser } from "../services/localStorage-service";
+import { getAuth, setAuth, setUser } from "../services/localstorage-service";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router";
 import signupUser from "../services/signup-service";
