@@ -10,6 +10,7 @@ export const products = [
     author: "Daniel Kahneman",
     category: "Non-Fiction",
     price: 350,
+    discount:50,
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/en/c/c1/Thinking%2C_Fast_and_Slow.jpg",
     pages: 499,
@@ -39,6 +40,7 @@ export const products = [
     author: "Bessel van der Kolk",
     category: "Non-Fiction",
     price: 500,
+    discount:70,
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/en/9/91/TheBodyKeepstheScore.jpg",
     pages: 480,
@@ -68,6 +70,7 @@ export const products = [
     author: "Jared Diamond",
     category: "Non-Fiction",
     price: 350,
+    discount:150,
     imgUrl: "https://upload.wikimedia.org/wikipedia/en/f/fc/Ggas_human_soc.jpg",
     pages: 480,
     rating: 4.6,
@@ -96,6 +99,7 @@ export const products = [
     author: "Walter Isaacson",
     category: "Biography",
     price: 700,
+    discount:20,
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/en/e/e4/Steve_Jobs_by_Walter_Isaacson.jpg",
     pages: 688,
@@ -125,6 +129,7 @@ export const products = [
     author: "Patrick Rothfuss",
     category: "Fantasy",
     price: 600,
+    discount:0,
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/en/5/56/TheNameoftheWind_cover.jpg",
     pages: 736,
@@ -154,6 +159,7 @@ export const products = [
     author: "Malcolm Gladwell",
     category: "Non-Fiction",
     price: 350,
+    discount:0,
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/en/7/73/Thetippingpoint.jpg",
     pages: 298,
@@ -183,6 +189,7 @@ export const products = [
     author: "William Shakespeare",
     category: "Drama",
     price: 999,
+    discount:300,
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/commons/2/2d/Thomas_Keene_in_Macbeth_1884_Wikipedia_crop.png",
     pages: 108,
@@ -212,6 +219,7 @@ export const products = [
     author: "William Peter Blatty",
     category: "Horror",
     price: 500,
+    discount:20,
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/en/f/fb/The_Exorcist_1971.jpg",
     pages: 448,
@@ -241,6 +249,7 @@ export const products = [
     author: "Thomas Harris",
     category: "Horror",
     price: 500,
+    discount:50,
     imgUrl: "https://upload.wikimedia.org/wikipedia/en/6/62/Silence3.png",
     pages: 320,
     rating: 4.8,
@@ -269,6 +278,7 @@ export const products = [
     author: "Lorraine Hansberry",
     category: "Drama",
     price: 400,
+    discount:50,
     imgUrl: "https://upload.wikimedia.org/wikipedia/en/c/c5/RaisinInTheSun.JPG",
     pages: 96,
     rating: 4.5,
@@ -297,6 +307,7 @@ export const products = [
     author: "Malcolm Gladwell",
     category: "Non-Fiction",
     price: 350,
+    discount:10,
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/en/e/ec/Outliers_%28book_cover%29.png",
     pages: 288,
@@ -326,6 +337,7 @@ export const products = [
     author: "George R.R. Martin",
     category: "Fantasy",
     price: 900,
+    discount:250,
     imgUrl: "https://upload.wikimedia.org/wikipedia/en/9/93/AGameOfThrones.jpg",
     pages: 864,
     rating: 3.8,
@@ -353,6 +365,7 @@ export const products = [
     author: "David Garrow",
     category: "Biography",
     price: 800,
+    discount:130,
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/en/8/80/The_Girl_with_the_Dragon_Tattoo_Poster.jpg",
     pages: 864,
@@ -382,6 +395,7 @@ export const products = [
     author: "Arthur Miller",
     category: "Drama",
     price: 450,
+    discount:66,
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/en/2/20/DeathOfASalesman.jpg",
     pages: 108,
@@ -411,6 +425,7 @@ export const products = [
     author: "Arthur Miller",
     category: "Drama",
     price: 600,
+    discount:200,
     imgUrl: "https://upload.wikimedia.org/wikipedia/en/7/75/Cruciblecover.jpg",
     pages: 128,
     rating: 2.6,
@@ -439,6 +454,7 @@ export const products = [
     author: "Charles Duhigg",
     category: "Non-Fiction",
     price: 500,
+    discount:30,
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/en/7/7f/The_Power_of_Habit.jpg",
     pages: 288,
@@ -468,6 +484,7 @@ export const products = [
     author: "Stephen King",
     category: "Horror",
     price: 500,
+    discount:0,
     imgUrl: "https://upload.wikimedia.org/wikipedia/en/4/4c/Shiningnovel.jpg",
     pages: 444,
     rating: 3.7,
@@ -496,6 +513,7 @@ export const products = [
     author: "David McCullough",
     category: "Biography",
     price: 850,
+    discount:100,
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/en/1/17/TheWrightBrothers.jpg",
     pages: 528,
@@ -525,6 +543,7 @@ export const products = [
     author: "Bram Stoker",
     category: "Horror",
     price: 500,
+    discount:100,
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/commons/4/45/Dracula_1st_ed_cover_reproduction.jpg",
     pages: 342,
@@ -554,6 +573,7 @@ export const products = [
     author: "William Shakespeare",
     category: "Drama",
     price: 760,
+    discount:100,
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/commons/1/1c/Hamlet_et_Horatio_au_cimeti%C3%A8re_-_Eug%C3%A8ne_Delacroix_-_Mus%C3%A9e_du_Louvre_Peintures_RF_1942.jpg",
     pages: 127,
@@ -583,6 +603,7 @@ export const products = [
     author: "Douglas Adams",
     category: "Fantasy",
     price: 460,
+    discount:100,
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/en/b/bd/H2G2_UK_front_cover.jpg",
     pages: 256,
@@ -611,6 +632,7 @@ export const products = [
     author: "C.S. Lewis",
     category: "Fantasy",
     price: 600,
+    discount:20,
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/en/c/cb/The_Chronicles_of_Narnia_box_set_cover.jpg",
     pages: 256,
@@ -638,6 +660,7 @@ export const products = [
     author: "Walter Isaacson",
     category: "Biography",
     price: 700,
+    discount:60,
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/en/f/fe/Cover_of_Walter_Isaacson%27s_biography_of_Einstein.jpg",
     pages: 504,
@@ -667,6 +690,7 @@ export const products = [
     authors: "Steven D. Levitt and Stephen J. Dubner",
     category: "Non-Fiction",
     price: 350,
+    discount:60,
     imgUrl: "https://upload.wikimedia.org/wikipedia/en/6/63/Freakonomics.jpg",
     pages: 288,
     rating: 4.5,
@@ -695,6 +719,7 @@ export const products = [
     author: "Stephen King",
     category: "Horror",
     price: 500,
+    discount:60,
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/en/7/78/It_%28Stephen_King_novel_-_cover_art%29.jpg",
     pages: 1138,
@@ -723,6 +748,7 @@ export const products = [
     author: "J.R.R. Tolkien",
     category: "Fantasy",
     price: 900,
+    discount:60,
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/en/8/8e/The_Fellowship_of_the_Ring_cover.gif",
     pages: 416,
@@ -752,6 +778,7 @@ export const products = [
     author: "Manning Marable",
     category: "Biography",
     price: 700,
+    discount:54,
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/en/a/a6/Malcolm_X_Life_of_Reinvention.jpg",
     pages: 704,
@@ -781,6 +808,7 @@ export const products = [
     author: "J.K. Rowling",
     category: "Fantasy",
     price: 600,
+    discount:100,
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/en/5/5c/Harry_Potter_and_the_Chamber_of_Secrets.jpg",
     pages: 384,
@@ -810,6 +838,7 @@ export const products = [
     author: "J.R.R. Tolkien",
     category: "Fantasy",
     price: 600,
+    discount:100,
     imgUrl: "https://upload.wikimedia.org/wikipedia/en/3/30/Hobbit_cover.JPG",
     pages: 312,
     rating: 3.9,
@@ -838,6 +867,7 @@ export const products = [
     author: "Stephen King",
     category: "Horror",
     price: 500,
+    discount:0,
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/en/5/52/StephenKingPetSematary.jpg",
     pages: 352,
@@ -867,6 +897,7 @@ export const products = [
     author: "William Shakespeare",
     category: "Drama",
     price: 460,
+    discount:100,
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/commons/5/55/Romeo_and_juliet_brown.jpg",
     pages: 159,

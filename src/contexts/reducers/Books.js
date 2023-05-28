@@ -28,16 +28,22 @@ const books = (state, { type, payload }) => {
         booksData: state.booksData.map((ele) => removeWishlisted(ele, payload)),
       };
 
-    case BOOKS_ACTIONS.CART_TOGGLE:
+    case BOOKS_ACTIONS.ADD_TO_CART:
       return {
         ...state,
-        booksData: state.booksData.map((ele) =>
-          addAndRemoveCartItems(ele, payload)
-        ),
+        booksData: state.booksData.map((ele) => addToCart(ele, payload)),
+      };
+    case BOOKS_ACTIONS.REMOVE_FROM_CART:
+      return {
+        ...state,
+        booksData: state.booksData.map((ele) => removeFromCart(ele, payload)),
       };
 
     case BOOKS_ACTIONS.RESET_CART_WISHLIST:
-      return {...state,cart:[],wishlist:[]};
+      return { ...state, cart: [], wishlist: [] };
+
+    case BOOKS_ACTIONS.RESET_PRODUCTS:
+      return {...state,booksData:state.booksData.map((ele)=>resetProducts(ele))}
 
     case BOOKS_ACTIONS.RESET:
       return booksInitialState;
@@ -49,16 +55,17 @@ const books = (state, { type, payload }) => {
 export default books;
 
 const wishlisted = (element, payloadId) =>
-  element._id === payloadId
-    ? { ...element, wishlisted: true }
-    : element;
+  element._id === payloadId ? { ...element, wishlisted: true } : element;
 
 const removeWishlisted = (element, payloadId) =>
+  element._id === payloadId ? { ...element, wishlisted: false } : element;
+
+const addToCart = (element, payloadId) =>
   element._id === payloadId
-    ? { ...element, wishlisted: false }
+    ? { ...element, addedToCart: true }
     : element;
 
-const addAndRemoveCartItems = (element, payloadId) =>
-  element._id === payloadId
-    ? { ...element, addedToCart: !element.addedToCart }
-    : element;
+const removeFromCart = (element, payloadId) =>
+  element._id === payloadId ? { ...element, addedToCart: false } : element;
+
+  const resetProducts=(element)=> ({ ...element,wishlisted:false,addedToCart:false})
