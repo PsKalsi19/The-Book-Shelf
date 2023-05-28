@@ -14,6 +14,7 @@ const {setUserState}=useContext(AuthContext)
 
       const handleLogout = () => {
         handleLocalStorageLogOut();
+        booksDispatch({type:BOOKS_ACTIONS.RESET_PRODUCTS,payload:''})
         booksDispatch({type:BOOKS_ACTIONS.RESET_CART_WISHLIST,payload:''})
         filtersDispatch({type:FILTERS_ACTION.RESET,payload:''})
         setUserState(authInitialState);

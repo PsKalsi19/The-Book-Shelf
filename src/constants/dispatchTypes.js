@@ -5,9 +5,11 @@ export const BOOKS_ACTIONS = {
   SAVE_WISHLIST: "save_wishlist",
   WISHLISTED: "wishlisted",
   REMOVE_WISHLISTED: "remove_wishlisted",
-  CART_TOGGLE: "cart_toggle",
+  ADD_TO_CART: "add_to_cart",
+  REMOVE_FROM_CART: "remove_from_cart",
   RESET_CART_WISHLIST:"reset_cart_wishlist",
-  RESET:"reset"
+  RESET:"reset",
+  RESET_PRODUCTS:"reset_products"
 };
 
 export const FILTERS_ACTION ={

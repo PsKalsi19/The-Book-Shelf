@@ -11,9 +11,56 @@ export const deleteCartItems = (productId) =>
   axios.delete(`${ENDPOINTS.CART}/${productId}`, DEFAULT_HEADERS);
 
 export const changeItemQuantity = (productId, changeType) => {
-  axios.post(
+ return axios.post(
     `${ENDPOINTS.CART}/${productId}`,
     { action: { type: changeType } },
     DEFAULT_HEADERS
   );
+};
+
+export const getTotalAmount = (payload) => {
+  return payload.reduce(
+    (acc, item) => ({
+      totalAmount: (item.price + acc.totalAmount)*item.qty,
+      discountedAmount: (item.price - item.discount + acc.discountedAmount)*item.qty,
+    }),
+    {
+      totalAmount: 0,
+      discountedAmount: 0,
+    }
+  );
+};
+
+
+export const createCouponData = (payload) => {
+  const itemsLength = payload.length;
+  let coupons = [
+    {
+      name: "Free Delivery",
+      value: 50,
+    },
+    {
+      name: "Bookworms",
+      value: 100,
+    },
+  ];
+  switch (true) {
+    case itemsLength === 3:
+      coupons = [...coupons, { name: "3 Combo", value: 150 }];
+      break;
+
+    case itemsLength === 4:
+      coupons = [...coupons, { name: "4 Combo", value: 250 }];
+      break;
+
+    case itemsLength > 4:
+      coupons = [...coupons, { name: "Bibliophilia", value: 500 }];
+      break;
+
+    default:
+      coupons = { ...coupons };
+      break;
+  }
+
+  return coupons;
 };
