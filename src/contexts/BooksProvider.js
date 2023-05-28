@@ -1,4 +1,4 @@
-import { createContext, useEffect, useReducer } from "react";
+import { createContext, useCallback, useEffect, useReducer, useState } from "react";
 import axios from "axios";
 
 import { filtersInitialState } from "./initialStates/FilterInitialState";
@@ -15,9 +15,15 @@ import { toast } from "react-hot-toast";
 import {
   getCart,
   getWishlist,
+  updateCart,
   updateWishlist,
 } from "../services/localstorage-service";
 import { getProducts } from "../services/products-service";
+import {
+  changeItemQuantity,
+  deleteCartItems,
+  postCartItem,
+} from "../services/cart-service";
 
 export const BooksContext = createContext();
 
@@ -27,6 +33,7 @@ const BooksProvider = ({ children }) => {
     filtersInitialState
   );
   const [booksState, booksDispatch] = useReducer(books, booksInitialState);
+  const [buttonDisabled, setButtonDisable] = useState("");
 
   const handleWishlistToggle = (product) => {
     try {
@@ -39,8 +46,7 @@ const BooksProvider = ({ children }) => {
         type: BOOKS_ACTIONS.REMOVE_WISHLISTED,
         payload: product._id,
       });
-      console.error(error);
-      toast.error("Could not add the item, try again.");
+      handleError(error);
     }
   };
 
@@ -72,7 +78,7 @@ const BooksProvider = ({ children }) => {
     });
   };
 
-  const addBooksData = async () => {
+  const addBooksData = useCallback(async () => {
     try {
       const data = await getProducts();
       const updatedData = getUpdatedData(data?.data?.products);
@@ -81,20 +87,104 @@ const BooksProvider = ({ children }) => {
         payload: updatedData,
       });
     } catch (error) {
-      console.error(error);
-      toast.error("Something Went Wrong, Try Later");
+      handleError(error);
     }
+  },[]);
+
+  const addToCartHandler = async (product) => {
+    try {
+      booksDispatch({
+        type: BOOKS_ACTIONS.ADD_TO_CART,
+        payload: product._id,
+      });
+      await postCartItem({ product }).then((data) => {
+        booksDispatch({
+          type: BOOKS_ACTIONS.SAVE_CART,
+          payload: data?.data?.cart,
+        });
+        booksDispatch({
+          type: BOOKS_ACTIONS.STOP_LOADER,
+          payload: product._id,
+        });
+        updateCart(data?.data?.cart);
+        toast.success("Item added.");
+        setButtonDisable(null);
+      });
+    } catch (e) {
+      toast.error("Something Went Wrong, Try Again.");
+      console.error(e);
+      booksDispatch({
+        type: BOOKS_ACTIONS.REMOVE_FROM_CART,
+        payload: product._id,
+      });
+      booksDispatch({
+        type: BOOKS_ACTIONS.STOP_LOADER,
+        payload: product._id,
+      });
+    }
+  };
+
+  const removeFromCartHandler = async (
+    product,
+    toastMessage = "Item Removed."
+  ) => {
+    try {
+      await deleteCartItems(product._id).then((data) => {
+        booksDispatch({
+          type: BOOKS_ACTIONS.SAVE_CART,
+          payload: data?.data?.cart,
+        });
+        booksDispatch({
+          type: BOOKS_ACTIONS.REMOVE_FROM_CART,
+          payload: product._id,
+        });
+        updateCart(data?.data?.cart);
+        toast.success(toastMessage);
+      });
+    } catch (error) {
+      handleError(error);
+    }
+  };
+
+  const moveToWishlistHandler = async (product) => {
+    try {
+      addWishlistHandler(product).then(() => {
+        removeFromCartHandler(product, "Item moved to wishlist");
+      });
+    } catch (error) {
+      handleError(error);
+    }
+  };
+
+  const cartItemQuantityHandler = async (product, action) => {
+    try {
+      await changeItemQuantity(product._id, action).then((data) => {
+        booksDispatch({
+          type: BOOKS_ACTIONS.SAVE_CART,
+          payload: data?.data?.cart,
+        });
+        updateCart(data?.data?.cart);
+        action==='increment'?toast.success("Quantity Increased"):toast.success("Quantity Decreased")
+      });
+    } catch (error) {
+      handleError(error);
+    }
+  };
+
+  const handleError = (e) => {
+    console.error(e);
+    toast.error("Something Went Wrong, Try Later");
   };
 
   useEffect(() => {
     getCategories(ENDPOINTS.CATEGORIES, booksDispatch);
-    getBooks(ENDPOINTS.PRODUCTS, booksDispatch);
+    addBooksData();
     booksDispatch({ type: BOOKS_ACTIONS.SAVE_CART, payload: [...getCart()] });
     booksDispatch({
       type: BOOKS_ACTIONS.SAVE_WISHLIST,
       payload: [...getWishlist()],
     });
-  }, []);
+  }, [addBooksData]);
 
   return (
     <BooksContext.Provider
@@ -106,6 +196,12 @@ const BooksProvider = ({ children }) => {
         addBooksData,
         removeWishlistHandler,
         handleWishlistToggle,
+        addToCartHandler,
+        removeFromCartHandler,
+        moveToWishlistHandler,
+        cartItemQuantityHandler,
+        buttonDisabled,
+        setButtonDisable,
       }}
     >
       {children}
@@ -121,19 +217,6 @@ const getCategories = async (url, dispatch) => {
     dispatch({
       type: BOOKS_ACTIONS.SAVE_CATEGORY,
       payload: data.data.categories,
-    });
-  } catch (error) {
-    console.error(error);
-  }
-};
-
-const getBooks = async (url, dispatch) => {
-  try {
-    const data = await axios.get(url);
-    const updatedData = getUpdatedData(data?.data?.products);
-    dispatch({
-      type: BOOKS_ACTIONS.SAVE_BOOKS_DATA,
-      payload: updatedData,
     });
   } catch (error) {
     console.error(error);

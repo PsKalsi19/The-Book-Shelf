@@ -25,8 +25,9 @@ const Login = () => {
     getAuth()!==null?
     navigate("/"):
     setUserState(authInitialState)
-  },[navigate, setUserState])
+  },[navigate, setUserState]);
 
+  // This will get the data from localstorage and reassign it to the wishlist state.
   useEffect(() => {
     booksDispatch({ type: BOOKS_ACTIONS.SAVE_WISHLIST, payload: [...getWishlist()] });
   }, [ booksDispatch, userState]);

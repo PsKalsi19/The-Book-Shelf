@@ -8,7 +8,7 @@ import {
 import { BiLogIn } from "react-icons/bi";
 import { useContext, useEffect } from "react";
 import { AuthContext } from "../../contexts/AuthProvider";
-import { getAuth,  getUser } from "../../services/localstorage-service";
+import { getAuth, getUser } from "../../services/localstorage-service";
 import Logout from "./logout/Logout";
 import { BooksContext } from "../../contexts/BooksProvider";
 
@@ -18,18 +18,22 @@ const Navbar = () => {
     setUserState,
   } = useContext(AuthContext);
 
-
-  const {booksState:{wishlist,cart}}=useContext(BooksContext)
+  const {
+    booksState: { wishlist, cart },
+    addBooksData,
+  } = useContext(BooksContext);
 
   useEffect(() => {
-    if(isUserValid) return
+    if (isUserValid) return;
     setUserState({
       user: getUser(),
       isUserValid: !!getAuth(),
     });
-
   }, [isUserValid, setUserState]);
- 
+
+  // useEffect(() => {
+  //   addBooksData();
+  // }, [addBooksData]);
 
   return (
     <header>
@@ -84,7 +88,6 @@ const Navbar = () => {
                     />
                   </div>
                 </div>
-                
                 <div className="flow-root ml-4 lg:ml-6">
                   <NavLink
                     to="wishlist"
@@ -120,23 +123,22 @@ const Navbar = () => {
                   </NavLink>
                 </div>
                 <span
-                      className="hidden w-px h-6 ml-4 bg-gray-700 md:block lg:ml-6"
+                  className="hidden w-px h-6 ml-4 bg-gray-700 md:block lg:ml-6"
+                  aria-hidden="true"
+                />{" "}
+                <div className="ml-4 md:flow-root lg:ml-6">
+                  <NavLink
+                    to="user"
+                    className="flex items-center p-2 -m-2 group"
+                  >
+                    <UserCircleIcon
+                      className="flex-shrink-0 w-6 h-6 text-gray-100 group-hover:text-white"
                       aria-hidden="true"
-                    />{" "}
-                    <div className="ml-4 md:flow-root lg:ml-6">
-                      <NavLink
-                        to="user"
-                        className="flex items-center p-2 -m-2 group"
-                      >
-                        <UserCircleIcon
-                          className="flex-shrink-0 w-6 h-6 text-gray-100 group-hover:text-white"
-                          aria-hidden="true"
-                        />
+                    />
 
-                        <span className="sr-only">user profile view</span>
-                      </NavLink>
-                    </div>
-
+                    <span className="sr-only">user profile view</span>
+                  </NavLink>
+                </div>
                 {isUserValid && (
                   <>
                     <span
@@ -144,32 +146,29 @@ const Navbar = () => {
                       aria-hidden="true"
                     />
                     <div className="flow-root ml-4 lg:ml-6">
-                     <Logout/>
+                      <Logout />
                     </div>
                   </>
                 )}
-                {!isUserValid && (<>
-                   <span
-                   className="hidden w-px h-6 ml-4 bg-gray-700 md:block lg:ml-6"
-                   aria-hidden="true"
-                 />
-                  <div className="flow-root ml-4 lg:ml-6">
-                    <NavLink
-                      to="login"
-                      className="flex items-center p-2 px-3 py-2 -m-2 text-sm font-medium text-gray-100 rounded-lg hover:bg-gray-50 hover:bg-opacity-10 hover:text-white group"
-                    >
-                      
-                      <span className="hidden mr-2 md:block">
-                          Log In
-                        </span>
-                       <BiLogIn
+                {!isUserValid && (
+                  <>
+                    <span
+                      className="hidden w-px h-6 ml-4 bg-gray-700 md:block lg:ml-6"
+                      aria-hidden="true"
+                    />
+                    <div className="flow-root ml-4 lg:ml-6">
+                      <NavLink
+                        to="login"
+                        className="flex items-center p-2 px-3 py-2 -m-2 text-sm font-medium text-gray-100 rounded-lg hover:bg-gray-50 hover:bg-opacity-10 hover:text-white group"
+                      >
+                        <span className="hidden mr-2 md:block">Log In</span>
+                        <BiLogIn
                           title="log in"
                           className="flex-shrink-0 w-6 h-6 ml-2 text-gray-100 group-hover:text-white"
                           aria-hidden="true"
                         />
-                     
-                    </NavLink>
-                  </div>
+                      </NavLink>
+                    </div>
                   </>
                 )}
               </div>
