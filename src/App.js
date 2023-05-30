@@ -15,6 +15,7 @@ import User from "./pages/user/User";
 import Cart from "./pages/cart/Cart";
 import Wishlist from "./pages/wishlist/Wishlist";
 import CanActivate from "./components/routegurad/CanActivate";
+import AddressForm from "./pages/addressForm/AddressForm";
 
 function App() {
   return (
@@ -39,7 +40,32 @@ function App() {
             </CanActivate>
           }
         />
-        <Route path="user" element={<User />} />
+        <Route
+          path="user"
+          element={
+            <CanActivate>
+              <User />
+            </CanActivate>
+          }
+        />
+        <Route path="address">
+          <Route
+            index
+            element={
+              <CanActivate>
+                <AddressForm />
+              </CanActivate>
+            }
+          />
+          <Route
+            path=":id"
+            element={
+              <CanActivate>
+                <AddressForm />
+              </CanActivate>
+            }
+          />
+        </Route>
         <Route path="products" element={<ProductLayout />}>
           <Route index element={<Products />} />
           <Route path=":category" element={<Products />} />
