@@ -18,6 +18,7 @@ import CanActivate from "./components/routegurad/CanActivate";
 import AddressForm from "./pages/addressForm/AddressForm";
 import Checkout from "./pages/checkout/Checkout";
 import ThankYou from "./pages/thank-you/ThankYou";
+import ProductOverview from "./pages/products/ProductsOverview";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route index element={<Home />} />
         <Route path="login" element={<Login />} />
         <Route path="create-account" element={<SignUp />} />
+        <Route path="product-overview/:id" element={<ProductOverview />} />
         <Route
           path="cart"
           element={

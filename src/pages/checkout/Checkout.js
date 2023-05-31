@@ -1,12 +1,9 @@
 import { useContext } from "react";
-import { AddressContext } from "../../contexts/AddressProvider";
 import CartCheckoutDetails from "../../components/cart/CartCheckoutDetails";
-import AddressCard from "../../components/AddressCard";
 import { BooksContext } from "../../contexts/BooksProvider";
 import Address from "../user/Address";
 
 const Checkout = () => {
-  const { addresses,setAddress } = useContext(AddressContext);
   const {
     booksState: { cart },
   } = useContext(BooksContext);

@@ -60,11 +60,12 @@ const BooksProvider = ({ children }) => {
         type: BOOKS_ACTIONS.SAVE_WISHLIST,
         payload: data?.data?.wishlist,
       });
+      toast.success("Removed from Wishlist")
       updateWishlist(data?.data?.wishlist);
     });
   };
-
-  const addWishlistHandler = async (product) => {
+  
+  const addWishlistHandler = async (product,showToast=true) => {
     booksDispatch({
       type: BOOKS_ACTIONS.WISHLISTED,
       payload: product._id,
@@ -74,6 +75,7 @@ const BooksProvider = ({ children }) => {
         type: BOOKS_ACTIONS.SAVE_WISHLIST,
         payload: data?.data?.wishlist,
       });
+      showToast && toast.success("Added to Wishlist")
       updateWishlist(data?.data?.wishlist);
     });
   };
@@ -94,7 +96,7 @@ const BooksProvider = ({ children }) => {
           payload: product._id,
         });
         updateCart(data?.data?.cart);
-        toast.success("Item added.");
+        toast.success("Added to Cart");
         setButtonDisable(null);
       });
     } catch (e) {
@@ -113,7 +115,7 @@ const BooksProvider = ({ children }) => {
 
   const removeFromCartHandler = async (
     product,
-    toastMessage = "Item Removed.",
+    toastMessage = "Removed from Cart",
     showToast = true
   ) => {
     try {
@@ -163,7 +165,7 @@ const BooksProvider = ({ children }) => {
 
   const moveToWishlistHandler = async (product) => {
     try {
-      addWishlistHandler(product).then(() => {
+      addWishlistHandler(product,false).then(() => {
         removeFromCartHandler(product, "Item moved to wishlist");
       });
     } catch (error) {
