@@ -53,12 +53,7 @@ export const getUserEmail = () => {
 
 export const saveAddress = (payload) => {
   const addresses = getAddress() ?? [];
-  if (payload.isDefault) {
-    const oldAddresses = addresses.map((ele) => ({ ...ele, isDefault: false }));
-    localStorage.setItem(ADDRESS, JSON.stringify([...oldAddresses, payload]));
-  } else {
-    localStorage.setItem(ADDRESS, JSON.stringify([...addresses, payload]));
-  }
+  localStorage.setItem(ADDRESS, JSON.stringify([...addresses, payload]));
 };
 
 export const getAddress = () => {
@@ -68,9 +63,7 @@ export const getAddress = () => {
 export const updateAddress = (payload, id) => {
   const addresses = getAddress() ?? [];
   const updatedData = addresses.map((ele) =>
-    ele.id === id
-      ? { ...payload, id: id }
-      : { ...ele, isDefault: payload.isDefault ? false : ele.isDefault }
+    ele.id === id ? { ...payload, id: id } : ele
   );
   localStorage.setItem(ADDRESS, JSON.stringify(updatedData));
 };
@@ -78,5 +71,13 @@ export const updateAddress = (payload, id) => {
 export const deleteAddress = (id) => {
   const addresses = getAddress() ?? [];
   const updatedAddresses = addresses.filter((ele) => ele.id !== id);
+  localStorage.setItem(ADDRESS, JSON.stringify(updatedAddresses));
+};
+
+export const togglePrimaryAddress = (id) => {
+  const addresses = getAddress() ?? [];
+  const updatedAddresses = addresses.map((ele) =>
+    ele.id === id ? { ...ele, isPrimary: true } : {...ele,isPrimary:false}
+  );
   localStorage.setItem(ADDRESS, JSON.stringify(updatedAddresses));
 };

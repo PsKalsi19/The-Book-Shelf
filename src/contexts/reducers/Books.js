@@ -39,11 +39,14 @@ const books = (state, { type, payload }) => {
         booksData: state.booksData.map((ele) => removeFromCart(ele, payload)),
       };
 
+    case BOOKS_ACTIONS.SAVE_PURCHASED_ITEMS:
+      return { ...state, orders: [ ...state.orders, payload ] };
+
     case BOOKS_ACTIONS.RESET_CART_WISHLIST:
       return { ...state, cart: [], wishlist: [] };
 
     case BOOKS_ACTIONS.RESET_PRODUCTS:
-      return {...state,booksData:state.booksData.map((ele)=>resetProducts(ele))}
+      return {...state,orders:state.booksData.map((ele)=>resetProducts(ele))}
 
     case BOOKS_ACTIONS.RESET:
       return booksInitialState;
