@@ -10,7 +10,7 @@ export const products = [
     author: "Daniel Kahneman",
     category: "Non-Fiction",
     price: 350,
-    discount:50,
+    discount: 50,
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/en/c/c1/Thinking%2C_Fast_and_Slow.jpg",
     pages: 499,
@@ -32,6 +32,8 @@ export const products = [
         date: "2022-10-20",
       },
     ],
+    description:
+      "In 'Thinking, Fast and Slow,' Daniel Kahneman, a renowned psychologist and Nobel laureate, explores the fascinating realm of human decision-making and presents his influential research on the two systems of thinking that drive our choices and judgments. Through vivid examples and thought-provoking anecdotes, Kahneman challenges conventional wisdom, shedding light on the workings of the mind and providing valuable insights into the complexities of human behavior. This captivating masterpiece invites readers to reconsider their understanding of decision-making and gain a deeper understanding of the intricacies of the human mind.",
     id: "1",
   },
   {
@@ -40,7 +42,7 @@ export const products = [
     author: "Bessel van der Kolk",
     category: "Non-Fiction",
     price: 500,
-    discount:70,
+    discount: 70,
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/en/9/91/TheBodyKeepstheScore.jpg",
     pages: 480,
@@ -62,6 +64,8 @@ export const products = [
         date: "2022-11-15",
       },
     ],
+    description:
+      "In 'The Body Keeps the Score,' Bessel van der Kolk, a renowned psychiatrist and trauma expert, delves into the profound effects of trauma on the body and mind. Drawing on decades of clinical experience and scientific research, van der Kolk explores the complex interplay between trauma, memory, and the physical sensations that become lodged within us. Through real-life stories and compelling case studies, he sheds light on the long-term impact of trauma and offers insights into innovative therapeutic approaches that can aid in healing. 'The Body Keeps the Score' is an essential read for anyone seeking to understand the intricate connection between trauma and its lasting effects, providing valuable knowledge and hope for those on the path to recovery.",
     id: "2",
   },
   {
@@ -70,7 +74,7 @@ export const products = [
     author: "Jared Diamond",
     category: "Non-Fiction",
     price: 350,
-    discount:150,
+    discount: 150,
     imgUrl: "https://upload.wikimedia.org/wikipedia/en/f/fc/Ggas_human_soc.jpg",
     pages: 480,
     rating: 4.6,
@@ -91,6 +95,8 @@ export const products = [
         date: "2022-11-15",
       },
     ],
+    description:
+      'In "Guns, Germs, and Steel," Jared Diamond presents a thought-provoking exploration of the factors that have shaped the course of human history. Diamond investigates why certain civilizations and societies have advanced technologically, politically, and economically, while others have lagged behind. Through an interdisciplinary approach encompassing geography, biology, anthropology, and history, Diamond examines the influence of geographic advantages, domestication of plants and animals, the development of writing systems, and the spread of diseases on the fates of different societies. The book offers a compelling and comprehensive analysis of the complex interplay between geography, culture, and technology in shaping the trajectory of human civilization.',
     id: "3",
   },
   {
@@ -99,7 +105,7 @@ export const products = [
     author: "Walter Isaacson",
     category: "Biography",
     price: 700,
-    discount:20,
+    discount: 20,
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/en/e/e4/Steve_Jobs_by_Walter_Isaacson.jpg",
     pages: 688,
@@ -122,6 +128,8 @@ export const products = [
       },
     ],
     id: "4",
+    description:
+      "In 'Steve Jobs,' Walter Isaacson presents an intimate and revealing biography of the iconic co-founder of Apple Inc. This meticulously researched book takes readers on a journey through Jobs' life, from his unconventional upbringing to his groundbreaking contributions in the technology industry. Isaacson explores Jobs' relentless pursuit of perfection, his visionary leadership, and his enduring impact on personal computing, music, animation, and mobile communication. Through interviews with Jobs, his family, and colleagues, Isaacson provides a candid portrayal of a complex and charismatic figure who revolutionized multiple industries. 'Steve Jobs' is an engrossing account that offers deep insights into the life and legacy of a true visionary.",
   },
   {
     _id: "631da4ef-0f1f-4618-8610-cce7c8628e0e",
@@ -129,7 +137,7 @@ export const products = [
     author: "Patrick Rothfuss",
     category: "Fantasy",
     price: 600,
-    discount:0,
+    discount: 0,
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/en/5/56/TheNameoftheWind_cover.jpg",
     pages: 736,
@@ -151,6 +159,8 @@ export const products = [
         date: "2022-11-30",
       },
     ],
+    description:
+      "The Name of the Wind is a captivating fantasy novel written by Patrick Rothfuss. It follows the story of Kvothe, a renowned figure known as a legendary magician, musician, and adventurer. The book is set in a richly detailed world where magic, music, and mystery intertwine. Through a first-person narrative, Kvothe recounts his extraordinary life, from his humble beginnings as a talented young musician to his experiences at the prestigious University, where he hones his magical skills. With lyrical prose and a compelling plot, The Name of the Wind immerses readers in a spellbinding tale of adventure, love, and the pursuit of knowledge. It is a must-read for fantasy enthusiasts and anyone seeking a mesmerizing journey into a vividly imagined realm.",
     id: "5",
   },
   {
@@ -159,7 +169,7 @@ export const products = [
     author: "Malcolm Gladwell",
     category: "Non-Fiction",
     price: 350,
-    discount:0,
+    discount: 0,
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/en/7/73/Thetippingpoint.jpg",
     pages: 298,
@@ -181,6 +191,8 @@ export const products = [
         date: "2022-10-25",
       },
     ],
+    description:
+      "In 'The Tipping Point,' Malcolm Gladwell explores the concept of social epidemics and the factors that contribute to their sudden and significant spread. Through engaging storytelling and extensive research, Gladwell delves into the tipping points that lead to contagious trends, viral marketing, and societal transformations. Drawing examples from diverse fields such as fashion, crime, and public health, he identifies the key elements that can turn an idea or behavior into a phenomenon. 'The Tipping Point' offers valuable insights into the dynamics of social change and the fascinating tipping points that shape our world.",
     id: "6",
   },
   {
@@ -189,7 +201,7 @@ export const products = [
     author: "William Shakespeare",
     category: "Drama",
     price: 999,
-    discount:300,
+    discount: 300,
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/commons/2/2d/Thomas_Keene_in_Macbeth_1884_Wikipedia_crop.png",
     pages: 108,
@@ -211,6 +223,8 @@ export const products = [
         date: "2022-10-25",
       },
     ],
+    description:
+      "William Shakespeare's tragedy 'Macbeth' follows the ambitious and morally conflicted Scottish general Macbeth as he rises to power through treachery and deceit. Fueled by his wife's ambition and the prophecies of three witches, Macbeth embarks on a path of violence and manipulation, leading to his downfall. This timeless play explores themes of ambition, guilt, fate, and the corrupting nature of unchecked power. Shakespeare's masterful language, memorable characters, and dramatic plot twists make 'Macbeth' one of his most renowned and frequently performed plays, captivating audiences with its exploration of human nature and the consequences of unchecked ambition.",
     id: "7",
   },
   {
@@ -219,7 +233,7 @@ export const products = [
     author: "William Peter Blatty",
     category: "Horror",
     price: 500,
-    discount:20,
+    discount: 20,
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/en/f/fb/The_Exorcist_1971.jpg",
     pages: 448,
@@ -241,6 +255,8 @@ export const products = [
         date: "2022-12-04",
       },
     ],
+    description:
+      "Written by William Peter Blatty, 'The Exorcist' is a chilling horror novel that tells the haunting story of the possession of a young girl named Regan MacNeil. When Regan's behavior becomes increasingly disturbing and her health deteriorates, her desperate mother seeks help from two priests who attempt to exorcise the demonic entity within her. Blatty's masterful storytelling and atmospheric writing create an atmosphere of dread and suspense, delving into themes of faith, good versus evil, and the nature of supernatural forces. 'The Exorcist' is a terrifying exploration of the battle between the sacred and the profane, leaving readers captivated and disturbed.",
     id: "8",
   },
   {
@@ -249,7 +265,7 @@ export const products = [
     author: "Thomas Harris",
     category: "Horror",
     price: 500,
-    discount:50,
+    discount: 50,
     imgUrl: "https://upload.wikimedia.org/wikipedia/en/6/62/Silence3.png",
     pages: 320,
     rating: 4.8,
@@ -270,6 +286,8 @@ export const products = [
         date: "2022-12-06",
       },
     ],
+    description:
+      "Thomas Harris's psychological thriller 'The Silence of the Lambs' introduces readers to Clarice Starling, an FBI trainee tasked with interviewing the incarcerated cannibalistic serial killer, Dr. Hannibal Lecter, in order to gain insight into the mind of another serial killer named Buffalo Bill. As Clarice delves deeper into the twisted world of criminal psychology, she becomes entangled in a dangerous game of cat and mouse with both Lecter and Buffalo Bill. Harris's chilling prose, intricate character development, and suspenseful plot create a gripping narrative that explores the depths of human depravity and the psychological intricacies of the criminal mind. 'The Silence of the Lambs' is a thrilling and unsettling read that has left an indelible mark on the thriller genre.",
     id: "9",
   },
   {
@@ -278,7 +296,7 @@ export const products = [
     author: "Lorraine Hansberry",
     category: "Drama",
     price: 400,
-    discount:50,
+    discount: 50,
     imgUrl: "https://upload.wikimedia.org/wikipedia/en/c/c5/RaisinInTheSun.JPG",
     pages: 96,
     rating: 4.5,
@@ -299,6 +317,8 @@ export const products = [
         date: "2022-08-25",
       },
     ],
+    description:
+      "Written by Lorraine Hansberry, 'A Raisin in the Sun' is a groundbreaking play that explores the dreams, aspirations, and challenges faced by an African American family living in Chicago's South Side in the 1950s. The play revolves around the Younger family, who have the opportunity to move to a better neighborhood after receiving a life insurance payout. However, their individual desires and ambitions clash as they confront issues of racial discrimination, generational conflicts, and the pursuit of their dreams. Hansberry's powerful storytelling and poignant characters shed light on the African American experience, highlighting themes of identity, family, and the pursuit of a better life. 'A Raisin in the Sun' is a timeless masterpiece that continues to resonate with audiences, provoking discussions on race, social inequality, and the resilience of the human spirit.",
     id: "10",
   },
   {
@@ -307,7 +327,7 @@ export const products = [
     author: "Malcolm Gladwell",
     category: "Non-Fiction",
     price: 350,
-    discount:10,
+    discount: 10,
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/en/e/ec/Outliers_%28book_cover%29.png",
     pages: 288,
@@ -329,6 +349,8 @@ export const products = [
         date: "2022-10-30",
       },
     ],
+    description:
+      "In 'Outliers: The Story of Success,' Malcolm Gladwell explores the factors that contribute to extraordinary success. Through a combination of storytelling, research, and analysis, Gladwell challenges the notion that individual talent and hard work alone determine success. He examines the role of cultural background, opportunity, timing, and meaningful practice in shaping high achievement. From the experiences of successful individuals like Bill Gates, The Beatles, and professional athletes, Gladwell uncovers patterns and hidden advantages that contribute to their exceptional accomplishments. 'Outliers' offers thought-provoking insights into the complex interplay of factors that differentiate outliers from the rest and encourages readers to reconsider the traditional understanding of success. It is a compelling read for anyone interested in understanding the dynamics behind extraordinary achievement and the power of context in shaping our lives.",
     id: "11",
   },
   {
@@ -337,7 +359,7 @@ export const products = [
     author: "George R.R. Martin",
     category: "Fantasy",
     price: 900,
-    discount:250,
+    discount: 250,
     imgUrl: "https://upload.wikimedia.org/wikipedia/en/9/93/AGameOfThrones.jpg",
     pages: 864,
     rating: 3.8,
@@ -357,6 +379,9 @@ export const products = [
         date: "2022-12-02",
       },
     ],
+
+    description:
+      "George R.R. Martin's epic fantasy series 'A Song of Ice and Fire,' popularly known as 'Game of Thrones,' takes readers on a thrilling journey through the fictional continents of Westeros and Essos. Set in a complex world of political intrigue, power struggles, and fantastical elements, the story follows numerous noble families as they vie for control of the Iron Throne. With intricate plot twists, morally ambiguous characters, and a sprawling ensemble cast, Martin weaves a tale of alliances, betrayals, and the consequences of wielding power. 'Game of Thrones' captivates readers with its richly imagined world, unpredictable narratives, and exploration of themes such as honor, loyalty, and the corrupting nature of power. It has become a cultural phenomenon, both in literature and through its acclaimed television adaptation, enticing fans with its blend of fantasy, drama, and gritty realism.",
     id: "12",
   },
   {
@@ -365,7 +390,7 @@ export const products = [
     author: "David Garrow",
     category: "Biography",
     price: 800,
-    discount:130,
+    discount: 130,
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/en/8/80/The_Girl_with_the_Dragon_Tattoo_Poster.jpg",
     pages: 864,
@@ -387,6 +412,8 @@ export const products = [
         date: "2022-12-05",
       },
     ],
+    description:
+      "'Martin Luther King, Jr.: A Biography' offers a comprehensive account of the life and legacy of one of the most influential civil rights leaders in history. Written by renowned author and historian, Martin Luther King, Jr., the book delves into King's early years, his leadership in the civil rights movement, and his tireless advocacy for racial equality and justice. It explores the significant milestones in King's life, including his pivotal role in the Montgomery Bus Boycott, the March on Washington, and his iconic 'I Have a Dream' speech. Through meticulous research and insightful analysis, the biography provides a deep understanding of King's philosophy of nonviolent resistance and his unwavering commitment to achieving social change. It serves as an invaluable resource for anyone seeking to comprehend the life and enduring impact of Martin Luther King, Jr.",
     id: "13",
   },
   {
@@ -395,7 +422,7 @@ export const products = [
     author: "Arthur Miller",
     category: "Drama",
     price: 450,
-    discount:66,
+    discount: 66,
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/en/2/20/DeathOfASalesman.jpg",
     pages: 108,
@@ -417,6 +444,8 @@ export const products = [
         date: "2022-06-30",
       },
     ],
+    description:
+      "Death of a Salesman is a classic play written by Arthur Miller. It tells the story of Willy Loman, a weary and disillusioned salesman who grapples with the decline of his career and the shattered dreams of success for himself and his family. Set in post-World War II America, the play explores themes of the American Dream, identity, and the harsh realities of the capitalist society. Through a combination of present-day scenes and memories, the audience is taken on a journey through Willy's internal struggles and the strained relationships with his sons. Death of a Salesman is a poignant examination of the human condition, revealing the consequences of pursuing an elusive and ultimately unattainable version of the American Dream. It is a powerful and thought-provoking exploration of the human desire for validation and the tragic consequences of chasing unrealistic ideals.",
     id: "14",
   },
   {
@@ -425,7 +454,7 @@ export const products = [
     author: "Arthur Miller",
     category: "Drama",
     price: 600,
-    discount:200,
+    discount: 200,
     imgUrl: "https://upload.wikimedia.org/wikipedia/en/7/75/Cruciblecover.jpg",
     pages: 128,
     rating: 2.6,
@@ -446,6 +475,8 @@ export const products = [
         date: "2022-10-20",
       },
     ],
+    description:
+      "Written by Arthur Miller, 'The Crucible' is a gripping play set in the town of Salem during the infamous Salem witch trials of the 17th century. The story unfolds as a group of young girls accuses several townspeople of practicing witchcraft, triggering a wave of hysteria and paranoia. As the trials progress, the play explores themes of mass hysteria, manipulation, and the destructive power of fear. Through intense dialogue and complex characters, Miller draws parallels between the witch trials and the anti-communist McCarthyism of the 1950s, highlighting the dangers of false accusations and the erosion of individual freedoms. 'The Crucible' serves as a timeless cautionary tale, reminding audiences of the importance of truth, integrity, and the consequences of unchecked authority.",
     id: "15",
   },
   {
@@ -454,7 +485,7 @@ export const products = [
     author: "Charles Duhigg",
     category: "Non-Fiction",
     price: 500,
-    discount:30,
+    discount: 30,
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/en/7/7f/The_Power_of_Habit.jpg",
     pages: 288,
@@ -476,6 +507,8 @@ export const products = [
         date: "2022-11-10",
       },
     ],
+    description:
+      "In 'The Power of Habit,' Charles Duhigg delves into the science and psychology behind habits, revealing how they shape our lives and influence our behaviors. Drawing on extensive research and captivating stories, Duhigg explores the formation of habits, the triggers that initiate them, and the rewards that reinforce them. He explains how understanding the mechanics of habit formation can empower individuals and organizations to make positive changes and break destructive patterns. From personal habits to organizational routines, Duhigg presents strategies for harnessing the power of habit to create lasting change. 'The Power of Habit' is an insightful and practical book that offers a fresh perspective on how habits impact our lives and provides valuable tools for transforming behaviors and achieving personal and professional success.",
     id: "16",
   },
   {
@@ -484,7 +517,7 @@ export const products = [
     author: "Stephen King",
     category: "Horror",
     price: 500,
-    discount:0,
+    discount: 0,
     imgUrl: "https://upload.wikimedia.org/wikipedia/en/4/4c/Shiningnovel.jpg",
     pages: 444,
     rating: 3.7,
@@ -505,6 +538,8 @@ export const products = [
         date: "2022-12-10",
       },
     ],
+    description:
+      "Written by Stephen King, 'The Shining' is a chilling and suspenseful horror novel that follows the Torrance family's stay at the isolated Overlook Hotel during the winter season. Jack Torrance, a struggling writer, takes on the role of the hotel's caretaker, bringing along his wife, Wendy, and their young son, Danny. As the winter months progress, the hotel's dark and malevolent presence begins to affect Jack's sanity, unleashing a terrifying series of events. With its atmospheric setting, psychological tension, and supernatural elements, 'The Shining' delves into themes of isolation, addiction, and the unraveling of the human mind. Stephen King's masterful storytelling and vivid descriptions make 'The Shining' an iconic work of horror fiction that continues to captivate readers with its blend of psychological terror and supernatural dread.",
     id: "17",
   },
   {
@@ -513,7 +548,7 @@ export const products = [
     author: "David McCullough",
     category: "Biography",
     price: 850,
-    discount:100,
+    discount: 100,
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/en/1/17/TheWrightBrothers.jpg",
     pages: 528,
@@ -535,6 +570,8 @@ export const products = [
         date: "2022-09-10",
       },
     ],
+    description:
+      "In 'The Wright Brothers,' author David McCullough explores the incredible journey of Orville and Wilbur Wright, two brothers from Ohio who pioneered the field of aviation. The book delves into their upbringing, their early fascination with flight, and their tireless pursuit of their dream to build a flying machine. McCullough takes readers through the challenges and triumphs the Wright brothers faced as they experimented, designed, and eventually achieved powered flight. With meticulous research and engaging storytelling, 'The Wright Brothers' offers a captivating account of their perseverance, ingenuity, and the impact their invention had on the world. It highlights the brothers' relentless dedication to their craft and their place in history as the inventors of the first successful airplane, forever changing the course of aviation.",
     id: "18",
   },
   {
@@ -543,7 +580,7 @@ export const products = [
     author: "Bram Stoker",
     category: "Horror",
     price: 500,
-    discount:100,
+    discount: 100,
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/commons/4/45/Dracula_1st_ed_cover_reproduction.jpg",
     pages: 342,
@@ -565,6 +602,8 @@ export const products = [
         date: "2022-12-02",
       },
     ],
+    description:
+      "Bram Stoker's 'Dracula' is a timeless gothic horror novel that introduced the world to one of the most iconic and enduring characters in literature: Count Dracula. Set in Transylvania and Victorian England, the story follows the sinister vampire Count Dracula as he seeks to spread his curse and unleash his reign of terror. Through a series of diary entries, letters, and newspaper clippings, Stoker weaves a chilling tale of suspense, romance, and the battle between good and evil. 'Dracula' established many of the vampire tropes that continue to shape vampire literature and popular culture today. With its atmospheric setting, richly drawn characters, and themes of sexuality, power, and morality, 'Dracula' has become a classic of horror fiction, captivating readers with its blend of supernatural horror and psychological suspense.",
     id: "19",
   },
   {
@@ -573,7 +612,7 @@ export const products = [
     author: "William Shakespeare",
     category: "Drama",
     price: 760,
-    discount:100,
+    discount: 100,
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/commons/1/1c/Hamlet_et_Horatio_au_cimeti%C3%A8re_-_Eug%C3%A8ne_Delacroix_-_Mus%C3%A9e_du_Louvre_Peintures_RF_1942.jpg",
     pages: 127,
@@ -595,6 +634,8 @@ export const products = [
         date: "2022-10-28",
       },
     ],
+    description:
+      "William Shakespeare's 'Hamlet' is a renowned tragedy that explores themes of revenge, madness, and the complexity of human nature. The play follows Prince Hamlet of Denmark, who is visited by the ghost of his father and learns of his uncle Claudius's treachery, leading to a quest for vengeance. As Hamlet grapples with his own doubts and internal conflicts, the play delves into profound philosophical questions about life, death, and the nature of existence. 'Hamlet' is celebrated for its compelling characters, dramatic soliloquies, and masterful use of language. It continues to be performed and studied worldwide, captivating audiences with its exploration of moral dilemmas, the consequences of action and inaction, and the tragic consequences of obsession and revenge.",
     id: "20",
   },
   {
@@ -603,7 +644,7 @@ export const products = [
     author: "Douglas Adams",
     category: "Fantasy",
     price: 460,
-    discount:100,
+    discount: 100,
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/en/b/bd/H2G2_UK_front_cover.jpg",
     pages: 256,
@@ -624,6 +665,8 @@ export const products = [
         date: "2022-11-26",
       },
     ],
+    description:
+      "Douglas Adams' 'The Hitchhiker's Guide to the Galaxy' is a hilarious and satirical science fiction series that follows the misadventures of the ordinary human Arthur Dent after the destruction of Earth to make way for a hyperspace bypass. Arthur finds himself on an intergalactic journey with his alien friend Ford Prefect, encountering a range of eccentric characters and mind-boggling situations. Filled with wit, absurdity, and clever social commentary, the series explores themes of the meaning of life, the nature of the universe, and the absurdity of human existence. With its unique blend of science fiction, humor, and philosophical musings, 'The Hitchhiker's Guide to the Galaxy' has garnered a devoted fanbase and remains a beloved classic in the genre.",
     id: "21",
   },
   {
@@ -632,7 +675,7 @@ export const products = [
     author: "C.S. Lewis",
     category: "Fantasy",
     price: 600,
-    discount:20,
+    discount: 20,
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/en/c/cb/The_Chronicles_of_Narnia_box_set_cover.jpg",
     pages: 256,
@@ -652,6 +695,8 @@ export const products = [
         date: "2022-12-12",
       },
     ],
+    description:
+      "C.S. Lewis' 'The Chronicles of Narnia: The Lion, the Witch and the Wardrobe' is the first book in the beloved fantasy series that transports readers into a magical world. The story follows the Pevensie siblings - Peter, Susan, Edmund, and Lucy - who stumble upon a magical wardrobe that leads them to the enchanted land of Narnia. In Narnia, they discover a kingdom trapped in eternal winter under the rule of the White Witch. With the help of the mighty lion Aslan, the siblings embark on a perilous journey to fulfill an ancient prophecy and bring hope and freedom to Narnia. 'The Lion, the Witch and the Wardrobe' is a timeless tale of adventure, courage, and the triumph of good over evil. It captivates readers of all ages with its rich world-building, memorable characters, and its exploration of themes such as bravery, sacrifice, and the power of imagination.",
     id: "22",
   },
   {
@@ -660,7 +705,7 @@ export const products = [
     author: "Walter Isaacson",
     category: "Biography",
     price: 700,
-    discount:60,
+    discount: 60,
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/en/f/fe/Cover_of_Walter_Isaacson%27s_biography_of_Einstein.jpg",
     pages: 504,
@@ -682,6 +727,8 @@ export const products = [
         date: "2022-10-25",
       },
     ],
+    description:
+      "In 'Einstein: His Life and Universe,' acclaimed author Walter Isaacson presents a comprehensive biography of the iconic physicist Albert Einstein. Drawing from a wealth of personal letters, scientific papers, and interviews, Isaacson provides a deep insight into Einstein's remarkable life and groundbreaking scientific contributions. From his early years as a curious and rebellious student to his revolutionary theories of relativity, Isaacson delves into Einstein's intellectual journey and his profound impact on our understanding of the universe. The biography also explores Einstein's personal life, his struggles, and his complex relationships. Through engaging storytelling and meticulous research, 'Einstein: His Life and Universe' offers readers a fascinating glimpse into the mind and personality of one of the greatest scientific geniuses of all time.",
     id: "23",
   },
   {
@@ -690,7 +737,7 @@ export const products = [
     authors: "Steven D. Levitt and Stephen J. Dubner",
     category: "Non-Fiction",
     price: 350,
-    discount:60,
+    discount: 60,
     imgUrl: "https://upload.wikimedia.org/wikipedia/en/6/63/Freakonomics.jpg",
     pages: 288,
     rating: 4.5,
@@ -711,6 +758,8 @@ export const products = [
         date: "2022-11-10",
       },
     ],
+    description:
+      "'Freakonomics' is a captivating and unconventional book written by economist Steven D. Levitt and journalist Stephen J. Dubner. Combining economic analysis with unexpected insights, the authors delve into a wide range of intriguing topics and examine the hidden side of human behavior. Through a series of thought-provoking case studies, Levitt and Dubner explore the economics of drug dealing, the impact of parenting on a child's future, the role of incentives in shaping behavior, and much more. They challenge conventional wisdom and present a fresh perspective on various social and economic phenomena. 'Freakonomics' is a fascinating exploration of the economic principles that shape our everyday lives and encourages readers to question assumptions and look at the world through a different lens.",
     id: "24",
   },
   {
@@ -719,7 +768,7 @@ export const products = [
     author: "Stephen King",
     category: "Horror",
     price: 500,
-    discount:60,
+    discount: 60,
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/en/7/78/It_%28Stephen_King_novel_-_cover_art%29.jpg",
     pages: 1138,
@@ -740,6 +789,8 @@ export const products = [
         date: "2022-12-08",
       },
     ],
+    description:
+      "Stephen King's 'It' is a horror novel that follows a group of childhood friends haunted by an ancient evil entity that takes the form of their worst fears, most notably a menacing clown named Pennywise. The story is set in the town of Derry, Maine, and alternates between the characters' childhood experiences in the 1950s and their adulthood in the 1980s. As the friends reunite to confront the malevolent presence that terrorized them in their youth, they must confront their own personal fears and traumas. 'It' delves into themes of friendship, childhood innocence, and the power of facing one's deepest fears. With Stephen King's trademark storytelling and atmospheric writing, 'It' has become a horror classic, captivating readers with its blend of psychological terror and supernatural suspense.",
     id: "25",
   },
   {
@@ -748,7 +799,7 @@ export const products = [
     author: "J.R.R. Tolkien",
     category: "Fantasy",
     price: 900,
-    discount:60,
+    discount: 60,
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/en/8/8e/The_Fellowship_of_the_Ring_cover.gif",
     pages: 416,
@@ -770,6 +821,8 @@ export const products = [
         date: "2022-12-05",
       },
     ],
+    description:
+      "J.R.R. Tolkien's 'The Lord of the Rings: The Fellowship of the Ring' is the first installment of the epic fantasy trilogy that takes readers on a captivating journey through the enchanting world of Middle-earth. The story begins with Frodo Baggins, a humble hobbit, who inherits a powerful and dangerous ring that holds the fate of the world in its grasp. Joined by a fellowship of diverse characters, including Gandalf the wizard, Aragorn the ranger, and Legolas the elf, Frodo embarks on a perilous quest to destroy the ring and defeat the dark lord Sauron. 'The Fellowship of the Ring' immerses readers in a richly detailed and immersive world, filled with breathtaking landscapes, memorable creatures, and a complex web of friendships, alliances, and epic battles. It explores themes of heroism, sacrifice, the struggle between good and evil, and the resilience of the human spirit. With Tolkien's masterful storytelling and rich imagination, 'The Fellowship of the Ring' has become a timeless classic in the realm of fantasy literature.",
     id: "26",
   },
   {
@@ -778,7 +831,7 @@ export const products = [
     author: "Manning Marable",
     category: "Biography",
     price: 700,
-    discount:54,
+    discount: 54,
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/en/a/a6/Malcolm_X_Life_of_Reinvention.jpg",
     pages: 704,
@@ -800,6 +853,8 @@ export const products = [
         date: "2022-10-30",
       },
     ],
+    description:
+      "In 'Malcolm X: A Life of Reinvention,' Pulitzer Prize-winning author Manning Marable presents a comprehensive and thought-provoking biography of the influential civil rights leader Malcolm X. Marable delves deep into Malcolm X's life, from his troubled childhood and early criminal activities to his conversion to Islam and his transformation into a prominent figure in the Nation of Islam. The biography explores Malcolm X's evolution as a charismatic speaker, his role in the civil rights movement, and his later disillusionment with the Nation of Islam. Marable critically examines Malcolm X's complex persona, his intellectual growth, and his struggles with racial identity and political ideologies. Through extensive research and insightful analysis, 'Malcolm X: A Life of Reinvention' offers a nuanced portrait of a man who made a profound impact on American history and continues to inspire generations with his pursuit of justice and equality.",
     id: "27",
   },
   {
@@ -808,7 +863,7 @@ export const products = [
     author: "J.K. Rowling",
     category: "Fantasy",
     price: 600,
-    discount:100,
+    discount: 100,
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/en/5/5c/Harry_Potter_and_the_Chamber_of_Secrets.jpg",
     pages: 384,
@@ -830,6 +885,8 @@ export const products = [
         date: "2022-12-08",
       },
     ],
+    description:
+      "J.K. Rowling's 'Harry Potter and the Chamber of Secrets' is the second book in the beloved fantasy series that follows the magical adventures of Harry Potter, a young wizard attending Hogwarts School of Witchcraft and Wizardry. In this installment, Harry returns to Hogwarts for his second year, only to find that the school is plagued by a mysterious series of attacks. As Harry delves into the secrets of the Chamber of Secrets, he uncovers dark forces and a terrifying creature that threatens the safety of the entire school. Alongside his friends Ron and Hermione, Harry must navigate challenges, solve puzzles, and confront his own fears to unravel the mystery and save Hogwarts. 'Harry Potter and the Chamber of Secrets' continues to enchant readers of all ages with its captivating storytelling, magical world-building, and themes of friendship, bravery, and the power of standing up against injustice.",
     id: "28",
   },
   {
@@ -838,7 +895,7 @@ export const products = [
     author: "J.R.R. Tolkien",
     category: "Fantasy",
     price: 600,
-    discount:100,
+    discount: 100,
     imgUrl: "https://upload.wikimedia.org/wikipedia/en/3/30/Hobbit_cover.JPG",
     pages: 312,
     rating: 3.9,
@@ -859,6 +916,8 @@ export const products = [
         date: "2022-12-15",
       },
     ],
+    description:
+      "'The Hobbit' by J.R.R. Tolkien is a timeless fantasy novel that serves as a prelude to 'The Lord of the Rings' trilogy. The story follows Bilbo Baggins, a reluctant hobbit who is swept into an extraordinary adventure when the wizard Gandalf and a group of dwarves arrive at his doorstep. Together, they embark on a quest to reclaim the dwarves' homeland from the fearsome dragon Smaug. Throughout their journey, Bilbo encounters magical creatures, treacherous obstacles, and his own inner courage. 'The Hobbit' is a delightful tale filled with memorable characters, vivid descriptions of Middle-earth, and a captivating narrative. It explores themes of heroism, friendship, and the discovery of one's true self. With Tolkien's enchanting storytelling and rich imagination, 'The Hobbit' has become a beloved classic in the fantasy genre, captivating readers of all ages with its whimsical charm and epic scope.",
     id: "29",
   },
   {
@@ -867,7 +926,7 @@ export const products = [
     author: "Stephen King",
     category: "Horror",
     price: 500,
-    discount:0,
+    discount: 0,
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/en/5/52/StephenKingPetSematary.jpg",
     pages: 352,
@@ -889,6 +948,9 @@ export const products = [
         date: "2022-12-05",
       },
     ],
+    description:
+      "'Pet Sematary' is a chilling horror novel written by Stephen King. The story revolves around the Creed family who move to a small town in Maine and discover an ancient burial ground hidden deep in the woods behind their new home. As tragedy strikes the family, the burial ground's dark powers are unleashed, allowing the dead to come back to life. However, the resurrected loved ones are not the same, and their return leads to terrifying consequences. 'Pet Sematary' explores themes of grief, loss, and the depths of human desperation. Stephen King's masterful storytelling and atmospheric writing create a sense of dread and unease throughout the novel, making it a gripping and unsettling tale that has become a staple in the horror genre.",
+
     id: "30",
   },
   {
@@ -897,7 +959,7 @@ export const products = [
     author: "William Shakespeare",
     category: "Drama",
     price: 460,
-    discount:100,
+    discount: 100,
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/commons/5/55/Romeo_and_juliet_brown.jpg",
     pages: 159,
@@ -919,6 +981,260 @@ export const products = [
         date: "2022-11-18",
       },
     ],
+    description:
+      "'Romeo and Juliet' is a tragic play written by William Shakespeare. Set in the city of Verona, the story follows the passionate love affair between Romeo, a member of the Montague family, and Juliet, a member of the rival Capulet family. Despite their families' long-standing feud, Romeo and Juliet marry in secret, but their happiness is short-lived as a series of unfortunate events and misunderstandings lead to their untimely deaths. Shakespeare's 'Romeo and Juliet' explores themes of love, fate, and the consequences of impulsive actions. The play is renowned for its poetic language, memorable characters, and timeless exploration of the complexities of human emotions. It remains one of Shakespeare's most celebrated works and a classic of world literature, captivating audiences with its tragic tale of young love and the destructive power of hatred.",
     id: "31",
+  },
+  {
+    _id: "9cf05b45-40f4-486e-9a0f-15ef7595f19d",
+    title: "Harry Potter and the Philosopher's Stone",
+    author: "J.K. Rowling",
+    category: "Fantasy",
+    price: 550,
+    discount: 80,
+    imgUrl:
+      "https://upload.wikimedia.org/wikipedia/en/6/6b/Harry_Potter_and_the_Philosopher%27s_Stone_Book_Cover.jpg",
+    pages: 332,
+    rating: 4.8,
+    isBestSeller: true,
+    reviews: [
+      {
+        username: "PotterFan123",
+        rating: 5,
+        comment: "The beginning of a magical journey that captured my heart!",
+        date: "2022-11-15",
+      },
+      {
+        username: "BookLover456",
+        rating: 4.5,
+        comment:
+          "Rowling's imaginative world-building and lovable characters make this a must-read for all ages.",
+        date: "2022-11-01",
+      },
+    ],
+    description:
+      "J.K. Rowling's 'Harry Potter and the Philosopher's Stone' is the first book in the beloved fantasy series that introduces readers to the magical world of Harry Potter. The story follows young Harry as he discovers he is a wizard and begins his journey at Hogwarts School of Witchcraft and Wizardry. Alongside his newfound friends Ron and Hermione, Harry uncovers secrets, battles dark forces, and learns about his own extraordinary destiny. 'Harry Potter and the Philosopher's Stone' enchants readers with its captivating storytelling, whimsical setting, and themes of friendship, courage, and the power of love. It is a timeless classic that has sparked the imaginations of millions of readers worldwide.",
+    id: "33",
+  },
+  {
+    _id: "4ad5d8fd-9ff6-4a66-92c7-cbb8583d11db",
+    title: "Harry Potter and the Prisoner of Azkaban",
+    author: "J.K. Rowling",
+    category: "Fantasy",
+    price: 650,
+    discount: 120,
+    imgUrl:
+      "https://upload.wikimedia.org/wikipedia/en/a/a0/Harry_Potter_and_the_Prisoner_of_Azkaban.jpg",
+    pages: 448,
+    rating: 4.9,
+    isBestSeller: true,
+    reviews: [
+      {
+        username: "PotterFanatic",
+        rating: 5,
+        comment:
+          "An exhilarating and suspenseful addition to the Harry Potter series!",
+        date: "2022-11-30",
+      },
+      {
+        username: "MagicReader",
+        rating: 4.7,
+        comment:
+          "Rowling's storytelling keeps getting better with each book. A must-read for all fantasy lovers.",
+        date: "2022-11-25",
+      },
+    ],
+    description:
+      "J.K. Rowling's 'Harry Potter and the Prisoner of Azkaban' is the third book in the enchanting fantasy series that follows the magical adventures of Harry Potter. In this installment, Harry returns to Hogwarts for his third year, which becomes fraught with danger when an escaped prisoner named Sirius Black is believed to be after him. As Harry delves into the mystery surrounding Sirius Black and encounters new magical creatures and challenges, he discovers the complexities of loyalty, betrayal, and the true nature of good and evil. 'Harry Potter and the Prisoner of Azkaban' captivates readers with its thrilling plot twists, rich character development, and exploration of deeper themes. It is a spellbinding addition to the Harry Potter series that leaves readers eagerly anticipating the next magical installment.",
+  },
+  {
+    _id: "95e8e572-5272-4329-95f9-6c0d8f0d18dd",
+    title: "Harry Potter and the Goblet of Fire",
+    author: "J.K. Rowling",
+    category: "Fantasy",
+    price: 700,
+    discount: 150,
+    imgUrl:
+      "https://upload.wikimedia.org/wikipedia/en/b/b6/Harry_Potter_and_the_Goblet_of_Fire_cover.png",
+    pages: 734,
+    rating: 4.8,
+    isBestSeller: true,
+    reviews: [
+      {
+        username: "PotterHead1990",
+        rating: 5,
+        comment: "An epic and thrilling addition to the Harry Potter series!",
+        date: "2022-10-20",
+      },
+      {
+        username: "BookWorm77",
+        rating: 4.5,
+        comment:
+          "Rowling's writing continues to captivate readers with its intricate plot and unforgettable characters.",
+        date: "2022-10-15",
+      },
+    ],
+    description:
+      "J.K. Rowling's 'Harry Potter and the Goblet of Fire' is the fourth book in the beloved fantasy series that takes readers deeper into the magical world of Harry Potter. In this installment, Harry finds himself unexpectedly chosen as a champion in the Triwizard Tournament, a dangerous competition between three wizarding schools. As Harry faces deadly challenges, unravels dark secrets, and navigates complex relationships, he discovers that the line between friends and foes can blur and that the consequences of his actions can have far-reaching implications. 'Harry Potter and the Goblet of Fire' mesmerizes readers with its intricate plot, emotional depth, and exploration of themes such as identity, loss, and the choices that define us. It is a masterful addition to the Harry Potter series that keeps readers spellbound from beginning to end.",
+    id: "34",
+  },
+  {
+    _id: "e400c84a-1f15-44ce-8b36-4d08a8c741b4",
+    title: "Harry Potter and the Order of the Phoenix",
+    author: "J.K. Rowling",
+    category: "Fantasy",
+    price: 750,
+    discount: 180,
+    imgUrl:
+      "https://upload.wikimedia.org/wikipedia/en/7/70/Harry_Potter_and_the_Order_of_the_Phoenix.jpg",
+    pages: 870,
+    rating: 4.7,
+    isBestSeller: true,
+    reviews: [
+      {
+        username: "PotterFanForever",
+        rating: 5,
+        comment:
+          "A gripping and emotionally charged installment in the Harry Potter series!",
+        date: "2022-09-30",
+      },
+      {
+        username: "MagicalReader21",
+        rating: 4.6,
+        comment:
+          "Rowling's writing continues to captivate, and the complexities of the wizarding world deepen with each book.",
+        date: "2022-09-25",
+      },
+    ],
+    description:
+      "J.K. Rowling's 'Harry Potter and the Order of the Phoenix' is the fifth book in the captivating fantasy series that follows the magical journey of Harry Potter. In this installment, Harry returns to Hogwarts for his fifth year, only to find the wizarding world in turmoil. As he faces new challenges, including a new Defense Against the Dark Arts teacher and the oppressive control of the Ministry of Magic, Harry must navigate the complexities of politics, rebellion, and the growing threat of Lord Voldemort. 'Harry Potter and the Order of the Phoenix' delves into themes of resistance, resilience, and the power of unity in the face of darkness. It is a compelling and thought-provoking addition to the Harry Potter series that leaves readers eagerly awaiting the final battle between good and evil.",
+    id: "35",
+  },
+  {
+    _id: "721e051e-cbce-4340-974a-8d70699e3a32",
+    title: "Harry Potter and the Half-Blood Prince",
+    author: "J.K. Rowling",
+    category: "Fantasy",
+    price: 800,
+    discount: 200,
+    imgUrl:
+      "https://upload.wikimedia.org/wikipedia/en/b/b5/Harry_Potter_and_the_Half-Blood_Prince_cover.png",
+    pages: 607,
+    rating: 4.9,
+    isBestSeller: true,
+    reviews: [
+      {
+        username: "PotterFanatic123",
+        rating: 5,
+        comment:
+          "An emotionally gripping and game-changing installment in the Harry Potter series!",
+        date: "2022-08-20",
+      },
+      {
+        username: "BookLover234",
+        rating: 4.8,
+        comment:
+          "Rowling's writing reaches new heights in this thrilling and heartbreaking chapter of Harry's journey.",
+        date: "2022-08-15",
+      },
+    ],
+    description:
+      "J.K. Rowling's 'Harry Potter and the Half-Blood Prince' is the sixth book in the beloved fantasy series that plunges readers into the depths of darkness and prepares them for the epic finale. In this installment, as Lord Voldemort's power continues to rise, Harry receives private lessons from Hogwarts headmaster Albus Dumbledore, delving into Voldemort's past and uncovering crucial information. As the wizarding world teeters on the brink of war, Harry and his friends face personal challenges, complex relationships, and devastating losses. 'Harry Potter and the Half-Blood Prince' explores themes of sacrifice, love, and the complexities of morality. It is a gripping and emotionally charged addition to the Harry Potter series that sets the stage for the final battle between light and darkness.",
+  },
+  {
+    _id: "ca3e28d4-3eeb-4e1d-b988-ae108165fe8b",
+    title: "Harry Potter and the Deathly Hallows",
+    author: "J.K. Rowling",
+    category: "Fantasy",
+    price: 850,
+    discount: 220,
+    imgUrl:
+      "https://upload.wikimedia.org/wikipedia/en/a/a9/Harry_Potter_and_the_Deathly_Hallows.jpg",
+    pages: 607,
+    rating: 4.9,
+    isBestSeller: true,
+    reviews: [
+      {
+        username: "PotterFanatic123",
+        rating: 5,
+        comment:
+          "An epic and satisfying conclusion to the Harry Potter series!",
+        date: "2022-07-25",
+      },
+      {
+        username: "BookLover234",
+        rating: 4.8,
+        comment:
+          "Rowling masterfully wraps up the series with heart-wrenching moments and a fulfilling resolution.",
+        date: "2022-07-20",
+      },
+    ],
+    description:
+      "J.K. Rowling's 'Harry Potter and the Deathly Hallows' is the seventh and final book in the acclaimed fantasy series that brings Harry's journey to its thrilling conclusion. In this epic installment, Harry, Ron, and Hermione embark on a dangerous quest to find and destroy Voldemort's Horcruxes, objects containing pieces of his soul. As they face unimaginable challenges, make sacrifices, and confront the truth about themselves and their relationships, the battle between good and evil reaches its climax. 'Harry Potter and the Deathly Hallows' explores themes of love, sacrifice, and the power of unity in the face of adversity. It is a monumental finale that leaves readers spellbound and emotionally fulfilled.",
+    id: "36",
+  },
+  {
+    _id: "4ad5d8fd-9ff6-4a66-92c7-cbb8583d11db",
+    title: "Harry Potter and the Prisoner of Azkaban",
+    author: "J.K. Rowling",
+    category: "Fantasy",
+    price: 650,
+    discount: 120,
+    imgUrl:
+      "https://upload.wikimedia.org/wikipedia/en/a/a0/Harry_Potter_and_the_Prisoner_of_Azkaban.jpg",
+    pages: 448,
+    rating: 4.9,
+    isBestSeller: true,
+    reviews: [
+      {
+        username: "PotterFanatic",
+        rating: 5,
+        comment:
+          "An exhilarating and suspenseful addition to the Harry Potter series!",
+        date: "2022-11-30",
+      },
+      {
+        username: "MagicReader",
+        rating: 4.7,
+        comment:
+          "Rowling's storytelling keeps getting better with each book. A must-read for all fantasy lovers.",
+        date: "2022-11-25",
+      },
+    ],
+    description:
+      "J.K. Rowling's 'Harry Potter and the Prisoner of Azkaban' is the third book in the enchanting fantasy series that follows the magical adventures of Harry Potter. In this installment, Harry returns to Hogwarts for his third year, which becomes fraught with danger when an escaped prisoner named Sirius Black is believed to be after him. As Harry delves into the mystery surrounding Sirius Black and encounters new magical creatures and challenges, he discovers the complexities of loyalty, betrayal, and the true nature of good and evil. 'Harry Potter and the Prisoner of Azkaban' captivates readers with its thrilling plot twists, rich character development, and exploration of deeper themes. It is a spellbinding addition to the Harry Potter series that leaves readers eagerly anticipating the next magical installment.",
+    id: "37",
+  },
+  {
+    _id: "721e051e-cbce-4340-974a-8d70699e3a32",
+    title: "Harry Potter and the Half-Blood Prince",
+    author: "J.K. Rowling",
+    category: "Fantasy",
+    price: 800,
+    discount: 200,
+    imgUrl:
+      "https://upload.wikimedia.org/wikipedia/en/b/b5/Harry_Potter_and_the_Half-Blood_Prince_cover.png",
+    pages: 607,
+    rating: 4.9,
+    isBestSeller: true,
+    reviews: [
+      {
+        username: "PotterFanatic123",
+        rating: 5,
+        comment:
+          "An emotionally gripping and game-changing installment in the Harry Potter series!",
+        date: "2022-08-20",
+      },
+      {
+        username: "BookLover234",
+        rating: 4.8,
+        comment:
+          "Rowling's writing reaches new heights in this thrilling and heartbreaking chapter of Harry's journey.",
+        date: "2022-08-15",
+      },
+    ],
+    description:
+      "J.K. Rowling's 'Harry Potter and the Half-Blood Prince' is the sixth book in the beloved fantasy series that plunges readers into the depths of darkness and prepares them for the epic finale. In this installment, as Lord Voldemort's power continues to rise, Harry receives private lessons from Hogwarts headmaster Albus Dumbledore, delving into Voldemort's past and uncovering crucial information. As the wizarding world teeters on the brink of war, Harry and his friends face personal challenges, complex relationships, and devastating losses. 'Harry Potter and the Half-Blood Prince' explores themes of sacrifice, love, and the complexities of morality. It is a gripping and emotionally charged addition to the Harry Potter series that sets the stage for the final battle between light and darkness.",
+    id: "38",
   },
 ];
