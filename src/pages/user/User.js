@@ -4,12 +4,15 @@ import {
   getUserName,
 } from "./../../services/localstorage-service";
 import Address from "./Address";
+import OrderHistory from "./OrderHistory";
+import { useParams } from "react-router-dom";
 
 const User = () => {
-  const [selectedTab, setSelectedTab] = useState("address");
+  const { tab } = useParams();
+  const [selectedTab, setSelectedTab] = useState(tab ?? "address");
   return (
-    <div className="mt-32 mx-4">
-      <ul className="flex max-w-4xl mx-auto flex-wrap text-sm font-medium text-center text-gray-400 border-b border-gray-700">
+    <div className="mx-4 mt-32">
+      <ul className="flex flex-wrap max-w-4xl mx-auto text-sm font-medium text-center text-gray-400 border-b border-gray-700">
         <li className="mr-2">
           <button
             onClick={() => setSelectedTab("profile")}
@@ -61,13 +64,21 @@ const User = () => {
         {selectedTab === "profile" && (
           <>
             <p className="text-lg font-semibold">{getUserName()}</p>
-            <p className="text-md font-semibold">{getUserEmail()}</p>
+            <p className="font-semibold text-md">{getUserEmail()}</p>
           </>
         )}
         {/* For Address */}
-        {selectedTab === "address" && <>
-        <Address/>
-        </>}
+        {selectedTab === "address" && (
+          <>
+            <Address />
+          </>
+        )}
+        {/* For Orders */}
+        {selectedTab === "orders" && (
+          <>
+            <OrderHistory />
+          </>
+        )}
       </div>
     </div>
   );

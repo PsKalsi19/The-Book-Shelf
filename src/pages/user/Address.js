@@ -1,38 +1,9 @@
-import { useEffect, useState } from "react";
-import { getAddress, saveAddress } from "../../services/localstorage-service";
-import { useNavigate } from "react-router-dom";
 import AddressCard from "../../components/AddressCard";
-
-const defaultAddress = [
-  {
-    id: 1,
-    name: "Joe Russo",
-    number: "2132434645",
-    line1: "Vasant Colony",
-    line2: "Shivaji Road",
-    landmark: "Near XYZ Garden",
-    pincode: "403021",
-    city: "Nagpur",
-    state: "Maharashtra",
-    country: "India",
-    isDefault: true,
-  },
-];
+import { useContext } from "react";
+import { AddressContext } from "../../contexts/AddressProvider";
 
 const Address = () => {
-  const [addresses, setAddress] = useState();
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (getAddress().length === 0) {
-      saveAddress(...defaultAddress);
-    }
-    setAddress(getAddress());
-  }, []);
-
-  const handleAddressForm = (payload = null) => {
-    navigate("/address", { state: { selectedForm: payload } });
-  };
+  const { addresses,setAddress,handleAddressForm } = useContext(AddressContext);
 
   return (
     <div>

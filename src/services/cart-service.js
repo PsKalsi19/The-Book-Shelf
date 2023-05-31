@@ -11,7 +11,7 @@ export const deleteCartItems = (productId) =>
   axios.delete(`${ENDPOINTS.CART}/${productId}`, DEFAULT_HEADERS);
 
 export const changeItemQuantity = (productId, changeType) => {
- return axios.post(
+  return axios.post(
     `${ENDPOINTS.CART}/${productId}`,
     { action: { type: changeType } },
     DEFAULT_HEADERS
@@ -21,8 +21,9 @@ export const changeItemQuantity = (productId, changeType) => {
 export const getTotalAmount = (payload) => {
   return payload.reduce(
     (acc, item) => ({
-      totalAmount: (item.price + acc.totalAmount)*item.qty,
-      discountedAmount: (item.price - item.discount + acc.discountedAmount)*item.qty,
+      totalAmount: item.price * item.qty + acc.totalAmount,
+      discountedAmount:
+        item.price - item.discount * item.qty + acc.discountedAmount,
     }),
     {
       totalAmount: 0,
@@ -30,7 +31,6 @@ export const getTotalAmount = (payload) => {
     }
   );
 };
-
 
 export const createCouponData = (payload) => {
   const itemsLength = payload.length;
@@ -58,7 +58,7 @@ export const createCouponData = (payload) => {
       break;
 
     default:
-      coupons = { ...coupons };
+      coupons = [...coupons];
       break;
   }
 
