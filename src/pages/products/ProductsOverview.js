@@ -2,8 +2,6 @@ import { useContext } from "react";
 import AddToCartButton from "../../components/AddToCartButton";
 import { useParams } from "react-router";
 import { BooksContext } from "../../contexts/BooksProvider";
-import { HeartIcon } from "@heroicons/react/24/outline";
-import { HeartIcon as FilledHeartIcon } from "@heroicons/react/24/solid";
 import WishlistButton from "../../components/WishlistButton";
 
 const ProductOverview = () => {

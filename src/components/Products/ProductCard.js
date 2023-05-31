@@ -1,16 +1,12 @@
 import { useContext } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { BooksContext } from "../../contexts/BooksProvider";
-import { toast } from "react-hot-toast";
-import { getAuth } from "../../services/localstorage-service";
 import AddToCartButton from "../AddToCartButton";
 import WishlistButton from "../WishlistButton";
 
 const ProductCard = ({ product, fromWishlist }) => {
   const navigate = useNavigate();
-  const location = useLocation();
   const {
-    handleWishlistToggle,
     removeWishlistHandler,
   } = useContext(BooksContext);
 
@@ -19,23 +15,10 @@ const ProductCard = ({ product, fromWishlist }) => {
     price,
     rating,
     title,
-    wishlisted,
     _id,
     discount,
   } = product;
-  const wishlistToggleHandler = (e, product) => {
-    e.stopPropagation();
-    if (checkForAuth()) return;
-    handleWishlistToggle(product);
-  };
 
-  const checkForAuth = () => {
-    if (getAuth() === null) {
-      toast.error("Log in to continue.");
-      navigate("/login", { state: { from: location } });
-      return true;
-    }
-  };
 
   const removeFromWishList = (e, product) => {
     e.stopPropagation();
