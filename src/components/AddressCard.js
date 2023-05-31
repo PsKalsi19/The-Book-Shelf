@@ -1,8 +1,12 @@
 import { TrashIcon } from "@heroicons/react/24/outline";
 import { useNavigate } from "react-router-dom";
-import { deleteAddress, getAddress } from "../services/localstorage-service";
+import {
+  deleteAddress,
+  getAddress,
+  togglePrimaryAddress,
+} from "../services/localstorage-service";
 import { toast } from "react-hot-toast";
-const AddressCard = ({ address,setAddressHandler }) => {
+const AddressCard = ({ address, setAddressHandler }) => {
   const {
     id,
     name,
@@ -13,12 +17,12 @@ const AddressCard = ({ address,setAddressHandler }) => {
     city,
     state,
     country,
-    isDefault,
+    isPrimary,
   } = address;
   const removeAddress = (id) => {
     deleteAddress(id);
-    setAddressHandler(getAddress())
-    toast.success("Address Deleted")
+    setAddressHandler(getAddress());
+    toast.success("Address Deleted");
   };
 
   const navigate = useNavigate();
@@ -27,19 +31,49 @@ const AddressCard = ({ address,setAddressHandler }) => {
     navigate(`/address/${id}`, { state: { selectedForm: payload } });
   };
 
+  const setPrimaryAddress = (id) => {
+    togglePrimaryAddress(id);
+    setAddressHandler(getAddress());
+    toast.success("Addresses Updated.");
+  };
+
   return (
     <div
       id={id}
-      className={`flex flex-row p-6 mb-6 border-b border-gray-700 hover:rounded-lg  ${isDefault?'bg-gray-800 rounded-lg':'hover:bg-gray-800'}`}
+      className={`flex relative flex-row p-6 mb-6 border-b border-gray-700 hover:rounded-lg  ${
+        isPrimary ? "bg-gray-800 rounded-lg" : "hover:bg-gray-800"
+      }`}
     >
-      <div className="flex justify-between items-start flex-row sm:w-full">
+      <button title="Set as primary" disabled={isPrimary} onClick={() => setPrimaryAddress(id)} type="button">
+        <svg
+          
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="currentColor"
+          className={`w-6 absolute -bottom-3  ${
+            isPrimary
+              ? "text-cyan-800 cursor-not-allowed "
+              : "text-gray-400 hover:text-cyan-800 cursor-pointer"
+          }  fill-current right-6 h-6`}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z"
+          />
+        </svg>
+      </button>
+
+      <div className="flex flex-row items-start justify-between sm:w-full">
         <div>
           <div className="flex flex-col items-start">
             <h2 className="text-lg text-gray-100 sm:text-xl">
               {name}, {number}
             </h2>
           </div>
-          <div className="mt-4 text-sm space-y-2 text-gray-100">
+          <div className="mt-4 space-y-2 text-sm text-gray-100">
             <p>
               {line1}, {line2}
             </p>
@@ -48,12 +82,14 @@ const AddressCard = ({ address,setAddressHandler }) => {
             </p>
           </div>
         </div>
-        <div className="space-x-2 flex text-gray-100">
-         { !isDefault && <TrashIcon
-            onClick={(e) => removeAddress(id)}
-            title="Remove Address"
-            className="w-8 h-8 p-2 text-red-500 duration-150 bg-red-100 rounded-full cursor-pointer opacity-80"
-          />}
+        <div className="flex space-x-2 text-gray-100">
+          {!isPrimary && (
+            <TrashIcon
+              onClick={(e) => removeAddress(id)}
+              title="Remove Address"
+              className="w-8 h-8 p-2 text-red-500 duration-150 bg-red-100 rounded-full cursor-pointer opacity-80"
+            />
+          )}
           <svg
             onClick={(e) => editAddress(address)}
             xmlns="http://www.w3.org/2000/svg"
@@ -61,7 +97,7 @@ const AddressCard = ({ address,setAddressHandler }) => {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-8 h-8 p-2 text-gray-200 duration-150 bg-cyan-800 rounded-full cursor-pointer"
+            className="w-8 h-8 p-2 text-gray-200 duration-150 rounded-full cursor-pointer bg-cyan-800"
           >
             <path
               strokeLinecap="round"
@@ -70,7 +106,6 @@ const AddressCard = ({ address,setAddressHandler }) => {
             />
           </svg>
         </div>
-      
       </div>
     </div>
   );

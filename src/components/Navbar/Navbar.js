@@ -20,7 +20,6 @@ const Navbar = () => {
 
   const {
     booksState: { wishlist, cart },
-    addBooksData,
   } = useContext(BooksContext);
 
   useEffect(() => {
@@ -31,9 +30,6 @@ const Navbar = () => {
     });
   }, [isUserValid, setUserState]);
 
-  // useEffect(() => {
-  //   addBooksData();
-  // }, [addBooksData]);
 
   return (
     <header>

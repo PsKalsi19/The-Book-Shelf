@@ -1,4 +1,4 @@
-import { createContext, useCallback, useEffect, useReducer, useState } from "react";
+import { createContext, useEffect, useReducer, useState } from "react";
 import axios from "axios";
 
 import { filtersInitialState } from "./initialStates/FilterInitialState";
@@ -78,19 +78,6 @@ const BooksProvider = ({ children }) => {
     });
   };
 
-  const addBooksData = useCallback(async () => {
-    try {
-      const data = await getProducts();
-      const updatedData = getUpdatedData(data?.data?.products);
-      booksDispatch({
-        type: BOOKS_ACTIONS.SAVE_BOOKS_DATA,
-        payload: updatedData,
-      });
-    } catch (error) {
-      handleError(error);
-    }
-  },[]);
-
   const addToCartHandler = async (product) => {
     try {
       booksDispatch({
@@ -126,7 +113,8 @@ const BooksProvider = ({ children }) => {
 
   const removeFromCartHandler = async (
     product,
-    toastMessage = "Item Removed."
+    toastMessage = "Item Removed.",
+    showToast = true
   ) => {
     try {
       await deleteCartItems(product._id).then((data) => {
@@ -139,11 +127,38 @@ const BooksProvider = ({ children }) => {
           payload: product._id,
         });
         updateCart(data?.data?.cart);
-        toast.success(toastMessage);
+        showToast && toast.success(toastMessage);
       });
     } catch (error) {
       handleError(error);
     }
+  };
+
+  const saveOrderHistory = (items, totalAmount) => {
+    const placedOrder = {
+      products: items,
+      totalBill: totalAmount,
+      ...generateDateTimeAndId(),
+    };
+    booksDispatch({
+      type: BOOKS_ACTIONS.SAVE_PURCHASED_ITEMS,
+      payload: placedOrder,
+    });
+  };
+
+  const generateDateTimeAndId = () => {
+    const currentDate = new Date();
+    const year = currentDate.getFullYear();
+    const month = currentDate.getMonth() + 1;
+    const day = currentDate.getDate();
+    const hours = currentDate.getHours();
+    const minutes = currentDate.getMinutes();
+
+    return {
+      date: `${day}/${month}/${year}`,
+      time: `${hours}:${minutes}`,
+      orderId: `ORD#00${currentDate.getTime()}`,
+    };
   };
 
   const moveToWishlistHandler = async (product) => {
@@ -164,7 +179,9 @@ const BooksProvider = ({ children }) => {
           payload: data?.data?.cart,
         });
         updateCart(data?.data?.cart);
-        action==='increment'?toast.success("Quantity Increased"):toast.success("Quantity Decreased")
+        action === "increment"
+          ? toast.success("Quantity Increased")
+          : toast.success("Quantity Decreased");
       });
     } catch (error) {
       handleError(error);
@@ -178,13 +195,27 @@ const BooksProvider = ({ children }) => {
 
   useEffect(() => {
     getCategories(ENDPOINTS.CATEGORIES, booksDispatch);
-    addBooksData();
+
     booksDispatch({ type: BOOKS_ACTIONS.SAVE_CART, payload: [...getCart()] });
     booksDispatch({
       type: BOOKS_ACTIONS.SAVE_WISHLIST,
       payload: [...getWishlist()],
     });
-  }, [addBooksData]);
+
+    const addBooksData = async () => {
+      try {
+        const data = await getProducts();
+        const updatedData = getUpdatedData(data?.data?.products);
+        booksDispatch({
+          type: BOOKS_ACTIONS.SAVE_BOOKS_DATA,
+          payload: updatedData,
+        });
+      } catch (error) {
+        handleError(error);
+      }
+    };
+    addBooksData();
+  }, []);
 
   return (
     <BooksContext.Provider
@@ -193,13 +224,13 @@ const BooksProvider = ({ children }) => {
         filtersDispatch,
         booksState,
         booksDispatch,
-        addBooksData,
         removeWishlistHandler,
         handleWishlistToggle,
         addToCartHandler,
         removeFromCartHandler,
         moveToWishlistHandler,
         cartItemQuantityHandler,
+        saveOrderHistory,
         buttonDisabled,
         setButtonDisable,
       }}

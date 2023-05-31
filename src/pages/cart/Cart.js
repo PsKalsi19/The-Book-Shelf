@@ -10,7 +10,7 @@ const Cart = () => {
   } = useContext(BooksContext);
 
   return (
-    <div className="pt-20">
+    <div className="mt-20">
       <h1 className="my-4 font-bold tracking-tight text-center text-gray-100 md:text-xl lg:text-4xl">
         Cart Items
       </h1>

@@ -9,7 +9,8 @@ export const BOOKS_ACTIONS = {
   REMOVE_FROM_CART: "remove_from_cart",
   RESET_CART_WISHLIST:"reset_cart_wishlist",
   RESET:"reset",
-  RESET_PRODUCTS:"reset_products"
+  RESET_PRODUCTS:"reset_products",
+  SAVE_PURCHASED_ITEMS:"save_purchased_items"
 };
 
 export const FILTERS_ACTION ={

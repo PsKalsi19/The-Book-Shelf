@@ -8,7 +8,7 @@ const links = [
 ]
 
 
-export default function Home() {
+ const Home=()=> {
     const {booksState}=useContext(BooksContext)
     return (
         <div className='relative flex flex-col'>
@@ -76,3 +76,6 @@ export default function Home() {
         </div>
     )
 }
+
+
+export default Home
