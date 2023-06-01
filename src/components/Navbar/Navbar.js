@@ -12,7 +12,6 @@ import { getAuth, getUser } from "../../services/localstorage-service";
 import Logout from "./logout/Logout";
 import { BooksContext } from "../../contexts/BooksProvider";
 import SearchBar from "../search-bar/SearchBar";
-
 const Navbar = () => {
   const {
     userState: { isUserValid },
@@ -40,7 +39,7 @@ const Navbar = () => {
         >
           <div className="flex items-center h-16">
             <div className="flex items-center">
-              <div className="flex w-3/4 ml-4 overflow-hidden md:w-1/5 lg:ml-0">
+              <div className="flex w-3/4 sm:ml-4 overflow-hidden md:w-1/5 lg:ml-0">
                 <NavLink to="/">
                   <span className="sr-only">The Book Shelf</span>
                   <img
@@ -51,7 +50,7 @@ const Navbar = () => {
               </div>
               <div className="flex items-center justify-end w-4/5">
                 {/* Search bar */}
-                <div className={`hidden w-1/2 mx-10 md:block`}>
+                <div className={`hidden relative w-1/2 mx-10 md:block`}>
                   <SearchBar />
                 </div>
                 <div className="flow-root ml-4 lg:ml-6">
@@ -141,7 +140,7 @@ const Navbar = () => {
             </div>
           </div>
           {/* Search bar */}
-          <div className="w-full my-2 md:hidden">
+          <div className=" md:hidden">
             <SearchBar />
           </div>
         </div>
