@@ -21,9 +21,9 @@ const ProductOverview = () => {
   if(showLoader) return <Loader/>
 
   return (
-    <section className="overflow-hidden text-gray-100 body-font">
+    <section className="overflow-hidden text-gray-100">
       {product && (
-        <div className="container px-5 py-24 mx-auto">
+        <div className="container px-5 pt-32 pb-4 sm:py-24 mx-auto">
           <div className="flex items-center flex-wrap mx-auto lg:max-w-5xl">
             <img
               alt={product.title}
