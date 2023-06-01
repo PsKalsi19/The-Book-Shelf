@@ -22,87 +22,90 @@ import ProductOverview from "./pages/products/ProductsOverview";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<RootLayout />}>
-        <Route index element={<Home />} />
-        <Route path="login" element={<Login />} />
-        <Route path="create-account" element={<SignUp />} />
-        <Route path="product-overview/:id" element={<ProductOverview />} />
-        <Route
-          path="cart"
-          element={
-            <CanActivate>
-              <Cart />
-            </CanActivate>
-          }
-        />
-        <Route
-          path="checkout"
-          element={
-            <CanActivate>
-              <Checkout />
-            </CanActivate>
-          }
-        />
-        <Route
-          path="thank-you"
-          element={
-            <CanActivate>
-              <ThankYou />
-            </CanActivate>
-          }
-        />
-        <Route
-          path="wishlist"
-          element={
-            <CanActivate>
-              <Wishlist />
-            </CanActivate>
-          }
-        />
-        <Route path="user">
+    <>
+     
+      <Routes>
+        <Route path="/" element={<RootLayout />}>
+          <Route index element={<Home />} />
+          <Route path="login" element={<Login />} />
+          <Route path="create-account" element={<SignUp />} />
+          <Route path="product-overview/:id" element={<ProductOverview />} />
           <Route
-            index
+            path="cart"
             element={
               <CanActivate>
-                <User />
+                <Cart />
               </CanActivate>
             }
           />
           <Route
-            path=":tab"
+            path="checkout"
             element={
               <CanActivate>
-                <User />
+                <Checkout />
               </CanActivate>
             }
           />
+          <Route
+            path="thank-you"
+            element={
+              <CanActivate>
+                <ThankYou />
+              </CanActivate>
+            }
+          />
+          <Route
+            path="wishlist"
+            element={
+              <CanActivate>
+                <Wishlist />
+              </CanActivate>
+            }
+          />
+          <Route path="user">
+            <Route
+              index
+              element={
+                <CanActivate>
+                  <User />
+                </CanActivate>
+              }
+            />
+            <Route
+              path=":tab"
+              element={
+                <CanActivate>
+                  <User />
+                </CanActivate>
+              }
+            />
+          </Route>
+          <Route path="address">
+            <Route
+              index
+              element={
+                <CanActivate>
+                  <AddressForm />
+                </CanActivate>
+              }
+            />
+            <Route
+              path=":id"
+              element={
+                <CanActivate>
+                  <AddressForm />
+                </CanActivate>
+              }
+            />
+          </Route>
+          <Route path="products" element={<ProductLayout />}>
+            <Route index element={<Products />} />
+            <Route path=":category" element={<Products />} />
+          </Route>
         </Route>
-        <Route path="address">
-          <Route
-            index
-            element={
-              <CanActivate>
-                <AddressForm />
-              </CanActivate>
-            }
-          />
-          <Route
-            path=":id"
-            element={
-              <CanActivate>
-                <AddressForm />
-              </CanActivate>
-            }
-          />
-        </Route>
-        <Route path="products" element={<ProductLayout />}>
-          <Route index element={<Products />} />
-          <Route path=":category" element={<Products />} />
-        </Route>
-      </Route>
-      <Route path="mocks" element={<Mockman />} />
-    </Routes>
+        <Route path="mocks" element={<Mockman />} />
+      </Routes>
+    </>
   );
 }
 
