@@ -66,9 +66,16 @@ const BooksProvider = ({ children }) => {
     });
   };
 
-  const searchProductsHandler =()=> booksState.booksData.filter(({ title }) => {
-    return title.toLowerCase().includes(searchTerm.toLowerCase());
-  });
+  // const searchProductsHandler =()=> booksState.booksData.filter(({ title }) => {
+  //   return title.toLowerCase().includes(searchTerm.toLowerCase());
+  // });
+
+  const searchProductsHandler =
+  searchTerm === ""
+    ? booksState.booksData
+    : booksState.booksData.filter((books) =>
+        books.title.toLowerCase().includes(searchTerm.toLowerCase())
+      );
 
   const addWishlistHandler = async (product, showToast = true) => {
     booksDispatch({
