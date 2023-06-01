@@ -34,6 +34,7 @@ const BooksProvider = ({ children }) => {
   );
   const [booksState, booksDispatch] = useReducer(books, booksInitialState);
   const [buttonDisabled, setButtonDisable] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
 
   const handleWishlistToggle = (product) => {
     try {
@@ -60,12 +61,16 @@ const BooksProvider = ({ children }) => {
         type: BOOKS_ACTIONS.SAVE_WISHLIST,
         payload: data?.data?.wishlist,
       });
-      toast.success("Removed from Wishlist")
+      toast.success("Removed from Wishlist");
       updateWishlist(data?.data?.wishlist);
     });
   };
-  
-  const addWishlistHandler = async (product,showToast=true) => {
+
+  const searchProductsHandler =()=> booksState.booksData.filter(({ title }) => {
+    return title.toLowerCase().includes(searchTerm.toLowerCase());
+  });
+
+  const addWishlistHandler = async (product, showToast = true) => {
     booksDispatch({
       type: BOOKS_ACTIONS.WISHLISTED,
       payload: product._id,
@@ -75,7 +80,7 @@ const BooksProvider = ({ children }) => {
         type: BOOKS_ACTIONS.SAVE_WISHLIST,
         payload: data?.data?.wishlist,
       });
-      showToast && toast.success("Added to Wishlist")
+      showToast && toast.success("Added to Wishlist");
       updateWishlist(data?.data?.wishlist);
     });
   };
@@ -165,7 +170,7 @@ const BooksProvider = ({ children }) => {
 
   const moveToWishlistHandler = async (product) => {
     try {
-      addWishlistHandler(product,false).then(() => {
+      addWishlistHandler(product, false).then(() => {
         removeFromCartHandler(product, "Item moved to wishlist");
       });
     } catch (error) {
@@ -232,9 +237,12 @@ const BooksProvider = ({ children }) => {
         removeFromCartHandler,
         moveToWishlistHandler,
         cartItemQuantityHandler,
+        searchProductsHandler,
         saveOrderHistory,
         buttonDisabled,
         setButtonDisable,
+        searchTerm,
+        setSearchTerm,
       }}
     >
       {children}
