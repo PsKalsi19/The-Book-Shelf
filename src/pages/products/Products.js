@@ -5,7 +5,8 @@ import ProductCard from "../../components/products/ProductCard";
 import Loader from "../../components/loader/Loader";
 const Products = () => {
   const [showLoader, setShowLoader] = useState(true);
-  const { booksState, searchProductsHandler } = useContext(BooksContext);
+  const { booksState, allSortsAndFilters } =
+    useContext(BooksContext);
 
   useEffect(() => {
     const loader = setTimeout(() => {
@@ -14,25 +15,19 @@ const Products = () => {
     return () => clearTimeout(loader);
   }, []);
 
-  // useEffect(()=>{
-  //   const searchTimeout=setTimeout(() => {
-      
-  //     searchProductsHandler()
-  //   }, 10000);
-  //   return ()=>clearTimeout(searchTimeout)
-  // },[searchTerm])
-
-
-
   const { booksData } = booksState;
   if (showLoader) return <Loader />;
   return (
     <div className="grid grid-cols-2 gap-2 lg:grid-cols-4">
       {booksData &&
         booksData.length > 0 &&
-        searchProductsHandler.map((product) => (
-          <ProductCard key={product._id} product={product} />
-        ))}
+        allSortsAndFilters()
+          .map((product) => (
+            <ProductCard key={product._id} product={product} />
+          ))}
+          {
+             booksData && allSortsAndFilters().length===0 && <p className="text-4xl text-gray-100">No Data Available.</p>
+          }
     </div>
   );
 };

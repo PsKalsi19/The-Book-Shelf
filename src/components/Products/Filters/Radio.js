@@ -1,8 +1,12 @@
-import React from 'react';
-
-
+import { useContext } from "react";
+import { BooksContext } from './../../../contexts/BooksProvider';
+import { FILTERS_ACTION } from "../../../constants/dispatchTypes";
 
 const Radio = () => {
+  const {filtersDispatch,filtersState:{priceSort}}=useContext(BooksContext)
+  const handleSortChange=(e)=>{
+    filtersDispatch({type:FILTERS_ACTION.CHANGE_PRICE_SORT,payload:e.target.value})
+  }
     return (
         <fieldset className='pb-4 border-b border-gray-500'>
             <legend className='text-base text-gray-100'>Price</legend>
@@ -11,11 +15,13 @@ const Radio = () => {
                     <div className="flex items-center pl-3">
                       <input
                         id="desc"
+                        onChange={handleSortChange}
                         type="radio"
-                        value="desc"
+                        value="DESC"
+                        checked={priceSort==="DESC"}
                         name="price-sort-radio"
-                        className="w-4 h-4 text-blue-600 bg-gray-700 border-gray-500 focus:ring-blue-600 ring-offset-gray-700 focus:ring-offset-gray-700 focus:ring-2"
-                      />
+                        className="w-4 h-4 bg-gray-700 border-gray-500 text-cyan-600 focus:ring-cyan-600 ring-offset-gray-700 focus:ring-offset-gray-700 focus:ring-2"
+                        />
                       <label
                         htmlFor="desc"
                         className="w-full py-3 ml-2 text-sm font-medium text-gray-100"
@@ -29,9 +35,11 @@ const Radio = () => {
                       <input
                         id="asc"
                         type="radio"
-                        value="asc"
+                        onChange={handleSortChange}
+                        checked={priceSort==="ASC"}
+                        value="ASC"
                         name="price-sort-radio"
-                        className="w-4 h-4 text-blue-600 bg-gray-700 border-gray-500 focus:ring-blue-600 ring-offset-gray-700 focus:ring-offset-gray-700 focus:ring-2"
+                        className="w-4 h-4 bg-gray-700 border-gray-500 text-cyan-600 focus:ring-cyan-600 ring-offset-gray-700 focus:ring-offset-gray-700 focus:ring-2"
                       />
                       <label
                         htmlFor="asc"

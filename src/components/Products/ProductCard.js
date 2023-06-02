@@ -6,32 +6,22 @@ import WishlistButton from "../WishlistButton";
 
 const ProductCard = ({ product, fromWishlist }) => {
   const navigate = useNavigate();
-  const {
-    removeWishlistHandler,
-  } = useContext(BooksContext);
+  const { removeWishlistHandler } = useContext(BooksContext);
 
-  const {
-    imgUrl,
-    price,
-    rating,
-    title,
-    _id,
-    discount,
-  } = product;
-
+  const { imgUrl, price, rating, title, _id, discount } = product;
 
   const removeFromWishList = (e, product) => {
     e.stopPropagation();
     removeWishlistHandler(product._id);
   };
 
-  const productOverview = (e, id) => {
+  const productOverview = (id) => {
     navigate(`/product-overview/${id}`);
   };
 
   return (
     <div
-      onClick={(e) => productOverview(e, _id)}
+      onClick={(e) => productOverview(_id)}
       className="flex flex-col items-center self-start border border-gray-900 rounded-lg hover:bg-gray-800 hover:border hover:border-gray-700 "
     >
       <div className="relative">
@@ -40,7 +30,7 @@ const ProductCard = ({ product, fromWishlist }) => {
           src={imgUrl}
           alt={title}
         />
-        {!fromWishlist && <WishlistButton product={product}/>}
+        {!fromWishlist && <WishlistButton product={product} />}
         {fromWishlist && (
           <button
             type="button"
