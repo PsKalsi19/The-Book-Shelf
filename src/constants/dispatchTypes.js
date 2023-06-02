@@ -15,4 +15,9 @@ export const BOOKS_ACTIONS = {
 
 export const FILTERS_ACTION ={
   RESET:"reset",
+  CHANGE_PRICE_SORT:"change_price_sort",
+  UPDATE_CATEGORY:"update_category",
+  UPDATE_PRICE_SLIDER:"update_price_slider",
+  UPDATE_RATING_SLIDER:"update_rating_slider",
+
 }

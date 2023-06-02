@@ -10,7 +10,7 @@ import ProductLayout from "./layouts/ProductLayout";
 import Home from "./pages/home/Home";
 import Products from "./pages/products/Products";
 import Login from "./pages/login/Login";
-import SignUp from "./pages/signUp/SignUp";
+import SignUp from "./pages/sign-up/SignUp";
 import User from "./pages/user/User";
 import Cart from "./pages/cart/Cart";
 import Wishlist from "./pages/wishlist/Wishlist";
@@ -18,7 +18,7 @@ import CanActivate from "./components/routegurad/CanActivate";
 import AddressForm from "./pages/addressForm/AddressForm";
 import Checkout from "./pages/checkout/Checkout";
 import ThankYou from "./pages/thank-you/ThankYou";
-import ProductOverview from "./pages/products/ProductsOverview";
+import ProductOverview from './pages/productOverview/ProductsOverview';
 
 function App() {
   return (

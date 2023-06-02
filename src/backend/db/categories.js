@@ -31,7 +31,7 @@ export const categories = [
   },
   {
     _id: "2aad9bce-f932-44bf-8d13-0a0109dcbb5e",
-    categoryName: "Non-fiction",
+    categoryName: "Non-Fiction",
     imgUrl:
       "https://ik.imagekit.io/pb97gg2as/E-Commerce-Assets/Categories/Non-Fiction.jpg?updatedAt=1684597533100",
     description:

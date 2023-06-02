@@ -16,8 +16,8 @@ const SearchBar = () => {
   return (
     <div className="fixed w-11/12 sm:top-4 sm:w-96">
       <Combobox onChange={handleCardSelect}>
-        <div className="relative mt-1">
-          <div className="relative w-full cursor-default overflow-hidden rounded-lg  text-left shadow-md focus:outline-none focus-visible:ring-2  sm:text-sm">
+        <div className="relative">
+          <div className="relative w-10/12 overflow-hidden text-left rounded-lg shadow-md cursor-default sm:w-full focus:outline-none focus-visible:ring-2 sm:text-sm">
             <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
               <svg
                 aria-hidden="true"
@@ -40,12 +40,12 @@ const SearchBar = () => {
               displayValue={(person) => person.name}
               onChange={(event) => setSearchTerm(event.target.value)}
             />
-            <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
+            {/* <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
               <ChevronUpDownIcon
-                className="h-5 w-5 text-gray-400"
+                className="w-5 h-5 text-gray-400"
                 aria-hidden="true"
               />
-            </Combobox.Button>
+            </Combobox.Button> */}
           </div>
           <Transition
             as={Fragment}
@@ -54,13 +54,13 @@ const SearchBar = () => {
             leaveTo="opacity-0"
             afterLeave={() => setSearchTerm("")}
           >
-            <Combobox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-gray-900 py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-              {searchProductsHandler.length === 0 && searchTerm !== "" ? (
-                <div className="relative cursor-default select-none py-2 px-4 text-gray-100">
+            <Combobox.Options className="absolute w-full py-1 mt-1 overflow-auto text-base bg-gray-900 rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+              {searchProductsHandler().length === 0 && searchTerm !== "" ? (
+                <div className="relative px-4 py-2 text-gray-100 cursor-default select-none">
                   Nothing found.
                 </div>
               ) : (
-                searchProductsHandler.map((product) => (
+                searchProductsHandler().map((product) => (
                   <Combobox.Option
                     key={product.id}
                     className={({ active }) =>
@@ -70,12 +70,12 @@ const SearchBar = () => {
                     }
                     value={product}
                   >
-                    {({ selected, active }) => (
+                    {({ selected }) => (
                       <>
                         <img
                           src={product.imgUrl}
                           alt={product.title}
-                          className="h-16 w-12 mr-4"
+                          className="w-12 h-16 mr-4"
                         />
                         <span
                           className={`block truncate ${
