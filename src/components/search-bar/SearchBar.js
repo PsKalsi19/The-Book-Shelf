@@ -14,10 +14,10 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="fixed w-11/12 sm:top-4 sm:w-96">
+    <div className="fixed w-9/12 sm:top-4 sm:w-96">
       <Combobox onChange={handleCardSelect}>
         <div className="relative">
-          <div className="relative w-10/12 overflow-hidden text-left rounded-lg shadow-md cursor-default sm:w-full focus:outline-none focus-visible:ring-2 sm:text-sm">
+          <div className="relative w-full overflow-hidden text-left rounded-lg shadow-md cursor-default focus:outline-none focus-visible:ring-2 sm:text-sm">
             <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
               <svg
                 aria-hidden="true"

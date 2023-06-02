@@ -13,14 +13,14 @@ const OrderCard = ({order}) => {
         />
         {/* Actions for mobile */}
         <div className="flex flex-col items-center sm:items-start sm:flex-row sm:ml-4 sm:w-full sm:justify-between">
-          <div className="flex flex-col justify-between mt-5 align-center sm:mt-0">
+          <div className="flex flex-col items-center justify-between mt-5 align-center sm:mt-0">
             <div className="flex flex-col items-center sm:items-start">
               <h2 className="text-lg font-bold text-gray-100 sm:text-xl">
                 {title}
               </h2>
               <p className="mt-1 text-xs text-gray-200 sm:text-sm">{author}</p>
             </div>
-            <div className="flex flex-col items-center mt-4 space-x-4 text-gray-100 sm:flex-row">
+            <div className="flex flex-row items-center mt-4 space-x-4 text-gray-100">
               <p className="text-xs before:mr-1 before:content-['₹'] line-through text-gray-200">
                 {price}
               </p>
