@@ -12,7 +12,7 @@ const OrderHistory = () => {
         orders.length > 0 &&
         orders.map(({ date, orderId, products, totalBill }) => (
           <div key={orderId} className="pt-2 m-4 border border-gray-700 ">
-            <div className="grid grid-cols-4 grid-rows-1 gap-4 px-6 pb-2 border-b border-gray-700">
+            <div className="grid grid-cols-1 grid-rows-1 gap-4 px-6 pb-2 border-b border-gray-700 sm:grid-cols-4">
               <div className="col-span-2">
                 <dt className="text-gray-400">Order number</dt>
                 <dd className="font-semibold">{orderId}</dd>
