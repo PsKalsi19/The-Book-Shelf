@@ -5,7 +5,7 @@
   left: 50%;
   width: 20rem;
   transform: translate(-50%, -50%);
-  z-index: 999;
+  z-index: 10;
 }
 .preloader__text {
   position: relative;
