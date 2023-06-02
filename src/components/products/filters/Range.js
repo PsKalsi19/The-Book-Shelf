@@ -1,8 +1,5 @@
-import React, { useState } from 'react';
-import Loader from '../../loader/Loader';
 
 const Range = ({value,dispatch,heading,max,step,dispatchType}) => {
-    const [showLoader,setShowLoader]=useState(false)
     const handleSliderChange=(e)=>{
         dispatch({type:dispatchType,payload:Number(e.target.value)})
     }
@@ -14,8 +11,6 @@ const Range = ({value,dispatch,heading,max,step,dispatchType}) => {
             type="range" 
             min="0" 
             max={max}
-            onMouseDown={()=>setShowLoader(true)}
-            onMouseUp={()=>setShowLoader(false)}
             onChange={handleSliderChange}
             value={value} 
             step={step} 
