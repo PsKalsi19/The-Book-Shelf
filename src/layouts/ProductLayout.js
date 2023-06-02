@@ -1,16 +1,14 @@
 import { Fragment, useContext, useState } from "react";
 import { Dialog, Menu, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import {
-  ChevronDownIcon,
-  FunnelIcon,
-} from "@heroicons/react/20/solid";
+import { ChevronDownIcon, FunnelIcon } from "@heroicons/react/20/solid";
 import Radio from "../components/products/filters/Radio";
 import Checkbox from "../components/products/filters/Checkbox";
 import Range from "../components/products/filters/Range";
 
 import { Outlet } from "react-router-dom";
-import  { BooksContext } from "../contexts/BooksProvider";
+import { BooksContext } from "../contexts/BooksProvider";
+import { FILTERS_ACTION } from "../constants/dispatchTypes";
 
 const sortOptions = [
   { name: "A to Z", href: "#", current: true },
@@ -28,20 +26,25 @@ const ProductLayout = () => {
   const {
     filtersState: { priceSlider, ratingSlider },
     filtersDispatch,
+    handleFilterReset
   } = useContext(BooksContext);
+
   const ratingsRange = {
     value: ratingSlider,
     dispatch: filtersDispatch,
-    heading: `Ratings (${ratingSlider} and above)`,
-    max: "5",
-    step: "0.5",
+    heading: ratingSlider===5?`Ratings (${ratingSlider})`:`Ratings (${ratingSlider} and above)`,
+    max: 5,
+    step: 0.5,
+    dispatchType: FILTERS_ACTION.UPDATE_RATING_SLIDER,
   };
+
   const priceRange = {
     value: priceSlider,
     dispatch: filtersDispatch,
     heading: `Price (0 to ${priceSlider})`,
-    max: priceSlider,
-    step: "50",
+    max: 1500,
+    step: 50,
+    dispatchType: FILTERS_ACTION.UPDATE_PRICE_SLIDER,
   };
   return (
     <div className="mx-auto md:max-w-2xl lg:max-w-7xl">
@@ -85,11 +88,12 @@ const ProductLayout = () => {
                     <XMarkIcon className="w-6 h-6" aria-hidden="true" />
                   </button>
                 </div>
-                
+
                 <div className="flex items-center justify-between px-4 mt-8">
                   <h2 className="text-lg font-medium text-gray-100">Filters</h2>
                   <span className="w-px h-6 bg-gray-700" aria-hidden="true" />
                   <button
+                  onClick={handleFilterReset}
                     className="flex items-center p-2 text-sm text-gray-400 rounded-lg bg-gray-50 bg-opacity-10"
                     type="button"
                   >
@@ -102,11 +106,11 @@ const ProductLayout = () => {
                 <form className="mt-4 border-t border-gray-200">
                   <h3 className="sr-only">Categories</h3>
                   <div className="px-4 mt-12 space-y-2">
-                  <Range {...priceRange} />
-                  <Radio />
-                  <Range {...ratingsRange} />
-                  <Checkbox />
-                </div>
+                    <Range {...priceRange} />
+                    <Radio />
+                    <Range {...ratingsRange} />
+                    <Checkbox />
+                  </div>
                 </form>
               </Dialog.Panel>
             </Transition.Child>
@@ -195,6 +199,7 @@ const ProductLayout = () => {
                   </span>
                   <span className="w-px h-6 bg-gray-700" aria-hidden="true" />
                   <button
+                                    onClick={handleFilterReset}
                     className="flex items-center p-2 text-sm text-gray-400 rounded-lg hover:bg-gray-50 hover:bg-opacity-10"
                     type="button"
                   >

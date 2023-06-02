@@ -5,7 +5,7 @@ import { filtersInitialState } from "./initialStates/FilterInitialState";
 import { booksInitialState } from "./initialStates/BooksInitialState";
 import filters from "./reducers/Filters";
 import books from "./reducers/Books";
-import { BOOKS_ACTIONS } from "../constants/dispatchTypes";
+import { BOOKS_ACTIONS, FILTERS_ACTION } from "../constants/dispatchTypes";
 import ENDPOINTS from "../constants/endpoints";
 import {
   addToWishlist,
@@ -35,6 +35,12 @@ const BooksProvider = ({ children }) => {
   const [booksState, booksDispatch] = useReducer(books, booksInitialState);
   const [buttonDisabled, setButtonDisable] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
+
+  // states destructured
+  const { priceSort, selectedCategory, priceSlider, ratingSlider } =
+    filtersState;
+
+  const { booksData } = booksState;
 
   const handleWishlistToggle = (product) => {
     try {
@@ -66,16 +72,54 @@ const BooksProvider = ({ children }) => {
     });
   };
 
-  // const searchProductsHandler =()=> booksState.booksData.filter(({ title }) => {
-  //   return title.toLowerCase().includes(searchTerm.toLowerCase());
-  // });
+  const searchProductsHandler = () =>
+    searchTerm === ""
+      ? booksData
+      : booksData.filter((books) =>
+          books.title.toLowerCase().includes(searchTerm.toLowerCase())
+        );
 
-  const searchProductsHandler =
-  searchTerm === ""
-    ? booksState.booksData
-    : booksState.booksData.filter((books) =>
-        books.title.toLowerCase().includes(searchTerm.toLowerCase())
-      );
+  const changeCategoryHandler = (payload) => {
+    return selectedCategory.length === 0
+      ? payload
+      : payload.filter(({ category }) => selectedCategory.includes(category));
+  };
+
+  const changePriceSliderHandler = (payload) => {
+    return  payload.filter(
+          ({ price, discount }) => price - discount <= priceSlider
+        );
+  };
+
+  const changeRatingsSliderHandler = (payload) => {
+    return ratingSlider === 0
+      ? payload
+      : payload.filter(
+          ({ rating }) => rating >= ratingSlider
+        );
+  };
+
+  const changePriceSort = (paylaod) => {
+    if (priceSort === "") return paylaod;
+    return paylaod.sort((a, b) =>
+      priceSort === "ASC"
+        ? a.price - a.discount - (b.price - b.discount)
+        : b.price - b.discount - (a.price - a.discount)
+    );
+  };
+
+  const handleFilterReset=()=>{
+    filtersDispatch({type:FILTERS_ACTION.RESET,payload:''})
+  }
+
+  const allSortsAndFilters = () => {
+    let filteredData = searchProductsHandler();
+    filteredData = changeCategoryHandler(filteredData);
+    filteredData = changePriceSort(filteredData);
+    filteredData = changePriceSliderHandler(filteredData)
+    filteredData = changeRatingsSliderHandler(filteredData)
+    return filteredData;
+  };
 
   const addWishlistHandler = async (product, showToast = true) => {
     booksDispatch({
@@ -245,6 +289,10 @@ const BooksProvider = ({ children }) => {
         moveToWishlistHandler,
         cartItemQuantityHandler,
         searchProductsHandler,
+        changeCategoryHandler,
+        allSortsAndFilters,
+        handleFilterReset,
+        changePriceSort,
         saveOrderHistory,
         buttonDisabled,
         setButtonDisable,

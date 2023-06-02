@@ -392,7 +392,7 @@ export const products = [
     price: 800,
     discount: 130,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/en/8/80/The_Girl_with_the_Dragon_Tattoo_Poster.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/0/05/Martin_Luther_King%2C_Jr..jpg",
     pages: 864,
     rating: 4.7,
     isBestSeller: true,
@@ -1236,5 +1236,516 @@ export const products = [
     description:
       "J.K. Rowling's 'Harry Potter and the Half-Blood Prince' is the sixth book in the beloved fantasy series that plunges readers into the depths of darkness and prepares them for the epic finale. In this installment, as Lord Voldemort's power continues to rise, Harry receives private lessons from Hogwarts headmaster Albus Dumbledore, delving into Voldemort's past and uncovering crucial information. As the wizarding world teeters on the brink of war, Harry and his friends face personal challenges, complex relationships, and devastating losses. 'Harry Potter and the Half-Blood Prince' explores themes of sacrifice, love, and the complexities of morality. It is a gripping and emotionally charged addition to the Harry Potter series that sets the stage for the final battle between light and darkness.",
     id: "38",
+  },
+  {
+    _id: "2a6c3e5b-8359-4f71-8e0d-4e118e38048a",
+    title: "To Kill a Mockingbird",
+    author: "Harper Lee",
+    category: "Fiction",
+    price: 1200,
+    discount: 200,
+    imgUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/4/4f/To_Kill_a_Mockingbird_%28first_edition_cover%29.jpg",
+    pages: 324,
+    rating: 4.5,
+    isBestSeller: true,
+    reviews: [
+      {
+        username: "Bookworm123",
+        rating: 4.8,
+        comment:
+          "To Kill a Mockingbird is a timeless classic that explores important themes of justice and racism. Harper Lee's storytelling is captivating and thought-provoking.",
+        date: "2022-11-20",
+      },
+      {
+        username: "LiteratureFanatic",
+        rating: 4.7,
+        comment:
+          "This novel beautifully captures the innocence of childhood while addressing the harsh realities of society. It's a must-read for anyone interested in great literature.",
+        date: "2022-11-15",
+      },
+    ],
+    description:
+      "To Kill a Mockingbird is a Pulitzer Prize-winning novel by Harper Lee. Set in the 1930s in a small Southern town, the story follows Scout Finch as she navigates the complexities of racism and injustice. Through the eyes of Scout, the book explores themes of morality, compassion, and the loss of innocence. It is a powerful portrayal of the social issues prevalent at the time and continues to resonate with readers today.",
+    id: "39",
+  },
+  {
+    _id: "71e8f953-2e9a-4b56-b211-4b50f6ac5cc3",
+    title: "The Great Gatsby",
+    author: "F. Scott Fitzgerald",
+    category: "Fiction",
+    price: 1050,
+    discount: 150,
+    imgUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/7/7a/The_Great_Gatsby_Cover_1925_Retouched.jpg",
+    pages: 180,
+    rating: 4.6,
+    isBestSeller: true,
+    reviews: [
+      {
+        username: "ClassicBookworm",
+        rating: 4.5,
+        comment:
+          "The Great Gatsby is a captivating novel that brilliantly captures the decadence and disillusionment of the Jazz Age. Fitzgerald's prose is poetic and evocative.",
+        date: "2022-10-30",
+      },
+      {
+        username: "LiteraryEnthusiast",
+        rating: 4.7,
+        comment:
+          "This book offers a powerful critique of the American Dream and explores themes of wealth, love, and the hollowness of the upper class. A must-read for any literature lover.",
+        date: "2022-10-25",
+      },
+    ],
+    description:
+      "Set in the Roaring Twenties, The Great Gatsby by F. Scott Fitzgerald tells the story of Jay Gatsby and his pursuit of wealth, love, and the American Dream. Through vivid descriptions and compelling characters, the novel explores themes of ambition, corruption, and the emptiness of materialism. It is a timeless classic that continues to resonate with readers, offering a glimpse into the glamour and tragedy of the era.",
+    id: "40",
+  },
+  {
+    _id: "4d0f6d10-0e5b-4a9e-bb6c-839fcf9a8c85",
+    title: "Pride and Prejudice",
+    author: "Jane Austen",
+    category: "Drama",
+    price: 950,
+    discount: 100,
+    imgUrl:
+      "https://upload.wikimedia.org/wikipedia/en/0/09/Brock_Pride_and_Prejudice.jpg",
+    pages: 432,
+    rating: 4.8,
+    isBestSeller: false,
+    reviews: [
+      {
+        username: "LiteraryLover",
+        rating: 4.9,
+        comment:
+          "Pride and Prejudice is a timeless masterpiece. Jane Austen's witty writing and memorable characters make this novel a delight to read.",
+        date: "2022-11-10",
+      },
+      {
+        username: "AustenFan",
+        rating: 4.7,
+        comment:
+          "This novel beautifully captures the social conventions of the time and explores themes of love, marriage, and societal expectations. A true literary gem!",
+        date: "2022-11-05",
+      },
+    ],
+    description:
+      "Pride and Prejudice by Jane Austen is a classic novel that follows the story of Elizabeth Bennet as she navigates the complexities of love, marriage, and societal expectations in 19th-century England. With its memorable characters and sharp social commentary, the book offers a witty and insightful portrayal of the era. It continues to be cherished for its timeless themes and engaging storytelling.",
+    id: "41",
+  },
+  {
+    _id: "56a2937b-8d6a-4e54-947b-79db8eaa26f5",
+    title: "A Streetcar Named Desire",
+    author: "Tennessee Williams",
+    category: "Drama",
+    price: 900,
+    discount: 150,
+    imgUrl:
+      "https://upload.wikimedia.org/wikipedia/en/6/66/StreetcarNamedDesire.JPG",
+    pages: 142,
+    rating: 4.8,
+    isBestSeller: false,
+    reviews: [
+      {
+        username: "TheatreAficionado",
+        rating: 4.9,
+        comment:
+          "A Streetcar Named Desire is a compelling and emotionally charged play that delves into themes of desire, madness, and the clash of cultures. Tennessee Williams' writing is exceptional.",
+        date: "2022-07-01",
+      },
+      {
+        username: "DramaFanatic",
+        rating: 4.7,
+        comment:
+          "This play offers a profound exploration of human relationships and the consequences of personal illusions. It remains a classic in the realm of American drama.",
+        date: "2022-06-25",
+      },
+    ],
+    description:
+      "A Streetcar Named Desire, written by Tennessee Williams, is a Pulitzer Prize-winning drama set in New Orleans. The play follows the tumultuous relationship between Blanche DuBois, a fading Southern belle, and Stanley Kowalski, her working-class brother-in-law. It explores themes of desire, power, mental instability, and the clash between old and new America. A Streetcar Named Desire is known for its memorable characters and intense emotional depth, making it a significant work in the realm of drama.",
+    id: "42",
+  },
+  {
+    _id: "f823d1e9-7e70-46c2-8f77-62955f625c1f",
+    title: "Cat on a Hot Tin Roof",
+    author: "Tennessee Williams",
+    category: "Drama",
+    price: 950,
+    discount: 100,
+    imgUrl:
+      "https://upload.wikimedia.org/wikipedia/en/f/f9/CatOnAHotTinRoof.JPG",
+    pages: 190,
+    rating: 3.9,
+    isBestSeller: false,
+    reviews: [
+      {
+        username: "TheatreGoer123",
+        rating: 3.8,
+        comment:
+          "Cat on a Hot Tin Roof explores themes of mendacity and the crumbling facade of a wealthy Southern family. While the writing is engaging, the play's pacing felt uneven at times.",
+        date: "2022-09-01",
+      },
+      {
+        username: "DramaViewer456",
+        rating: 3.6,
+        comment:
+          "While the performances were strong, I found the characters' dynamics to be overly melodramatic. The play touches on interesting themes but failed to fully captivate my attention.",
+        date: "2022-08-27",
+      },
+    ],
+    description:
+      "Cat on a Hot Tin Roof, written by Tennessee Williams, is a Pulitzer Prize-winning drama that delves into the complexities of the Pollitt family. Set in the Mississippi Delta, the play explores themes of greed, love, and the destructive power of lies. It examines the strained relationships within the family and the desperate search for truth and authenticity. Cat on a Hot Tin Roof is a powerful work that sheds light on the fragile nature of human connections.",
+    id: "43",
+  },
+  {
+    _id: "813b5c61-06f1-42a3-9d7e-9507ad1c0862",
+    title: "Equus",
+    author: "Peter Shaffer",
+    category: "Drama",
+    price: 850,
+    discount: 120,
+    imgUrl:
+      "https://upload.wikimedia.org/wikipedia/en/f/f8/Equusplaybookcover2.JPG",
+    pages: 124,
+    rating: 3.8,
+    isBestSeller: false,
+    reviews: [
+      {
+        username: "TheatreAficionado345",
+        rating: 3.7,
+        comment:
+          "Equus explores dark and psychological themes, but the play's heavy symbolism and abstract storytelling left me feeling disconnected from the characters and their journeys.",
+        date: "2022-09-20",
+      },
+      {
+        username: "DramaFanatic345",
+        rating: 3.5,
+        comment:
+          "While the performances were commendable, the play's plot and narrative structure felt disjointed. I struggled to fully grasp the underlying messages and the character's motivations.",
+        date: "2022-09-15",
+      },
+    ],
+    description:
+      "Equus, written by Peter Shaffer, is a psychological drama that delves into the complex mind of a young man named Alan Strang, who has an obsessive fascination with horses. The play explores themes of passion, religion, and the boundaries of sanity. Through a series of intense and provocative scenes, Equus confronts the audience with questions about the nature of worship, repression, and the human psyche. It is a challenging and thought-provoking work that pushes the boundaries of conventional storytelling.",
+    id: "44",
+  },
+  {
+    _id: "436780b4-687f-47b3-9d8f-695d59b6e7e1",
+    title: "Sapiens: A Brief History of Humankind",
+    author: "Yuval Noah Harari",
+    category: "Non-Fiction",
+    price: 1200,
+    discount: 200,
+    imgUrl:
+      "https://upload.wikimedia.org/wikipedia/en/0/06/%E1%B8%B2itsur_toldot_ha-enoshut.jpg",
+    pages: 443,
+    rating: 4.8,
+    isBestSeller: true,
+    reviews: [
+      {
+        username: "HistoryBuff123",
+        rating: 4.9,
+        comment:
+          "Sapiens provides a fascinating exploration of human history, covering various aspects from the cognitive revolution to modern-day advancements. Harari's writing style is engaging and thought-provoking, making it a must-read for anyone interested in understanding our shared past.",
+        date: "2022-11-01",
+      },
+      {
+        username: "ScienceEnthusiast456",
+        rating: 4.7,
+        comment:
+          "As someone passionate about anthropology and evolution, Sapiens offered a comprehensive and insightful look into the development of our species. Harari's ability to condense complex ideas into an accessible narrative is commendable.",
+        date: "2022-10-28",
+      },
+    ],
+    description:
+      "Sapiens: A Brief History of Humankind, written by Yuval Noah Harari, takes readers on a journey through the history of our species. From the emergence of Homo sapiens to the present day, Harari explores key developments, including the cognitive revolution, agricultural revolution, and scientific advancements. The book challenges conventional wisdom and offers new perspectives on our shared history. Sapiens is a captivating exploration of the human story, providing insights into our past and prompting reflection on our future.",
+    id: "45",
+  },
+  {
+    _id: "0c4e699d-1a0c-4ab4-9532-942bca87ef63",
+    title: "Becoming",
+    author: "Michelle Obama",
+    category: "Non-Fiction",
+    price: 1100,
+    discount: 180,
+    imgUrl:
+      "https://upload.wikimedia.org/wikipedia/en/0/09/Becoming_%28Michelle_Obama_book%29.jpg",
+    pages: 426,
+    rating: 4.9,
+    isBestSeller: true,
+    reviews: [
+      {
+        username: "MemoirReader234",
+        rating: 5.0,
+        comment:
+          "Michelle Obama's memoir is a powerful and inspiring account of her journey from the South Side of Chicago to the White House. Her storytelling is both intimate and relatable, offering valuable insights into her life and the impact she has made. Becoming is a must-read for anyone seeking inspiration and a deeper understanding of resilience and personal growth.",
+        date: "2022-11-10",
+      },
+      {
+        username: "EmpoweringReader567",
+        rating: 4.8,
+        comment:
+          "Becoming is an extraordinary memoir that not only sheds light on Michelle Obama's experiences but also resonates with readers on a personal level. Her authenticity and grace shine through her words, inspiring readers to embrace their own stories and strive for positive change.",
+        date: "2022-11-05",
+      },
+    ],
+    description:
+      "Becoming, written by Michelle Obama, offers a glimpse into the life of the former First Lady of the United States. From her childhood in Chicago to her time in the White House, Obama shares personal anecdotes, reflections, and insights into her journey of self-discovery and public service. The memoir captures the challenges and triumphs she experienced along the way, highlighting the power of resilience, determination, and embracing one's own voice. Becoming is a compelling and empowering read that resonates with readers from all walks of life.",
+    id: "46",
+  },
+  {
+    _id: "63d9a9c5-aeae-40df-a516-6a7d8e3e5c34",
+    title: "The Power of Now: A Guide to Spiritual Enlightenment",
+    author: "Eckhart Tolle",
+    category: "Non-Fiction",
+    price: 950,
+    discount: 150,
+    imgUrl: "https://upload.wikimedia.org/wikipedia/en/6/66/TPON_Cover_LG.jpg",
+    pages: 236,
+    rating: 4.6,
+    isBestSeller: false,
+    reviews: [
+      {
+        username: "MindfulnessSeeker890",
+        rating: 4.8,
+        comment:
+          "The Power of Now is a transformative book that offers profound insights into living in the present moment. Tolle's teachings are enlightening and practical, providing a guide to cultivating mindfulness and finding inner peace.",
+        date: "2022-10-20",
+      },
+      {
+        username: "SpiritualExplorer123",
+        rating: 4.4,
+        comment:
+          "Tolle's book is a reminder to embrace the present and let go of unnecessary worries and regrets. The Power of Now offers valuable techniques for quieting the mind and experiencing a deeper connection with oneself and the world.",
+        date: "2022-10-15",
+      },
+    ],
+    description:
+      "The Power of Now: A Guide to Spiritual Enlightenment, written by Eckhart Tolle, invites readers to embrace the present moment and experience a state of spiritual awakening. Tolle explores the concept of mindfulness and offers practical techniques for transcending past and future concerns. Through his teachings, readers are encouraged to let go of negative thought patterns, release attachment to outcomes, and find peace in the here and now. The Power of Now is a transformative read that can help individuals cultivate a deeper sense of joy and fulfillment in their lives.",
+    id: "47",
+  },
+  {
+    _id: "d35ff0b4-0409-429e-b61b-49661561667e",
+    title: "The Immortal Life of Henrietta Lacks",
+    author: "Rebecca Skloot",
+    category: "Non-Fiction",
+    price: 1050,
+    discount: 160,
+    imgUrl:
+      "https://upload.wikimedia.org/wikipedia/en/5/5f/The_Immortal_Life_Henrietta_Lacks_%28cover%29.jpg",
+    pages: 384,
+    rating: 4.7,
+    isBestSeller: true,
+    reviews: [
+      {
+        username: "ScienceReader234",
+        rating: 4.9,
+        comment:
+          "The Immortal Life of Henrietta Lacks is a captivating exploration of science, ethics, and the impact of one woman's cells on medical research. Skloot's meticulous research and compassionate storytelling make this book a must-read for anyone interested in the intersection of medicine and human rights.",
+        date: "2022-11-15",
+      },
+      {
+        username: "BiomedicalEthics567",
+        rating: 4.6,
+        comment:
+          "Rebecca Skloot's book sheds light on the often-overlooked story of Henrietta Lacks and her significant contribution to medical science. It raises important questions about consent, ownership, and the exploitation of marginalized communities in scientific research.",
+        date: "2022-11-10",
+      },
+    ],
+    description:
+      "The Immortal Life of Henrietta Lacks, written by Rebecca Skloot, tells the remarkable story of Henrietta Lacks, a woman whose cells were unknowingly taken for medical research without her consent. The book explores the ethical implications of her case and delves into the scientific advancements made possible by her cells, known as HeLa cells. Skloot's narrative weaves together Lacks' personal story, the history of medical research, and the ongoing debate surrounding bioethics. The Immortal Life of Henrietta Lacks is a thought-provoking and poignant account that raises important questions about medical ethics and the human impact of scientific progress.",
+    id: "48",
+  },
+  {
+    _id: "e74f8b36-428d-4f78-bd25-27e2b0da800a",
+    title: "Educated: A Memoir",
+    author: "Tara Westover",
+    category: "Non-Fiction",
+    price: 1150,
+    discount: 190,
+    imgUrl:
+      "https://m.media-amazon.com/images/I/51kkgdDmtfL._SX306_BO1,204,203,200_.jpg",
+    pages: 334,
+    rating: 4.8,
+    isBestSeller: true,
+    reviews: [
+      {
+        username: "MemoirEnthusiast345",
+        rating: 4.9,
+        comment:
+          "Educated is a powerful memoir that explores the transformative power of education and the resilience of the human spirit. Westover's story is both heartbreaking and inspiring, reminding us of the importance of knowledge and the pursuit of truth.",
+        date: "2022-11-20",
+      },
+      {
+        username: "AutobiographyReader678",
+        rating: 4.7,
+        comment:
+          "Tara Westover's memoir is a testament to the power of determination and self-education. Her journey from a sheltered upbringing to academic success is both captivating and thought-provoking, leaving a lasting impression on readers.",
+        date: "2022-11-18",
+      },
+    ],
+    description:
+      "Educated: A Memoir, written by Tara Westover, chronicles her journey from a remote mountainous region of Idaho to earning a Ph.D. from Cambridge University. Westover grew up in a strict and abusive household, isolated from formal education. Despite the numerous obstacles she faced, she taught herself to read and eventually pursued higher education, challenging the beliefs and traditions she grew up with. Educated is a captivating memoir that explores the transformative power of education and the resilience of the human spirit.",
+    id: "49",
+  },
+  {
+    _id: "0b3a855c-bb3f-41d3-9bce-56f4bb9ae75a",
+    title: "House of Leaves",
+    author: "Mark Z. Danielewski",
+    category: "Horror",
+    price: 1050,
+    discount: 170,
+    imgUrl:
+      "https://upload.wikimedia.org/wikipedia/en/d/de/House_of_leaves.jpg",
+    pages: 709,
+    rating: 2.9,
+    isBestSeller: false,
+    reviews: [
+      {
+        username: "HorrorBookworm123",
+        rating: 2.8,
+        comment:
+          "House of Leaves is an experimental horror novel that pushes the boundaries of storytelling. While the intricate narrative structure is intriguing, it can also be confusing and hard to follow. The unconventional formatting adds to the horror, but it may not appeal to everyone.",
+        date: "2022-11-15",
+      },
+      {
+        username: "HorrorEnthusiast456",
+        rating: 2.7,
+        comment:
+          "House of Leaves is a unique and unsettling horror novel that plays with readers' perceptions. However, the convoluted plot and excessive footnotes make it a challenging read. It's an acquired taste for those who appreciate unconventional narratives.",
+        date: "2022-11-11",
+      },
+    ],
+    description:
+      "House of Leaves, written by Mark Z. Danielewski, is an unconventional and unsettling horror novel that blurs the lines between reality and fiction. It tells the story of a young family's encounter with a mysterious and ever-expanding house that defies the laws of physics. House of Leaves is a mind-bending exploration of fear, madness, and the power of storytelling.",
+    id: "50",
+  },
+  {
+    _id: "b6d8d582-8431-4e69-b1b0-50e89fde16a2",
+    title: "The Alchemist",
+    author: "Paulo Coelho",
+    category: "Fiction",
+    price: 670,
+    discount: 100,
+    imgUrl:
+      "https://m.media-amazon.com/images/I/41e+TR4xPDL._SX328_BO1,204,203,200_.jpg",
+    pages: 197,
+    rating: 4.6,
+    isBestSeller: true,
+    reviews: [
+      {
+        username: "Dreamer123",
+        rating: 4.8,
+        comment:
+          "Paulo Coelho's The Alchemist is a mesmerizing tale of self-discovery and following one's dreams. The allegorical narrative and profound wisdom make it a book that resonates with readers of all ages.",
+        date: "2022-11-18",
+      },
+      {
+        username: "Booklover456",
+        rating: 4.4,
+        comment:
+          "The Alchemist is a beautifully written novel that reminds us of the importance of listening to our hearts and pursuing our passions. Paulo Coelho's storytelling captivates and inspires.",
+        date: "2022-11-15",
+      },
+    ],
+    description:
+      "The Alchemist, written by Paulo Coelho, is a philosophical novel that follows the journey of Santiago, an Andalusian shepherd boy, as he searches for a hidden treasure in the Egyptian desert. Through Santiago's encounters with various characters, Coelho imparts valuable life lessons about destiny, perseverance, and the pursuit of one's personal legend. The Alchemist is a captivating and uplifting tale that encourages readers to chase their dreams.",
+    id: "51",
+  },
+  {
+    _id: "a879dfc5-938b-43b1-9a3b-89f2a36c5e11",
+    title: "The Kite Runner",
+    author: "Khaled Hosseini",
+    category: "Fiction",
+    price: 780,
+    discount: 130,
+    imgUrl:
+      "https://upload.wikimedia.org/wikipedia/en/6/62/Kite_runner.jpg",
+    pages: 371,
+    rating: 4.8,
+    isBestSeller: true,
+    reviews: [
+      {
+        username: "Storyteller123",
+        rating: 4.9,
+        comment:
+          "Khaled Hosseini's The Kite Runner is a powerful and emotionally charged novel that explores friendship, betrayal, and redemption. The vivid storytelling and vivid characters make it a compelling read.",
+        date: "2022-11-07",
+      },
+      {
+        username: "Bookworm678",
+        rating: 4.7,
+        comment:
+          "The Kite Runner is a heartbreaking yet beautifully written novel that transports readers to Afghanistan. Hosseini's storytelling is poignant, and the story lingers in your mind long after you've finished reading.",
+        date: "2022-11-05",
+      },
+    ],
+    description:
+      "The Kite Runner, written by Khaled Hosseini, is a captivating novel set in Afghanistan. The story follows Amir, a young boy from Kabul, and his complex relationship with his best friend Hassan. Against the backdrop of a changing Afghanistan, the novel explores themes of guilt, redemption, and the power of forgiveness. The Kite Runner is a gripping and thought-provoking work of fiction.",
+    id: "52",
+  },
+  {
+    _id: "c051c650-8eb2-4a97-9c6e-f5f64c82f0e7",
+    title: "Rich Dad Poor Dad",
+    author: "Robert T. Kiyosaki",
+    category: "Non-Fiction",
+    price: 550,
+    discount: 100,
+    imgUrl:
+      "https://upload.wikimedia.org/wikipedia/en/b/b9/Rich_Dad_Poor_Dad.jpg",
+    pages: 336,
+    rating: 4.5,
+    isBestSeller: true,
+    reviews: [
+      {
+        username: "WealthBuilder",
+        rating: 4.8,
+        comment:
+          "Rich Dad Poor Dad is an eye-opening book that challenges traditional beliefs about money and financial literacy. Robert Kiyosaki's personal stories and practical advice provide valuable insights for achieving financial independence.",
+        date: "2022-11-30",
+      },
+      {
+        username: "Investor101",
+        rating: 4.2,
+        comment:
+          "I found Rich Dad Poor Dad to be an inspiring read that emphasizes the importance of financial education and making smart investment decisions. Kiyosaki's teachings have the potential to change your perspective on wealth and financial success.",
+        date: "2022-11-28",
+      },
+    ],
+    description:
+      "Rich Dad Poor Dad is a personal finance book written by Robert T. Kiyosaki. It challenges the conventional wisdom about money and shares Kiyosaki's own experiences of growing up with two fathers: his real father (poor dad) and his best friend's father (rich dad). Through their contrasting beliefs and advice, Kiyosaki imparts valuable lessons on how to think differently about money, build wealth, and achieve financial independence. Rich Dad Poor Dad is a must-read for anyone seeking to improve their financial literacy and take control of their financial future.",
+    id: "53",
+  },
+  {
+    _id: "e3659d90-25ed-4b68-b3f2-6a764e9c09b6",
+    title: "The Diary of a Young Girl",
+    author: "Anne Frank",
+    category: "Biography",
+    price: 450,
+    discount: 80,
+    imgUrl:
+      "https://upload.wikimedia.org/wikipedia/en/4/47/Het_Achterhuis_%28Diary_of_Anne_Frank%29_-_front_cover%2C_first_edition.jpg",
+    pages: 283,
+    rating: 4.7,
+    isBestSeller: true,
+    reviews: [
+      {
+        username: "HistoryBuff",
+        rating: 4.9,
+        comment:
+          "The Diary of a Young Girl is a poignant and powerful account of Anne Frank's experiences during the Holocaust. It provides a heartbreaking glimpse into her life and thoughts while in hiding. A must-read for understanding the human impact of World War II.",
+        date: "2022-12-03",
+      },
+      {
+        username: "Bookworm123",
+        rating: 4.6,
+        comment:
+          "Anne Frank's diary is a testament to the strength and resilience of the human spirit. Her words transcend time and continue to inspire generations. A powerful and unforgettable read.",
+        date: "2022-11-29",
+      },
+    ],
+    description:
+      "The Diary of a Young Girl, also known as The Diary of Anne Frank, is a collection of writings by Anne Frank, a Jewish girl who went into hiding with her family during the Nazi occupation of the Netherlands. Her diary entries provide an intimate and personal account of her life in hiding, her dreams, fears, and hopes for the future. The Diary of a Young Girl serves as a powerful reminder of the atrocities of the Holocaust and the resilience of the human spirit.",
+    id: "54",
   },
 ];
