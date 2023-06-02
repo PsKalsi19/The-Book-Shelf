@@ -1,4 +1,4 @@
-import { Fragment, useContext, useState } from "react";
+import { Fragment, useContext, useEffect, useState } from "react";
 import { Dialog, Menu, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { ChevronDownIcon, FunnelIcon } from "@heroicons/react/20/solid";
@@ -6,7 +6,7 @@ import Radio from "../components/products/filters/Radio";
 import Checkbox from "../components/products/filters/Checkbox";
 import Range from "../components/products/filters/Range";
 
-import { Outlet } from "react-router-dom";
+import { Outlet, useParams } from "react-router-dom";
 import { BooksContext } from "../contexts/BooksProvider";
 import { FILTERS_ACTION } from "../constants/dispatchTypes";
 
@@ -28,6 +28,12 @@ const ProductLayout = () => {
     filtersDispatch,
     handleFilterReset
   } = useContext(BooksContext);
+
+  const {category}=useParams()
+
+  useEffect(()=>{
+    category && filtersDispatch({type:FILTERS_ACTION.UPDATE_CATEGORY,payload:[category]})
+  },[category, filtersDispatch])
 
   const ratingsRange = {
     value: ratingSlider,
