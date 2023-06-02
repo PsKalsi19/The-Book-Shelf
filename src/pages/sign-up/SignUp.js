@@ -2,26 +2,32 @@ import React, { useContext, useState } from "react";
 import { toast } from "react-hot-toast";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
-
+import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline";
 const SignUp = () => {
   const [signupState, setSignupState] = useState({
+    firstName:"",
+    lastName:"",
     email: "",
     password: "",
     confirmPassword: "",
+
+  });
+  const [showPassword, setShowPassword] = useState({
+    password: false,
+    confirmPassword: false,
   });
 
-const {handleSignUpFn}=useContext(AuthContext)
+  const { handleSignUpFn } = useContext(AuthContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const {email,password,confirmPassword}=signupState
-    if(password!==confirmPassword){
-      toast.error('Password and Confirm password do not match')
-      return
+    const { email, password, confirmPassword,firstName,lastName } = signupState;
+    if (password !== confirmPassword) {
+      toast.error("Password and Confirm password do not match");
+      return;
     }
-    handleSignUpFn({email,password})
+    handleSignUpFn({ email, password,firstName,lastName });
   };
-
 
   const changeHandlerFn = (e) => {
     setSignupState({ ...signupState, [e.target.name]: e.target.value });
@@ -36,6 +42,44 @@ const {handleSignUpFn}=useContext(AuthContext)
               Create and account
             </h1>
             <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
+              <div className="sm:flex sm:space-x-4">
+                <div>
+                  <label
+                    htmlFor="firstName"
+                    className="block mb-2 text-sm font-medium text-gray-100"
+                  >
+                    First Name
+                  </label>
+                  <input
+                    onChange={changeHandlerFn}
+                    value={signupState.firstName}
+                    type="text"
+                    name="firstName"
+                    id="firstName"
+                    className="border sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-gray-100 focus:ring-cyan-800 focus:border-cyan-800"
+                    placeholder="Jon"
+                    required={true}
+                  />
+                </div>
+                <div className="mt-2 sm:mt-0">
+                  <label
+                    htmlFor="lastName"
+                    className="block mb-2 text-sm font-medium text-gray-100"
+                  >
+                    Last Name
+                  </label>
+                  <input
+                    onChange={changeHandlerFn}
+                    value={signupState.lastName}
+                    type="text"
+                    name="lastName"
+                    id="lastName"
+                    className="border sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-gray-100 focus:ring-cyan-800 focus:border-cyan-800"
+                    placeholder="watts"
+                    required={true}
+                  />
+                </div>
+              </div>
               <div>
                 <label
                   htmlFor="email"
@@ -54,17 +98,28 @@ const {handleSignUpFn}=useContext(AuthContext)
                   required={true}
                 />
               </div>
-              <div>
+              <div className="relative">
                 <label
                   htmlFor="password"
                   className="block mb-2 text-sm font-medium text-gray-100"
                 >
                   Password
                 </label>
+                {showPassword.password ? (
+                  <EyeIcon
+                    onClick={() => setShowPassword({...showPassword,password:false})}
+                    className="absolute cursor-pointer w-6 h-6 text-gray-500 right-2 bottom-2"
+                  />
+                ) : (
+                  <EyeSlashIcon
+                  onClick={() => setShowPassword({...showPassword,password:true})}
+                  className="absolute cursor-pointer w-6 h-6 text-gray-500 right-2 bottom-2"
+                  />
+                )}
                 <input
+                  type={showPassword.password ? "text" : "password"}
                   onChange={changeHandlerFn}
                   value={signupState.password}
-                  type="password"
                   name="password"
                   minLength="6"
                   id="password"
@@ -73,17 +128,28 @@ const {handleSignUpFn}=useContext(AuthContext)
                   required={true}
                 />
               </div>
-              <div>
+              <div className="relative">
                 <label
                   htmlFor="confirmPassword"
                   className="block mb-2 text-sm font-medium text-gray-100"
                 >
                   Confirm password
                 </label>
+                {showPassword.confirmPassword ? (
+                  <EyeIcon
+                    onClick={() => setShowPassword({...showPassword,confirmPassword:false})}
+                    className="absolute cursor-pointer w-6 h-6 text-gray-500 right-2 bottom-2"
+                  />
+                ) : (
+                  <EyeSlashIcon
+                  onClick={() => setShowPassword({...showPassword,confirmPassword:true})}
+                  className="absolute cursor-pointer w-6 h-6 text-gray-500 right-2 bottom-2"
+                  />
+                )}
                 <input
                   onChange={changeHandlerFn}
                   value={signupState.confirmPassword}
-                  type="password"
+                  type={showPassword.confirmPassword ? "text" : "password"}
                   name="confirmPassword"
                   minLength="6"
                   id="confirmPassword"
