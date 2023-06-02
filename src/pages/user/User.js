@@ -63,7 +63,7 @@ const User = () => {
         {/* For profile */}
         {selectedTab === "profile" && (
           <>
-            <p className="text-lg font-semibold">{getUserName()}</p>
+           { <p className="text-lg font-semibold">{getUserName()}</p>}
             <p className="font-semibold text-md">{getUserEmail()}</p>
           </>
         )}
