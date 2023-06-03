@@ -6,6 +6,7 @@ import { useNavigate } from "react-router";
 import signupUser from "../services/signup-service";
 import { authInitialState } from "./initialStates/AuthInitialState";
 import { useLocation } from "react-router-dom";
+import { getAuth } from './../services/localstorage-service';
 export const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
@@ -14,11 +15,12 @@ const AuthProvider = ({ children }) => {
   const [userState, setUserState] = useState(authInitialState);
 
   const logInState = (user, encodedToken) => {
+
     setAuth(encodedToken);
     setUser(user);
     setUserState({
       user: user,
-      isUserValid: true,
+      isUserValid: !!getAuth(),
     });
   };
 

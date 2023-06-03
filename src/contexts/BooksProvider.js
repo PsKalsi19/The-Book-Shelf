@@ -156,6 +156,7 @@ const BooksProvider = ({ children }) => {
         setButtonDisable(null);
       });
     } catch (e) {
+      setButtonDisable(null);
       toast.error("Something Went Wrong, Try Again.");
       console.error(e);
       booksDispatch({
