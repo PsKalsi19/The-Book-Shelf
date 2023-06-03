@@ -15,10 +15,16 @@ import { BOOKS_ACTIONS, FILTERS_ACTION } from "../constants/dispatchTypes";
 import ENDPOINTS from "../constants/endpoints";
 import {
   addToWishlist,
+  addToWishlistInBulk,
   removeFromWishlist,
 } from "../services/wishlist-service";
 import { toast } from "react-hot-toast";
-import { getCart, getWishlist, updateCart, updateWishlist } from "../services/localstorage-service";
+import {
+  getCart,
+  getWishlist,
+  updateCart,
+  updateWishlist,
+} from "../services/localstorage-service";
 import { getProducts } from "../services/products-service";
 import {
   changeItemQuantity,
@@ -267,13 +273,25 @@ const BooksProvider = ({ children }) => {
     toast.error("Something Went Wrong, Try Later");
   };
 
-  const syncCartData=async(payload)=>{
-   const {data:{cart}}= await postCartItemInBulk([payload])
-   booksDispatch({
-    type: BOOKS_ACTIONS.SAVE_CART,
-    payload: cart,
-  });
-  }
+  const syncCartData = async (payload) => {
+    const {
+      data: { cart },
+    } = await postCartItemInBulk([payload]);
+    booksDispatch({
+      type: BOOKS_ACTIONS.SAVE_CART,
+      payload: cart,
+    });
+  };
+
+  const syncWishlistData = async (payload) => {
+    const {
+      data: { wishlist },
+    } = await addToWishlistInBulk([payload]);
+    booksDispatch({
+      type: BOOKS_ACTIONS.SAVE_WISHLIST,
+      payload: wishlist,
+    });
+  };
   useEffect(() => {
     getCategories(ENDPOINTS.CATEGORIES, booksDispatch);
     const addBooksData = async () => {
@@ -291,6 +309,7 @@ const BooksProvider = ({ children }) => {
     addBooksData();
     // getCart() && getCart().length > 0 && initializeCartItems();
     getCart() && getCart().length > 0 && syncCartData(getCart());
+    getWishlist() && getWishlist().length > 0 && syncWishlistData(getWishlist());
   }, [userState]);
 
   return (
@@ -318,7 +337,7 @@ const BooksProvider = ({ children }) => {
         setSearchTerm,
 
         // unused
-        initializeCartItems
+        initializeCartItems,
       }}
     >
       {children}
@@ -341,8 +360,8 @@ const getCategories = async (url, dispatch) => {
 };
 
 const getUpdatedData = (products) => {
-  const cart=getCart()
-  const wishlist=getWishlist()
+  const cart = getCart();
+  const wishlist = getWishlist();
   if (cart && cart.length === 0 && wishlist.length === 0) return products;
   return products.map((product) => {
     const itemInCart = cart.find((item) => item._id === product._id);
