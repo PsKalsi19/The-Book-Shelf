@@ -21,17 +21,18 @@ export const changeItemQuantity = (productId, changeType) => {
 };
 
 export const getTotalAmount = (payload) => {
-  return payload.reduce(
+  const amounts= payload.reduce(
     (acc, item) => ({
       totalAmount: item.price * item.qty + acc.totalAmount,
       discountedAmount:
-        item.price - item.discount * item.qty + acc.discountedAmount,
+        (item.price - item.discount) * item.qty + acc.discountedAmount,
     }),
     {
       totalAmount: 0,
       discountedAmount: 0,
     }
   );
+  return amounts
 };
 
 export const createCouponData = (payload) => {
