@@ -71,4 +71,5 @@ const addToCart = (element, payloadId) =>
 const removeFromCart = (element, payloadId) =>
   element._id === payloadId ? { ...element, addedToCart: false } : element;
 
-  const resetProducts=(element)=> ({ ...element,wishlisted:false,addedToCart:false})
+  const resetProducts=(element)=> {
+    return({ ...element,wishlisted:false,addedToCart:false})}
