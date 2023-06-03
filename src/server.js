@@ -5,6 +5,7 @@ import {
 } from "./backend/controllers/AuthController";
 import {
   addItemToCartHandler,
+  addItemToCartHandlerInBulk,
   getCartItemsHandler,
   removeItemFromCartHandler,
   updateCartItemHandler,
@@ -72,6 +73,7 @@ export function makeServer({ environment = "development" } = {}) {
       // cart routes (private)
       this.get("/user/cart", getCartItemsHandler.bind(this));
       this.post("/user/cart", addItemToCartHandler.bind(this));
+      this.post("/user/cart/bulk", addItemToCartHandlerInBulk.bind(this));
       this.post("/user/cart/:productId", updateCartItemHandler.bind(this));
       this.delete(
         "/user/cart/:productId",
