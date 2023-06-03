@@ -2,8 +2,13 @@ import { TrashIcon } from "@heroicons/react/24/outline";
 import { useContext } from "react";
 import { BooksContext } from "../../contexts/BooksProvider";
 const CartCard = ({ product }) => {
-  const { moveToWishlistHandler, removeFromCartHandler,cartItemQuantityHandler } =
-    useContext(BooksContext);
+  const {
+    moveToWishlistHandler,
+    removeFromCartHandler,
+    cartItemQuantityHandler,
+    disableQuantityButton,
+    setDisableQuantityButtons,
+  } = useContext(BooksContext);
   const moveToWishlist = (e, product) => {
     e.stopPropagation();
     moveToWishlistHandler(product);
@@ -13,12 +18,12 @@ const CartCard = ({ product }) => {
     e.stopPropagation();
     removeFromCartHandler(product);
   };
-  
-  const changeQuantity=(e,product,action)=>{
-    e.stopPropagation();
-    cartItemQuantityHandler(product,action)
 
-  }
+  const changeQuantity = (e, product, action) => {
+    setDisableQuantityButtons(true)
+    e.stopPropagation();
+    cartItemQuantityHandler(product, action);
+  };
 
   const { _id, imgUrl, author, price, qty, title, discount } = product;
   return (
@@ -82,19 +87,22 @@ const CartCard = ({ product }) => {
 
         <div className="flex flex-col justify-between mt-4 sm:space-y-6 sm:mt-0 sm:block">
           <div className="flex items-center justify-center text-gray-100 bg-gray-800 border border-gray-700 rounded w-min">
-            <button 
-            onClick={(e)=> changeQuantity(e,product,'decrement')}
+            <button
+              onClick={(e) => changeQuantity(e, product, "decrement")}
               type="button"
-              disabled={qty===1}
-              className=
-              {`cursor-pointer
+              disabled={qty === 1 || disableQuantityButton}
+              className={`
                rounded-l
                 py-1
                  px-3.5 
                  duration-100
                   hover:bg-gray-900
                    hover:text-white
-                   ${qty===1? 'pointer-events-none cursor-not-allowed bg-gray-700':''}
+                   ${
+                     qty === 1 || disableQuantityButton
+                       ? "cursor-not-allowed bg-gray-700"
+                       : "cursor-pointer"
+                   }
                    `}
             >
               -
@@ -103,9 +111,10 @@ const CartCard = ({ product }) => {
               {qty}
             </span>
             <button
-            onClick={(e)=> changeQuantity(e,product,'increment')}
+            disabled={disableQuantityButton}
+              onClick={(e) => changeQuantity(e, product, "increment")}
               type="button"
-              className="px-3 py-1 duration-100 rounded-r cursor-pointer hover:text-white hover:bg-gray-900 "
+              className={`px-3 py-1 duration-100 rounded-r  ${disableQuantityButton?'cursor-not-allowed bg-gray-700':'cursor-pointer'} hover:text-white hover:bg-gray-900 `}
             >
               +
             </button>
