@@ -45,6 +45,7 @@ const BooksProvider = ({ children }) => {
   const [booksState, booksDispatch] = useReducer(books, booksInitialState);
   const [buttonDisabled, setButtonDisable] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
+  const [disableQuantityButton, setDisableQuantityButtons] = useState(false);
   const { userState } = useContext(AuthContext);
   // states destructured
   const { priceSort, selectedCategory, priceSlider, ratingSlider } =
@@ -262,6 +263,7 @@ const BooksProvider = ({ children }) => {
         action === "increment"
           ? toast.success("Quantity Increased")
           : toast.success("Quantity Decreased");
+          setDisableQuantityButtons(false)
       });
     } catch (error) {
       handleError(error);
@@ -309,7 +311,9 @@ const BooksProvider = ({ children }) => {
     addBooksData();
     // getCart() && getCart().length > 0 && initializeCartItems();
     getCart() && getCart().length > 0 && syncCartData(getCart());
-    getWishlist() && getWishlist().length > 0 && syncWishlistData(getWishlist());
+    getWishlist() &&
+      getWishlist().length > 0 &&
+      syncWishlistData(getWishlist());
   }, [userState]);
 
   return (
@@ -335,6 +339,8 @@ const BooksProvider = ({ children }) => {
         setButtonDisable,
         searchTerm,
         setSearchTerm,
+        disableQuantityButton,
+        setDisableQuantityButtons,
 
         // unused
         initializeCartItems,
