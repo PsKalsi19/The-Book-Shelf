@@ -15,7 +15,6 @@ const AuthProvider = ({ children }) => {
   const [userState, setUserState] = useState(authInitialState);
 
   const logInState = (user, encodedToken) => {
-
     setAuth(encodedToken);
     setUser(user);
     setUserState({

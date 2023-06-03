@@ -1,4 +1,10 @@
-import { createContext, useEffect, useReducer, useState } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useReducer,
+  useState,
+} from "react";
 import axios from "axios";
 
 import { filtersInitialState } from "./initialStates/FilterInitialState";
@@ -12,18 +18,16 @@ import {
   removeFromWishlist,
 } from "../services/wishlist-service";
 import { toast } from "react-hot-toast";
-import {
-  getCart,
-  getWishlist,
-  updateCart,
-  updateWishlist,
-} from "../services/localstorage-service";
+import { getCart, getWishlist, updateCart, updateWishlist } from "../services/localstorage-service";
 import { getProducts } from "../services/products-service";
 import {
   changeItemQuantity,
   deleteCartItems,
+  getCartItems,
   postCartItem,
+  postCartItemInBulk,
 } from "../services/cart-service";
+import { AuthContext } from "./AuthProvider";
 
 export const BooksContext = createContext();
 
@@ -35,11 +39,10 @@ const BooksProvider = ({ children }) => {
   const [booksState, booksDispatch] = useReducer(books, booksInitialState);
   const [buttonDisabled, setButtonDisable] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
-
+  const { userState } = useContext(AuthContext);
   // states destructured
   const { priceSort, selectedCategory, priceSlider, ratingSlider } =
     filtersState;
-
   const { booksData } = booksState;
 
   const handleWishlistToggle = (product) => {
@@ -86,17 +89,15 @@ const BooksProvider = ({ children }) => {
   };
 
   const changePriceSliderHandler = (payload) => {
-    return  payload.filter(
-          ({ price, discount }) => price - discount <= priceSlider
-        );
+    return payload.filter(
+      ({ price, discount }) => price - discount <= priceSlider
+    );
   };
 
   const changeRatingsSliderHandler = (payload) => {
     return ratingSlider === 0
       ? payload
-      : payload.filter(
-          ({ rating }) => rating >= ratingSlider
-        );
+      : payload.filter(({ rating }) => rating >= ratingSlider);
   };
 
   const changePriceSort = (paylaod) => {
@@ -108,16 +109,16 @@ const BooksProvider = ({ children }) => {
     );
   };
 
-  const handleFilterReset=()=>{
-    filtersDispatch({type:FILTERS_ACTION.RESET,payload:''})
-  }
+  const handleFilterReset = () => {
+    filtersDispatch({ type: FILTERS_ACTION.RESET, payload: "" });
+  };
 
   const allSortsAndFilters = () => {
     let filteredData = searchProductsHandler();
     filteredData = changeCategoryHandler(filteredData);
     filteredData = changePriceSort(filteredData);
-    filteredData = changePriceSliderHandler(filteredData)
-    filteredData = changeRatingsSliderHandler(filteredData)
+    filteredData = changePriceSliderHandler(filteredData);
+    filteredData = changeRatingsSliderHandler(filteredData);
     return filteredData;
   };
 
@@ -205,6 +206,20 @@ const BooksProvider = ({ children }) => {
     });
   };
 
+  const initializeCartItems = async () => {
+    try {
+      const {
+        data: { cart },
+      } = await getCartItems();
+      booksDispatch({
+        type: BOOKS_ACTIONS.SAVE_CART,
+        payload: cart,
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   const generateDateTimeAndId = () => {
     const currentDate = new Date();
     const year = currentDate.getFullYear();
@@ -252,15 +267,15 @@ const BooksProvider = ({ children }) => {
     toast.error("Something Went Wrong, Try Later");
   };
 
+  const syncCartData=async(payload)=>{
+   const {data:{cart}}= await postCartItemInBulk([payload])
+   booksDispatch({
+    type: BOOKS_ACTIONS.SAVE_CART,
+    payload: cart,
+  });
+  }
   useEffect(() => {
     getCategories(ENDPOINTS.CATEGORIES, booksDispatch);
-
-    booksDispatch({ type: BOOKS_ACTIONS.SAVE_CART, payload: [...getCart()] });
-    booksDispatch({
-      type: BOOKS_ACTIONS.SAVE_WISHLIST,
-      payload: [...getWishlist()],
-    });
-
     const addBooksData = async () => {
       try {
         const data = await getProducts();
@@ -274,7 +289,9 @@ const BooksProvider = ({ children }) => {
       }
     };
     addBooksData();
-  }, []);
+    // getCart() && getCart().length > 0 && initializeCartItems();
+    getCart() && getCart().length > 0 && syncCartData(getCart());
+  }, [userState]);
 
   return (
     <BooksContext.Provider
@@ -299,6 +316,9 @@ const BooksProvider = ({ children }) => {
         setButtonDisable,
         searchTerm,
         setSearchTerm,
+
+        // unused
+        initializeCartItems
       }}
     >
       {children}
@@ -321,8 +341,8 @@ const getCategories = async (url, dispatch) => {
 };
 
 const getUpdatedData = (products) => {
-  const cart = getCart();
-  const wishlist = getWishlist();
+  const cart=getCart()
+  const wishlist=getWishlist()
   if (cart && cart.length === 0 && wishlist.length === 0) return products;
   return products.map((product) => {
     const itemInCart = cart.find((item) => item._id === product._id);
