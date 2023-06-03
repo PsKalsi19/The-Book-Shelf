@@ -4,6 +4,8 @@ import { DEFAULT_HEADERS } from "./auth-service";
 
 export const postCartItem = (payload) =>
   axios.post(ENDPOINTS.CART, payload, DEFAULT_HEADERS());
+export const postCartItemInBulk = (payload) =>{
+ return axios.post(ENDPOINTS.CART_BULK, payload, DEFAULT_HEADERS())}
 
 export const getCartItems = () => axios.get(ENDPOINTS.CART, DEFAULT_HEADERS());
 

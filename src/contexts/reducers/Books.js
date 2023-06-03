@@ -40,13 +40,16 @@ const books = (state, { type, payload }) => {
       };
 
     case BOOKS_ACTIONS.SAVE_PURCHASED_ITEMS:
-      return { ...state, orders: [ ...state.orders, payload ] };
+      return { ...state, orders: [...state.orders, payload] };
 
     case BOOKS_ACTIONS.RESET_CART_WISHLIST:
       return { ...state, cart: [], wishlist: [] };
 
     case BOOKS_ACTIONS.RESET_PRODUCTS:
-      return {...state,orders:state.booksData.map((ele)=>resetProducts(ele))}
+      return {
+        ...state,
+        booksData: state.booksData.map((ele) => resetProducts(ele)),
+      };
 
     case BOOKS_ACTIONS.RESET:
       return booksInitialState;
@@ -64,12 +67,11 @@ const removeWishlisted = (element, payloadId) =>
   element._id === payloadId ? { ...element, wishlisted: false } : element;
 
 const addToCart = (element, payloadId) =>
-  element._id === payloadId
-    ? { ...element, addedToCart: true }
-    : element;
+  element._id === payloadId ? { ...element, addedToCart: true } : element;
 
 const removeFromCart = (element, payloadId) =>
   element._id === payloadId ? { ...element, addedToCart: false } : element;
 
-  const resetProducts=(element)=> {
-    return({ ...element,wishlisted:false,addedToCart:false})}
+const resetProducts = (element) => {
+  return { ...element, wishlisted: false, addedToCart: false };
+};
