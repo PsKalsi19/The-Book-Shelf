@@ -89,12 +89,12 @@ const Login = () => {
                   {showPassword ? (
                     <EyeIcon
                       onClick={() => setShowPassword(false)}
-                      className="absolute cursor-pointer w-6 h-6 text-gray-500 right-2 bottom-2"
+                      className="absolute w-6 h-6 text-gray-500 cursor-pointer right-2 bottom-2"
                     />
                   ) : (
                     <EyeSlashIcon
                       onClick={() => setShowPassword(true)}
-                      className="absolute cursor-pointer w-6 h-6 text-gray-500 right-2 bottom-2"
+                      className="absolute w-6 h-6 text-gray-500 cursor-pointer right-2 bottom-2"
                     />
                   )}
                   <input
