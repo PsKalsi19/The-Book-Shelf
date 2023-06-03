@@ -65,6 +65,41 @@ export const addItemToWishlistHandler = function (schema, request) {
   }
 };
 
+
+/**
+ * This handler handles adding multiple items to user's wishlist.
+ * send POST Request at /api/user/wishlist/bulk
+ * body contains products array
+ * */
+
+export const addItemToWishlistHandlerInBulk = function (schema, request) {
+  const userId = requiresAuth.call(this, request);
+  try {
+    if (!userId) {
+      return new Response(
+        404,
+        {},
+        {
+          errors: ["The email you entered is not Registered. Not Found error"],
+        }
+      );
+    }
+    let userWishlist = schema.users.findBy({ _id: userId }).wishlist;
+    const  products  = JSON.parse(request.requestBody);
+    userWishlist = [...products[0]];
+    this.db.users.update({ _id: userId }, { wishlist: userWishlist });
+    return new Response(201, {}, { wishlist: userWishlist });
+  } catch (error) {
+    return new Response(
+      500,
+      {},
+      {
+        error,
+      }
+    );
+  }
+};
+
 /**
  * This handler handles removing items to user's wishlist.
  * send DELETE Request at /api/user/wishlist

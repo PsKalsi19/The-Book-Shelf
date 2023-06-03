@@ -20,6 +20,7 @@ import {
 } from "./backend/controllers/ProductController";
 import {
   addItemToWishlistHandler,
+  addItemToWishlistHandlerInBulk,
   getWishlistItemsHandler,
   removeItemFromWishlistHandler,
 } from "./backend/controllers/WishlistController";
@@ -83,6 +84,7 @@ export function makeServer({ environment = "development" } = {}) {
       // wishlist routes (private)
       this.get("/user/wishlist", getWishlistItemsHandler.bind(this));
       this.post("/user/wishlist", addItemToWishlistHandler.bind(this));
+      this.post("/user/wishlist/bulk", addItemToWishlistHandlerInBulk.bind(this));
       this.delete(
         "/user/wishlist/:productId",
         removeItemFromWishlistHandler.bind(this)
