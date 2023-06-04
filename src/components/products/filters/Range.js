@@ -6,7 +6,7 @@ const Range = ({value,dispatch,heading,max,step,dispatchType}) => {
  
     return (
         <fieldset className='pb-4 border-b border-gray-500'>
-            <legend className="text-base text-gray-100">{heading}</legend>
+            <legend className="text-sm text-gray-100 ">{heading}</legend>
             <input id="steps-range" 
             type="range" 
             min="0" 
@@ -14,7 +14,7 @@ const Range = ({value,dispatch,heading,max,step,dispatchType}) => {
             onChange={handleSliderChange}
             value={value} 
             step={step} 
-            className="w-full h-2"/>
+            className="w-full h-2 cursor-pointer"/>
         </fieldset>
     );
 };

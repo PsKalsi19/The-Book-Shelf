@@ -1659,8 +1659,7 @@ export const products = [
     category: "Fiction",
     price: 780,
     discount: 130,
-    imgUrl:
-      "https://upload.wikimedia.org/wikipedia/en/6/62/Kite_runner.jpg",
+    imgUrl: "https://upload.wikimedia.org/wikipedia/en/6/62/Kite_runner.jpg",
     pages: 371,
     rating: 4.8,
     isBestSeller: true,
@@ -1747,5 +1746,325 @@ export const products = [
     description:
       "The Diary of a Young Girl, also known as The Diary of Anne Frank, is a collection of writings by Anne Frank, a Jewish girl who went into hiding with her family during the Nazi occupation of the Netherlands. Her diary entries provide an intimate and personal account of her life in hiding, her dreams, fears, and hopes for the future. The Diary of a Young Girl serves as a powerful reminder of the atrocities of the Holocaust and the resilience of the human spirit.",
     id: "54",
+  },
+  {
+    id: "55",
+    _id: "bc80a49f-3c44-4b32-baf2-f75e7747df50",
+    title: "The Catcher in the Rye",
+    author: "J.D. Salinger",
+    category: "Fiction",
+    price: 450,
+    discount: 70,
+    imgUrl:
+      "https://upload.wikimedia.org/wikipedia/en/thumb/3/32/Rye_catcher.jpg/220px-Rye_catcher.jpg",
+    pages: 224,
+    rating: 4.6,
+    isBestSeller: true,
+    reviews: [
+      {
+        username: "Bookworm123",
+        rating: 4.8,
+        comment:
+          "The Catcher in the Rye is a coming-of-age novel that captures the struggles of adolescence and the search for identity. J.D. Salinger's writing is raw and honest, making it a timeless classic.",
+        date: "2022-12-10",
+      },
+      {
+        username: "LiteratureEnthusiast",
+        rating: 4.7,
+        comment:
+          "J.D. Salinger's The Catcher in the Rye is a poignant portrayal of teenage angst and disillusionment. The protagonist, Holden Caulfield, is a relatable character whose journey resonates with readers of all ages.",
+        date: "2022-12-08",
+      },
+    ],
+    description:
+      "The Catcher in the Rye is a classic novel by J.D. Salinger. It follows the story of Holden Caulfield, a disillusioned teenager who navigates the complexities of adolescence, identity, and societal expectations. Through Holden's introspective narrative, Salinger explores themes of alienation, loss of innocence, and the search for authenticity.",
+  },
+  {
+    id: "56",
+    _id: "3b2c27fd-df1b-4c1c-9f43-82ce6b011d6d",
+    title: "The Girl on the Train",
+    author: "Paula Hawkins",
+    category: "Thriller",
+    price: 580,
+    discount: 100,
+    imgUrl:
+      "https://upload.wikimedia.org/wikipedia/en/thumb/7/72/The_Girl_on_the_Train_%28novel%29.jpg/220px-The_Girl_on_the_Train_%28novel%29.jpg",
+    pages: 336,
+    rating: 4.5,
+    isBestSeller: true,
+    reviews: [
+      {
+        username: "ThrillerFan",
+        rating: 4.6,
+        comment:
+          "The Girl on the Train is a gripping psychological thriller that keeps you guessing until the very end. Paula Hawkins skillfully weaves together a complex narrative of suspense and intrigue.",
+        date: "2022-12-06",
+      },
+      {
+        username: "MysteryEnthusiast",
+        rating: 4.5,
+        comment:
+          "Paula Hawkins' The Girl on the Train is a page-turner that will leave you on the edge of your seat. The unreliable narrator and twists and turns make it an engrossing read for fans of suspense.",
+        date: "2022-12-04",
+      },
+    ],
+    description:
+      "The Girl on the Train is a thrilling mystery novel by Paula Hawkins. It follows Rachel Watson, a woman who becomes entangled in a missing person investigation. As Rachel becomes obsessed with solving the mystery, she unravels a web of secrets and lies. With its unreliable narrator and atmospheric setting, The Girl on the Train keeps readers guessing until the final revelation.",
+  },
+  {
+    id: "57",
+    _id: "5180b49f-3c44-4b32-baf2-f75e7747df50",
+    title: "The Da Vinci Code",
+    author: "Dan Brown",
+    category: "Fiction",
+    price: 550,
+    discount: 90,
+    imgUrl:
+      "https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/DaVinciCode.jpg/220px-DaVinciCode.jpg",
+    pages: 454,
+    rating: 4.7,
+    isBestSeller: true,
+    reviews: [
+      {
+        username: "MysteryReader",
+        rating: 4.8,
+        comment:
+          "The Da Vinci Code is a thrilling and intellectually stimulating novel. Dan Brown's masterful storytelling and intricate plot make it a must-read for fans of mystery and conspiracy.",
+        date: "2022-12-12",
+      },
+      {
+        username: "Booklover23",
+        rating: 4.7,
+        comment:
+          "Dan Brown's The Da Vinci Code is a gripping page-turner that combines art, history, and suspense. It keeps you hooked from start to finish with its clever puzzles and twists.",
+        date: "2022-12-09",
+      },
+    ],
+    description:
+      "The Da Vinci Code is a best-selling novel by Dan Brown. It follows the protagonist, Robert Langdon, as he gets entangled in a complex web of secret societies, religious conspiracies, and hidden codes. Set against the backdrop of art and history, the book takes readers on an exhilarating journey filled with clues and revelations. With its blend of action, mystery, and historical intrigue, The Da Vinci Code captivates readers until the final revelation.",
+  },
+  {
+    id: "58",
+    _id: "da8f27fd-df1b-4c1c-9f43-82ce6b011d6d",
+    title: "The Hunger Games",
+    author: "Suzanne Collins",
+    category: "Fiction",
+    price: 420,
+    discount: 80,
+    imgUrl:
+      "https://upload.wikimedia.org/wikipedia/en/thumb/3/39/The_Hunger_Games_cover.jpg/220px-The_Hunger_Games_cover.jpg",
+    pages: 374,
+    rating: 4.6,
+    isBestSeller: true,
+    reviews: [
+      {
+        username: "DystopiaFanatic",
+        rating: 4.8,
+        comment:
+          "The Hunger Games is a gripping dystopian novel that explores themes of survival, sacrifice, and rebellion. Suzanne Collins' writing immerses readers in a dark and brutal world that keeps them on the edge of their seats.",
+        date: "2022-12-07",
+      },
+      {
+        username: "Bookworm101",
+        rating: 4.5,
+        comment:
+          "Suzanne Collins' The Hunger Games is a thrilling and thought-provoking novel. It raises important questions about power, inequality, and the human spirit. A must-read for fans of dystopian fiction.",
+        date: "2022-12-05",
+      },
+    ],
+    description:
+      "The Hunger Games is the first book in a popular dystopian trilogy by Suzanne Collins. Set in a future society where children are forced to compete in a televised fight to the death, the story follows Katniss Everdeen as she navigates the brutal Hunger Games and becomes a symbol of resistance. With its action-packed plot and strong female protagonist, The Hunger Games captivates readers of all ages.",
+  },
+  {
+    id: "59",
+    _id: "da2aqa3ec-df1b-4c1c-9f43-82ce6b011d6d",
+    title: "The Handmaid's Tale",
+    author: "Margaret Atwood",
+    category: "Fiction",
+    price: 380,
+    discount: 70,
+    imgUrl:
+      "https://upload.wikimedia.org/wikipedia/en/thumb/f/fb/HandmaidsTale.jpg/220px-HandmaidsTale.jpg",
+    pages: 311,
+    rating: 4.8,
+    isBestSeller: true,
+    reviews: [
+      {
+        username: "DystopiaEnthusiast",
+        rating: 4.9,
+        comment:
+          "Margaret Atwood's The Handmaid's Tale is a chilling and thought-provoking dystopian novel. It explores themes of power, oppression, and women's rights in a society governed by religious extremism. A must-read.",
+        date: "2022-11-29",
+      },
+      {
+        username: "Booklover23",
+        rating: 4.7,
+        comment:
+          "The Handmaid's Tale is a haunting and powerful book that offers a stark warning about the fragility of freedom and the dangers of totalitarianism. Margaret Atwood's writing is gripping and evocative.",
+        date: "2022-11-26",
+      },
+    ],
+    description:
+      "The Handmaid's Tale is a dystopian novel by Margaret Atwood. Set in a future society called Gilead, it tells the story of Offred, a handmaid who is subjected to a life of servitude and reproductive coercion. The novel explores themes of gender, power, and individual agency in a world ruled by a totalitarian regime. With its powerful narrative and vivid world-building, The Handmaid's Tale has become a seminal work of speculative fiction.",
+  },
+  {
+    id: "61",
+    _id: "da81a3fd-df1b-4c1c-9f43-82ce6b011d6d",
+    title: "The Fault in Our Stars",
+    author: "John Green",
+    category: "Fiction",
+    price: 290,
+    discount: 50,
+    imgUrl:
+      "https://upload.wikimedia.org/wikipedia/en/thumb/1/18/The_Fault_in_Our_Stars.jpg/220px-The_Fault_in_Our_Stars.jpg",
+    pages: 313,
+    rating: 4.6,
+    isBestSeller: true,
+    reviews: [
+      {
+        username: "YoungAdultReader",
+        rating: 4.8,
+        comment:
+          "The Fault in Our Stars is a heart-wrenching and beautifully written novel. John Green captures the raw emotions of teenage love and the complexities of living with a terminal illness.",
+        date: "2022-11-24",
+      },
+      {
+        username: "Bookworm101",
+        rating: 4.5,
+        comment:
+          "John Green's The Fault in Our Stars is a poignant and unforgettable story that explores the fragility of life and the power of human connection. It will make you laugh, cry, and reflect on what truly matters.",
+        date: "2022-11-21",
+      },
+    ],
+    description:
+      "The Fault in Our Stars is a young adult novel by John Green. It tells the story of Hazel Grace Lancaster, a sixteen-year-old cancer patient, and her journey of love and self-discovery. With its compelling characters and heartfelt storytelling, The Fault in Our Stars resonates with readers of all ages, reminding us of the preciousness of life and the resilience of the human spirit.",
+  },
+  {
+    id: "62",
+    _id: "fa81a3fd-df1b-4c1c-9f43-82ce6b011d6d",
+    title: "Gone Girl",
+    author: "Gillian Flynn",
+    category: "Thriller",
+    price: 400,
+    discount: 80,
+    imgUrl:
+      "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Gone_Girl_Book_Cover.jpg/220px-Gone_Girl_Book_Cover.jpg",
+    pages: 432,
+    rating: 4.7,
+    isBestSeller: true,
+    reviews: [
+      {
+        username: "ThrillerFanatic",
+        rating: 4.8,
+        comment:
+          "Gone Girl is a gripping and twisty thriller that keeps you guessing until the very end. Gillian Flynn's writing is sharp and addictive, making it a must-read for fans of the genre.",
+        date: "2022-11-18",
+      },
+      {
+        username: "Booklover23",
+        rating: 4.6,
+        comment:
+          "Gillian Flynn's Gone Girl is a rollercoaster of suspense and psychological manipulation. The intricate plot and flawed characters make it an enthralling read from start to finish.",
+        date: "2022-11-16",
+      },
+    ],
+    description:
+      "Gone Girl is a thrilling novel by Gillian Flynn. It follows the story of Nick Dunne, whose wife, Amy, goes missing under suspicious circumstances. As the investigation unfolds, secrets and lies are revealed, leaving readers on the edge of their seats. With its unpredictable twists and complex characters, Gone Girl is a masterclass in psychological suspense.",
+  },
+  {
+    id: "63",
+    _id: "bd81a3fd-df1b-4c1c-9f43-82ce6b011d6d",
+    title: "The Girl with the Dragon Tattoo",
+    author: "Stieg Larsson",
+    category: "Thriller",
+    price: 350,
+    discount: 70,
+    imgUrl:
+      "https://upload.wikimedia.org/wikipedia/en/thumb/c/c0/The_Girl_with_the_Dragon_Tattoo_cover.jpg/220px-The_Girl_with_the_Dragon_Tattoo_cover.jpg",
+    pages: 590,
+    rating: 4.6,
+    isBestSeller: true,
+    reviews: [
+      {
+        username: "MysteryLover",
+        rating: 4.8,
+        comment:
+          "The Girl with the Dragon Tattoo is a dark and captivating thriller that keeps you guessing until the very end. Stieg Larsson's intricate plotting and compelling characters make it a must-read for fans of the genre.",
+        date: "2022-11-14",
+      },
+      {
+        username: "Bookworm101",
+        rating: 4.5,
+        comment:
+          "Stieg Larsson's The Girl with the Dragon Tattoo is a gripping and atmospheric novel that delves into the dark underbelly of Swedish society. Lisbeth Salander is a truly unforgettable character.",
+        date: "2022-11-12",
+      },
+    ],
+    description:
+      "The Girl with the Dragon Tattoo is the first book in the Millennium series by Stieg Larsson. It introduces readers to the enigmatic hacker Lisbeth Salander and journalist Mikael Blomkvist, who team up to solve a decades-old disappearance case. Filled with intrigue, suspense, and complex characters, this thriller is a page-turner that will leave you craving for more.",
+  },
+  {
+    id: "64",
+    _id: "dca313fd-df1b-4c1c-9f43-020d6b011d6d",
+    title: "The Silent Patient",
+    author: "Alex Michaelides",
+    category: "Thriller",
+    price: 420,
+    discount: 80,
+    imgUrl:
+      "https://upload.wikimedia.org/wikipedia/en/thumb/8/8e/The_Silent_Patient_Cover.jpg/220px-The_Silent_Patient_Cover.jpg",
+    pages: 336,
+    rating: 4.8,
+    isBestSeller: true,
+    reviews: [
+      {
+        username: "MysteryLover",
+        rating: 4.9,
+        comment:
+          "The Silent Patient is a mind-bending psychological thriller that will leave you speechless. Alex Michaelides' writing is taut and suspenseful, making it a must-read for fans of the genre.",
+        date: "2022-11-02",
+      },
+      {
+        username: "Booklover23",
+        rating: 4.8,
+        comment:
+          "Alex Michaelides' The Silent Patient is a gripping and atmospheric novel that keeps you guessing until the very end. The twists and turns will leave you breathless.",
+        date: "2022-10-31",
+      },
+    ],
+    description:
+      "The Silent Patient is a psychological thriller by Alex Michaelides. It tells the story of Alicia Berenson, a famous artist who has been silent since she was convicted of murdering her husband. With its complex characters and shocking revelations, this gripping novel will keep you guessing until the final page.",
+  },
+  {
+    id: "65",
+    _id: "80d2a3fd-df1b-4c1c-9f43-82ce6b011d6d",
+    title: "The Bourne Identity",
+    author: "Robert Ludlum",
+    category: "Thriller",
+    price: 520,
+    discount: 100,
+    imgUrl:
+      "https://upload.wikimedia.org/wikipedia/en/thumb/3/32/The_Bourne_Identity_cover.jpg/220px-The_Bourne_Identity_cover.jpg",
+    pages: 544,
+    rating: 4.6,
+    isBestSeller: false,
+    reviews: [
+      {
+        username: "ThrillerEnthusiast",
+        rating: 4.7,
+        comment:
+          "The Bourne Identity is a fast-paced and action-packed thriller that will keep you on the edge of your seat. Robert Ludlum's writing and the intriguing character of Jason Bourne make it a must-read for fans of the genre.",
+        date: "2022-10-29",
+      },
+      {
+        username: "Bookworm101",
+        rating: 4.5,
+        comment:
+          "Robert Ludlum's The Bourne Identity is a gripping and adrenaline-fueled novel that takes you on a thrilling ride. The twists and turns will keep you hooked until the very end.",
+        date: "2022-10-27",
+      },
+    ],
+    description:
+      "The Bourne Identity is a thrilling novel by Robert Ludlum. It introduces the character of Jason Bourne, a man with amnesia who must uncover his true identity while evading dangerous enemies. With its non-stop action and suspense, this book will leave you wanting more.",
   },
 ];

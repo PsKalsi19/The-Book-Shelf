@@ -5,8 +5,8 @@ import { authInitialState } from "../../contexts/initialStates/AuthInitialState"
 import { getAuth } from "../../services/localstorage-service";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline";
 const testUser = {
-  email: "adarshbalika@gmail.com",
-  password: "adarshbalika",
+  email: "johndoe@gmail.com",
+  password: "John@101",
 };
 
 const Login = () => {
