@@ -243,6 +243,7 @@ const BooksProvider = ({ children }) => {
   };
 
   const moveToWishlistHandler = async (product) => {
+    
     try {
       addWishlistHandler(product, false).then(() => {
         removeFromCartHandler(product, "Item moved to wishlist");

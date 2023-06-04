@@ -8,24 +8,18 @@ const CartCard = ({ product }) => {
     cartItemQuantityHandler,
     disableQuantityButton,
     setDisableQuantityButtons,
+    booksState:{booksData}
   } = useContext(BooksContext);
-  const moveToWishlist = (e, product) => {
-    e.stopPropagation();
-    moveToWishlistHandler(product);
-  };
 
-  const removeFromCart = (e, product) => {
-    e.stopPropagation();
-    removeFromCartHandler(product);
-  };
-
-  const changeQuantity = (e, product, action) => {
+  const changeQuantity = ( product, action) => {
     setDisableQuantityButtons(true)
-    e.stopPropagation();
     cartItemQuantityHandler(product, action);
   };
 
+
   const { _id, imgUrl, author, price, qty, title, discount } = product;
+  const wishlisted=booksData.find(books=>books._id===_id).wishlisted
+
   return (
     <div
       id={_id}
@@ -40,14 +34,16 @@ const CartCard = ({ product }) => {
       <div className="relative">
         <div className="absolute bottom-0 items-center space-y-2 text-gray-100 right-16 sm:hidden">
           <TrashIcon
-            onClick={(e) => removeFromCart(e, product)}
+            onClick={(e) => removeFromCartHandler(product)}
             title="Remove From Cart"
-            className="w-8 h-8 p-2 text-red-500 duration-150 bg-red-100 rounded-full cursor-pointer opacity-80 hover:text-red-500"
+            className="w-8 h-8 p-2 text-red-400 duration-150 bg-red-100 rounded-full cursor-pointer opacity-80 hover:text-red-500"
           />
           <button
-            title="Move to Wishlist"
             type="button"
-            onClick={(e) => moveToWishlist(e, product)}
+                          title={wishlisted?'Already Wishlisted':'Move to Wishlist'}
+
+            disabled={wishlisted}
+            onClick={(e) => moveToWishlistHandler(product)}
             className="text-pink-500"
           >
             <svg
@@ -56,7 +52,7 @@ const CartCard = ({ product }) => {
               viewBox="0 0 24 24"
               strokeWidth={2}
               stroke="currentColor"
-              className={`w-8 p-2 m-auto hover:fill-current bg-pink-100 opacity-80 rounded-full h-8`}
+              className={`w-8 p-2 m-auto ${wishlisted?'fill-pink-500':'hover:fill-current'} bg-pink-100 opacity-80 rounded-full h-8`}
             >
               <path
                 strokeLinecap="round"
@@ -88,7 +84,7 @@ const CartCard = ({ product }) => {
         <div className="flex flex-col justify-between mt-4 sm:space-y-6 sm:mt-0 sm:block">
           <div className="flex items-center justify-center text-gray-100 bg-gray-800 border border-gray-700 rounded w-min">
             <button
-              onClick={(e) => changeQuantity(e, product, "decrement")}
+              onClick={(e) => changeQuantity( product, "decrement")}
               type="button"
               disabled={qty === 1 || disableQuantityButton}
               className={`
@@ -100,9 +96,10 @@ const CartCard = ({ product }) => {
                    hover:text-white
                    ${
                      qty === 1 || disableQuantityButton
-                       ? "cursor-not-allowed bg-gray-700"
+                       ? "cursor-not-allowed"
                        : "cursor-pointer"
                    }
+                   ${qty===1?'bg-gray-700':''}
                    `}
             >
               -
@@ -112,9 +109,9 @@ const CartCard = ({ product }) => {
             </span>
             <button
             disabled={disableQuantityButton}
-              onClick={(e) => changeQuantity(e, product, "increment")}
+              onClick={(e) => changeQuantity( product, "increment")}
               type="button"
-              className={`px-3 py-1 duration-100 rounded-r  ${disableQuantityButton?'cursor-not-allowed bg-gray-700':'cursor-pointer'} hover:text-white hover:bg-gray-900 `}
+              className={`px-3 py-1 duration-100 rounded-r  ${disableQuantityButton?'cursor-not-allowed ':'cursor-pointer'} hover:text-white hover:bg-gray-900 `}
             >
               +
             </button>
@@ -123,14 +120,15 @@ const CartCard = ({ product }) => {
           {/* For Desktop */}
           <div className="relative items-center hidden space-x-4 text-gray-100 sm:flex">
             <TrashIcon
-              onClick={(e) => removeFromCart(e, product)}
+              onClick={(e) => removeFromCartHandler(product)}
               title="Remove From Cart"
-              className="w-8 h-8 p-2 text-red-500 duration-150 bg-gray-800 border border-gray-700 rounded-full cursor-pointer hover:text-red-500"
+              className="w-8 h-8 p-2 text-red-400 duration-150 bg-gray-800 border border-gray-700 rounded-full cursor-pointer hover:text-red-500"
             />
             <button
-              title="Move to Wishlist"
               type="button"
-              onClick={(e) => moveToWishlist(e, product)}
+              title={wishlisted?'Already Wishlisted':'Move to Wishlist'}
+              disabled={wishlisted}
+              onClick={(e) => moveToWishlistHandler(product)}
               className="absolute right-0 w-12 h-12 p-0 m-0 text-pink-500 rounded-full"
             >
               <svg
@@ -139,7 +137,7 @@ const CartCard = ({ product }) => {
                 viewBox="0 0 24 24"
                 strokeWidth={2}
                 stroke="currentColor"
-                className={`w-8 p-2 m-auto hover:fill-current border border-gray-700  bg-gray-800 rounded-full h-8`}
+                className={`w-8 p-2 m-auto ${wishlisted?'fill-pink-500':'hover:fill-current'}  border border-gray-700  bg-gray-800 rounded-full h-8`}
               >
                 <path
                   strokeLinecap="round"
