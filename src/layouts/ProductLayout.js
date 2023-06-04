@@ -199,8 +199,8 @@ const ProductLayout = () => {
           >
             <div className="h-full px-3 py-4 overflow-y-auto">
               <form className="hidden md:block">
-                <div className="flex items-center justify-between pb-6 my-4 text-gray-100 ">
-                  <span className="font-bold tracking-wide md:text-xl lg:text-4xl">
+                <div className="flex items-center justify-between my-4 text-gray-100 ">
+                  <span className="font-bold tracking-wide md:text-md lg:text-2xl">
                     Filters
                   </span>
                   <span className="w-px h-6 bg-gray-700" aria-hidden="true" />

@@ -1,26 +1,15 @@
-import { createContext, useEffect, useState } from "react";
-import { getAddress, saveAddress } from "../services/localstorage-service";
+import { createContext, useContext, useEffect, useState } from "react";
+import { getAddress, isExistingUser, saveAddress } from "../services/localstorage-service";
 import { useNavigate } from "react-router-dom";
+import { DEFAULT_ADDRESS } from "../constants/addressData";
+import { AuthContext } from "./AuthProvider";
 
-const defaultAddress = [
-  {
-    id: 1,
-    name: "Joe Russo",
-    number: "2132434645",
-    line1: "Vasant Colony",
-    line2: "Shivaji Road",
-    landmark: "Near XYZ Garden",
-    pincode: "403021",
-    city: "Nagpur",
-    state: "Maharashtra",
-    country: "India",
-    isPrimary: true,
-  },
-];
+
 
 export const AddressContext = createContext();
 const AddressProvider = ({ children }) => {
   const [addresses, setAddress] = useState();
+  const {userState}=useContext(AuthContext)
   const navigate = useNavigate();
 
   const handleAddressForm = (payload = null) => {
@@ -28,11 +17,11 @@ const AddressProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    if (getAddress().length === 0) {
-      saveAddress(...defaultAddress);
+    if ( isExistingUser() && getAddress().length === 0) {
+      saveAddress(...DEFAULT_ADDRESS);
     }
     setAddress(getAddress());
-  }, []);
+  }, [userState]);
 
   return (
     <AddressContext.Provider

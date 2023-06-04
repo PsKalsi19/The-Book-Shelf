@@ -51,6 +51,11 @@ export const getUserEmail = () => {
   return user.email;
 };
 
+export const isExistingUser = () => {
+  const user = getUser();
+  return user.existing;
+};
+
 export const saveAddress = (payload) => {
   const addresses = getAddress() ?? [];
   localStorage.setItem(ADDRESS, JSON.stringify([...addresses, payload]));
@@ -63,7 +68,7 @@ export const getAddress = () => {
 export const updateAddress = (payload, id) => {
   const addresses = getAddress() ?? [];
   const updatedData = addresses.map((ele) =>
-    ele.id === id ? { ...payload, id: id } : ele
+    Number(ele.id) === Number(id) ? { ...payload, id: id } : ele
   );
   localStorage.setItem(ADDRESS, JSON.stringify(updatedData));
 };
@@ -77,7 +82,7 @@ export const deleteAddress = (id) => {
 export const togglePrimaryAddress = (id) => {
   const addresses = getAddress() ?? [];
   const updatedAddresses = addresses.map((ele) =>
-    ele.id === id ? { ...ele, isPrimary: true } : {...ele,isPrimary:false}
+    ele.id === id ? { ...ele, isPrimary: true } : { ...ele, isPrimary: false }
   );
   localStorage.setItem(ADDRESS, JSON.stringify(updatedAddresses));
 };
