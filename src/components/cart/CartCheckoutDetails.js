@@ -84,7 +84,7 @@ const CartCheckoutDetails = ({ cart }) => {
           contact: number,
         },
         notes: {
-          address: `${name}, ${line1}, ${line2}, ${city}`, //customer address
+          address: `${name}, ${line1}, ${line2}, ${city}`,
         },
         theme: {
           color: "#111827",
