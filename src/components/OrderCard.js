@@ -13,7 +13,7 @@ const OrderCard = ({order}) => {
         />
         {/* Actions for mobile */}
         <div className="flex flex-col items-center sm:items-start sm:flex-row sm:ml-4 sm:w-full sm:justify-between">
-          <div className="flex flex-col items-center justify-between mt-5 align-center sm:mt-0">
+          <div className="flex flex-col items-center justify-between mt-5 sm:items-start align-center sm:mt-0">
             <div className="flex flex-col items-center sm:items-start">
               <h2 className="text-lg font-bold text-gray-100 sm:text-xl">
                 {title}
@@ -28,7 +28,7 @@ const OrderCard = ({order}) => {
                 {price - discount}
               </p>
             </div>
-              <p className="font-bold text-gray-700 text-md">
+              <p className="font-bold text-gray-600 text-md">
                X {qty}
               </p>
           </div>

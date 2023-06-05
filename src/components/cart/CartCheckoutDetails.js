@@ -4,7 +4,12 @@ import Dropdown from "./Dropdown";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { useLocation, useNavigate } from "react-router-dom";
 import { BooksContext } from "../../contexts/BooksProvider";
-import { getAddress } from "../../services/localstorage-service";
+import {
+  getAddress,
+  getPrimaryAddress,
+  getUserEmail,
+  getUserName,
+} from "../../services/localstorage-service";
 import { toast } from "react-hot-toast";
 
 const CartCheckoutDetails = ({ cart }) => {
@@ -16,16 +21,82 @@ const CartCheckoutDetails = ({ cart }) => {
   const allCoupons = createCouponData(cart);
   const location = useLocation();
   const navigate = useNavigate();
-  const {
-    removeFromCartHandler,
-    saveOrderHistory
-  } = useContext(BooksContext);
+  const { removeFromCartHandler, saveOrderHistory } = useContext(BooksContext);
 
   const removeAllCartItems = () => {
     cart.map((item) => removeFromCartHandler(item, "", false));
   };
 
-  
+  const loadScript = async (url) => {
+    return new Promise((resolve) => {
+      const script = document.createElement("script");
+      script.src = url;
+
+      script.onload = () => {
+        resolve(true);
+      };
+
+      script.onerror = () => {
+        resolve(false);
+      };
+
+      document.body.appendChild(script);
+    });
+  };
+
+  const displayRazorpay = async () => {
+    const address = getPrimaryAddress();
+    const { name, line1, line2, city, number } = address;
+    try {
+      const res = await loadScript(
+        "https://checkout.razorpay.com/v1/checkout.js"
+      );
+
+      if (!res) {
+        toast.error("Razorpay failed, Check your Connection.");
+        return;
+      }
+      const options = {
+        key: process.env.REACT_APP_MY_RZP_KEY,
+        amount: (amounts.discountedAmount- coupon.value) * 100,
+        currency: "INR",
+        name: "The Book Shelf",
+        description:
+          "Your literary cravings have been duly noted and satisfied. Happy reading!",
+        image:
+          "https://ik.imagekit.io/pb97gg2as/E-Commerce-Assets/logo-color.png?updatedAt=1684597529138",
+
+        handler: (response) => {
+          saveOrderHistory(
+            cart,
+            amounts.discountedAmount - coupon.value,
+            response.razorpay_payment_id
+          );
+          removeAllCartItems(cart);
+          toast.success("Order Placed Successfully.")
+          navigate("/thank-you", {
+            state: { finalAmount: amounts.discountedAmount - coupon.value },
+          });
+        },
+        prefill: {
+          name: getUserName(),
+          email: getUserEmail(),
+          contact: number,
+        },
+        notes: {
+          address: `${name}, ${line1}, ${line2}, ${city}`, //customer address
+        },
+        theme: {
+          color: "#111827",
+        },
+      };
+      const paymentObject = new window.Razorpay(options);
+      paymentObject.open();
+    } catch (error) {
+      console.log(error);
+      toast.error("Something Went Wrong, Try Later.");
+    }
+  };
 
   useEffect(() => {
     setAmounts(getTotalAmount(cart));
@@ -35,37 +106,34 @@ const CartCheckoutDetails = ({ cart }) => {
     if (location.pathname === "/cart") {
       navigate("/checkout");
     } else {
-      if(getAddress().length===0){
+      if (getAddress().length === 0) {
         toast.error("Please add a Primary Address to Proceed.");
-        return 
+        return;
       }
-      saveOrderHistory(cart,amounts.discountedAmount-coupon.value,)
-      removeAllCartItems(cart);
-      navigate("/thank-you", {
-        state: { finalAmount: amounts.discountedAmount - coupon.value },
-      });
-      // navigate("/checkout")
+      displayRazorpay();
     }
   };
   return (
     <div className="relative mb-20 sm:w-1/3">
       <div className="sticky left-0 right-0 w-full p-6 mt-6 border rounded-lg shadow-md top-40 md:mt-0">
-        { location.pathname==='/checkout' && allCoupons && allCoupons.length > 0 && (
-          <div className="pb-4 mb-4 border-b border-gray-700">
-            <Dropdown
-              dropdownData={allCoupons}
-              setCouponHandler={setCoupon}
-              heading={"Apply Coupons"}
-            />
-          </div>
-        )}
+        {location.pathname === "/checkout" &&
+          allCoupons &&
+          allCoupons.length > 0 && (
+            <div className="pb-4 mb-4 border-b border-gray-700">
+              <Dropdown
+                dropdownData={allCoupons}
+                setCouponHandler={setCoupon}
+                heading={"Apply Coupons"}
+              />
+            </div>
+          )}
 
         {cart &&
           cart.length > 0 &&
           cart.map(({ title, price, qty, _id }) => (
             <div key={_id} title={title} className="flex justify-between mb-2">
               <p className="w-40 text-gray-100 truncate">{title}</p>{" "}
-              <span className="text-gray-700">X {qty} </span>
+              <span className="text-gray-600">X {qty} </span>
               <p className="text-gray-100 before:mr-1 before:content-['₹']">
                 {price}
               </p>

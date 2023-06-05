@@ -1,15 +1,18 @@
-import { useLayoutEffect } from "react";
+import { useContext, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { BooksContext } from "../../contexts/BooksProvider";
 
 const ThankYou = () => {
   const location = useLocation();
   const finalAmount = location?.state?.finalAmount;
+  const {booksState:{orders}}=useContext(BooksContext)
   const navigate = useNavigate();
-  useLayoutEffect(() => {
-    if (!location?.state?.finalAmount) {
-      navigate("/cart");
+  useEffect(() => {
+    if (orders.length===0) {
+      navigate("/products");
     }
-  }, [location?.state?.finalAmount, navigate]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [orders]);
   return (
     <div className="relative px-6 isolate pt-14 lg:px-8">
       <div
