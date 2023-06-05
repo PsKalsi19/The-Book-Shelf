@@ -4,6 +4,8 @@ import Dropdown from "./Dropdown";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { useLocation, useNavigate } from "react-router-dom";
 import { BooksContext } from "../../contexts/BooksProvider";
+import { getAddress } from "../../services/localstorage-service";
+import { toast } from "react-hot-toast";
 
 const CartCheckoutDetails = ({ cart }) => {
   const [amounts, setAmounts] = useState({
@@ -33,7 +35,10 @@ const CartCheckoutDetails = ({ cart }) => {
     if (location.pathname === "/cart") {
       navigate("/checkout");
     } else {
-      
+      if(getAddress().length===0){
+        toast.error("Please add a Primary Address to Proceed.");
+        return 
+      }
       saveOrderHistory(cart,amounts.discountedAmount-coupon.value,)
       removeAllCartItems(cart);
       navigate("/thank-you", {

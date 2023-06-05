@@ -16,7 +16,6 @@ const AddressCard = ({ address, setAddressHandler }) => {
     pincode,
     city,
     state,
-    country,
     isPrimary,
   } = address;
   const removeAddress = (id) => {
@@ -44,7 +43,7 @@ const AddressCard = ({ address, setAddressHandler }) => {
         isPrimary ? "bg-gray-800 rounded-lg" : "hover:bg-gray-800"
       }`}
     >
-      <button title="Set as primary" disabled={isPrimary} onClick={() => setPrimaryAddress(id)} type="button">
+      <button className="flex" title="Set as primary" disabled={isPrimary} onClick={() => setPrimaryAddress(id)} type="button">
         <svg
           
           xmlns="http://www.w3.org/2000/svg"
@@ -78,7 +77,7 @@ const AddressCard = ({ address, setAddressHandler }) => {
               {line1}, {line2}
             </p>
             <p>
-              {city}-{pincode}, {state}, {country}
+              {city}-{pincode}, {state}
             </p>
           </div>
         </div>
