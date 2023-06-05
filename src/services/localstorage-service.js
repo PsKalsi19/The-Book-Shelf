@@ -86,3 +86,8 @@ export const togglePrimaryAddress = (id) => {
   );
   localStorage.setItem(ADDRESS, JSON.stringify(updatedAddresses));
 };
+
+export const getPrimaryAddress = () => {
+  const addresses = getAddress();
+  return addresses.find(({ isPrimary }) => isPrimary);
+};

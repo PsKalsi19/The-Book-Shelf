@@ -201,11 +201,11 @@ const BooksProvider = ({ children }) => {
     }
   };
 
-  const saveOrderHistory = (items, totalAmount) => {
+  const saveOrderHistory = (items, totalAmount,orderId) => {
     const placedOrder = {
       products: items,
       totalBill: totalAmount,
-      ...generateDateTimeAndId(),
+      ...generateDateTimeAndId(orderId),
     };
     booksDispatch({
       type: BOOKS_ACTIONS.SAVE_PURCHASED_ITEMS,
@@ -227,7 +227,7 @@ const BooksProvider = ({ children }) => {
     }
   };
 
-  const generateDateTimeAndId = () => {
+  const generateDateTimeAndId = (orderId) => {
     const currentDate = new Date();
     const year = currentDate.getFullYear();
     const month = currentDate.getMonth() + 1;
@@ -238,7 +238,7 @@ const BooksProvider = ({ children }) => {
     return {
       date: `${day}/${month}/${year}`,
       time: `${hours}:${minutes}`,
-      orderId: `ORD#00${currentDate.getTime()}`,
+      orderId:orderId?? `ORD#00${currentDate.getTime()}`,
     };
   };
 
