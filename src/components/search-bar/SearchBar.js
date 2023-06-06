@@ -13,7 +13,7 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="fixed w-9/12 sm:top-4 sm:w-96">
+    <div className="fixed w-9/12 md:w-3/4 sm:top-4 md:top-20 lg:top-4 lg:w-96">
       <Combobox onChange={handleCardSelect}>
         <div className="relative">
           <div className="relative w-full overflow-hidden text-left rounded-lg shadow-md cursor-default focus:outline-none focus-visible:ring-2 sm:text-sm">

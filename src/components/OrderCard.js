@@ -11,11 +11,10 @@ const OrderCard = ({order}) => {
           src={imgUrl}
           alt={title}
         />
-        {/* Actions for mobile */}
         <div className="flex flex-col items-center sm:items-start sm:flex-row sm:ml-4 sm:w-full sm:justify-between">
           <div className="flex flex-col items-center justify-between mt-5 sm:items-start align-center sm:mt-0">
             <div className="flex flex-col items-center sm:items-start">
-              <h2 className="text-lg font-bold text-gray-100 sm:text-xl">
+              <h2 className="text-lg font-bold text-gray-100 lg:text-xl">
                 {title}
               </h2>
               <p className="mt-1 text-xs text-gray-200 sm:text-sm">{author}</p>

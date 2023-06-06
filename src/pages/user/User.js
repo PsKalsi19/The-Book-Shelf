@@ -15,7 +15,7 @@ const User = () => {
     document.title="User | The Book Shelf"
   },[])
   return (
-    <div className="mx-4 mt-32">
+    <div className="mx-4 mt-40">
       <ul className="flex flex-wrap max-w-4xl mx-auto text-sm font-medium text-center text-gray-400 border-b border-gray-700">
         <li className="mr-2">
           <button
