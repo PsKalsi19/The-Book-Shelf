@@ -8,6 +8,7 @@ const ThankYou = () => {
   const {booksState:{orders}}=useContext(BooksContext)
   const navigate = useNavigate();
   useEffect(() => {
+  document.title="Thank You | The Book Shelf"
     if (orders.length===0) {
       navigate("/products");
     }

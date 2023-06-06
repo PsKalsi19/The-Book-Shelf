@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
@@ -18,6 +18,10 @@ const SignUp = () => {
   });
 
   const { handleSignUpFn } = useContext(AuthContext);
+
+  useEffect(()=>{
+    document.title="Sign Up | The Book Shelf"
+  },[])
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -108,12 +112,12 @@ const SignUp = () => {
                 {showPassword.password ? (
                   <EyeIcon
                     onClick={() => setShowPassword({...showPassword,password:false})}
-                    className="absolute cursor-pointer w-6 h-6 text-gray-500 right-2 bottom-2"
+                    className="absolute w-6 h-6 text-gray-500 cursor-pointer right-2 bottom-2"
                   />
                 ) : (
                   <EyeSlashIcon
                   onClick={() => setShowPassword({...showPassword,password:true})}
-                  className="absolute cursor-pointer w-6 h-6 text-gray-500 right-2 bottom-2"
+                  className="absolute w-6 h-6 text-gray-500 cursor-pointer right-2 bottom-2"
                   />
                 )}
                 <input
@@ -138,12 +142,12 @@ const SignUp = () => {
                 {showPassword.confirmPassword ? (
                   <EyeIcon
                     onClick={() => setShowPassword({...showPassword,confirmPassword:false})}
-                    className="absolute cursor-pointer w-6 h-6 text-gray-500 right-2 bottom-2"
+                    className="absolute w-6 h-6 text-gray-500 cursor-pointer right-2 bottom-2"
                   />
                 ) : (
                   <EyeSlashIcon
                   onClick={() => setShowPassword({...showPassword,confirmPassword:true})}
-                  className="absolute cursor-pointer w-6 h-6 text-gray-500 right-2 bottom-2"
+                  className="absolute w-6 h-6 text-gray-500 cursor-pointer right-2 bottom-2"
                   />
                 )}
                 <input

@@ -8,7 +8,8 @@ const Products = () => {
   const { booksState, allSortsAndFilters } =
     useContext(BooksContext);
 
-  useEffect(() => {
+    useEffect(() => {
+    document.title="Products | The Book Shelf"
     const loader = setTimeout(() => {
       setShowLoader(false);
     }, 2000);

@@ -1,5 +1,4 @@
-import { useContext } from 'react'
-// import Banner from "./Banner"
+import { useContext, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import { BooksContext } from '../../contexts/BooksProvider'
 import CategoryCard from '../../components/CategoryCard'
@@ -10,6 +9,9 @@ const links = [
 
  const Home=()=> {
     const {booksState}=useContext(BooksContext)
+    useEffect(()=>{
+        document.title="Home | The Book Shelf"
+    },[])
     return (
         <div className='relative flex flex-col'>
             <div className="relative py-24 mt-16 overflow-hidden bg-gray-900 sm:mt-0 isolate sm:pt-32 sm:pb-16">
@@ -35,7 +37,7 @@ const links = [
                     aria-hidden="true"
                 >
                     <div
-                        className="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20"
+                        className="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-30"
                         style={{
                             clipPath:
                                 'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
@@ -66,7 +68,7 @@ const links = [
                                 </p>
                             
                         </div> */}
-                        <dl className="grid grid-cols-1 gap-6 mt-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-5">
+                        <dl className="grid grid-cols-1 gap-6 mt-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
                             {booksState.categories.length>0 && booksState.categories.map((category) => <CategoryCard key={category._id} category={category}/>)}
                         </dl>
                     </div>

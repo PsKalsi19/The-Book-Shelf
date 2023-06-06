@@ -19,6 +19,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   useLayoutEffect(() => {
+    document.title="Login | The Book Shelf"
     getAuth() !== null ? navigate("/") : setUserState(authInitialState);
   }, [navigate, setUserState]);
 
