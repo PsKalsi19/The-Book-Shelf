@@ -18,10 +18,10 @@ const PageNotFound=()=> {
           </p>
           <div className="flex items-center justify-center mt-10 gap-x-6">
             <Link
-              to="/products"
+              to="/"
               className="w-full sm:w-1/4 px-5 block py-2.5 text-xs lg:text-sm font-medium text-center text-gray-100 rounded-lg bg-cyan-900 focus:ring-4 focus:outline-none hover:bg-cyan-950 focus:ring-cyan-950"
             >
-              Explore Books
+              Explore Books 
             </Link>
           </div>
         </div>
