@@ -1,8 +1,5 @@
 <div align="center">
 
-
-<h2> The Book Shelf</h2>
-
 <img style="text-align:center" src="https://ik.imagekit.io/pb97gg2as/E-Commerce-Assets/My_project.png?updatedAt=1686063929300" alt="The Book Shelf" height=150 width=250>
 
 ### Order your favorite books conveniently online from The Book Shelf ecommerce website.
