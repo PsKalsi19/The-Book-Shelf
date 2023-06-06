@@ -1,5 +1,5 @@
 
-const Range = ({value,dispatch,heading,max,step,dispatchType}) => {
+const Range = ({value,dispatch,heading,max,min,step,dispatchType}) => {
     const handleSliderChange=(e)=>{
         dispatch({type:dispatchType,payload:Number(e.target.value)})
     }
@@ -9,7 +9,7 @@ const Range = ({value,dispatch,heading,max,step,dispatchType}) => {
             <legend className="text-sm text-gray-100 ">{heading}</legend>
             <input id="steps-range" 
             type="range" 
-            min="0" 
+            min={min} 
             max={max}
             onChange={handleSliderChange}
             value={value} 

@@ -35,6 +35,7 @@ const ProductLayout = () => {
         ? `Ratings (${ratingSlider})`
         : `Ratings (${ratingSlider} and above)`,
     max: 5,
+    min:1,
     step: 0.5,
     dispatchType: FILTERS_ACTION.UPDATE_RATING_SLIDER,
   };
@@ -42,9 +43,10 @@ const ProductLayout = () => {
   const priceRange = {
     value: priceSlider,
     dispatch: filtersDispatch,
-    heading: `Price (0 to ${priceSlider})`,
+    heading:  `Price (100 to ${priceSlider})`,
     max: 1500,
     step: 50,
+    min:100,
     dispatchType: FILTERS_ACTION.UPDATE_PRICE_SLIDER,
   };
   return (
