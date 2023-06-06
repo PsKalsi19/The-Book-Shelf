@@ -13,7 +13,7 @@ const Cart = () => {
     document.title="Cart | The Book Shelf"
   },[])
   return (
-    <div className="mt-20">
+    <div className="mt-40 sm:mt-20 ">
       <h1 className="my-4 font-bold tracking-tight text-center text-gray-100 md:text-xl lg:text-4xl">
         Cart Items
       </h1>

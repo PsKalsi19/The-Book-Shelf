@@ -18,8 +18,8 @@ const Wishlist = () => {
     <section>
       <h1
         className={`${
-          wishListedItems.length > 0 ? " mb-10" : ""
-        } mt-32 font-bold tracking-tight text-center text-gray-100 md:text-xl lg:text-4xl`}
+          wishListedItems.length > 0 ? "mb-10" : ""
+        } mt-40 sm:mt-32 font-bold tracking-tight text-center text-gray-100 md:text-xl lg:text-4xl`}
       >
         Wishlist
       </h1>

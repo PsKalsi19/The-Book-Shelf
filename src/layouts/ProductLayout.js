@@ -122,7 +122,7 @@ const ProductLayout = () => {
       </Transition.Root>
 
       <main className="relative px-4 mx-auto md:ml-36 mt-18 max-w-7xl sm:px-6 lg:px-8">
-        <div className="sticky top-0 z-20 flex items-baseline justify-between pt-40 pb-8 bg-gray-900 md:pt-24 mb-30">
+        <div className="sticky z-20 flex items-baseline justify-between pt-40 pb-8 bg-gray-900 sm:top-16 lg:top-0 md:pt-24 mb-30">
           <h1 className="font-bold tracking-tight text-gray-100 md:text-xl lg:text-4xl">
             Books
           </h1>
@@ -150,7 +150,7 @@ const ProductLayout = () => {
           <aside
             id="default-sidebar"
             aria-label="Sidebar"
-            className="fixed left-0 h-screen mx-6 transition-transform -translate-x-full md:w-52 lg:w-64 sm:top-16 sm:translate-x-0"
+            className="fixed left-0 h-screen mx-6 transition-transform -translate-x-full lg:w-64 sm:top-32 lg:top-16 sm:translate-x-0"
           >
             <div className="h-full px-3 py-4 overflow-y-auto">
               <form className="hidden md:block">
@@ -158,7 +158,7 @@ const ProductLayout = () => {
                   <span className="font-bold tracking-wide md:text-md lg:text-2xl">
                     Filters
                   </span>
-                  <span className="w-px h-6 bg-gray-700" aria-hidden="true" />
+                  <span className="hidden w-px h-6 bg-gray-700 lg:block" aria-hidden="true" />
                   <button
                     onClick={handleFilterReset}
                     className="flex items-center p-2 text-sm text-gray-400 rounded-lg hover:bg-gray-50 hover:bg-opacity-10"
@@ -180,7 +180,7 @@ const ProductLayout = () => {
           </aside>
 
           {/* Product grid */}
-          <div className="p-4">
+          <div className="p-4 sm:mt-12 lg:mt-0">
             <Outlet />
           </div>
         </section>
