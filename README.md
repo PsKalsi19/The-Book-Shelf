@@ -12,6 +12,10 @@
 
 ----------------
 
+> ### Demo
+> 
+
+
 ### How to use on Local Machine:
 
 > 1. $  git clone https://github.com/PsKalsi19/Book-Freaks.git
@@ -65,7 +69,5 @@
 * Headless UI
 * React Hot Toast
 * Razorpay Payments 
-
-> ### Demo
->
+* React Icons
 > 
