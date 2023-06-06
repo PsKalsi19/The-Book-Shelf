@@ -1,7 +1,7 @@
 import { Fragment, useContext, useEffect, useState } from "react";
 import { Dialog, Menu, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import { ChevronDownIcon, FunnelIcon } from "@heroicons/react/20/solid";
+import { FunnelIcon } from "@heroicons/react/20/solid";
 import Radio from "../components/products/filters/Radio";
 import Checkbox from "../components/products/filters/Checkbox";
 import Range from "../components/products/filters/Range";
@@ -9,36 +9,31 @@ import Range from "../components/products/filters/Range";
 import { Outlet, useParams } from "react-router-dom";
 import { BooksContext } from "../contexts/BooksProvider";
 import { FILTERS_ACTION } from "../constants/dispatchTypes";
-
-const sortOptions = [
-  { name: "A to Z", href: "#", current: true },
-  { name: "Z to A", href: "#", current: false },
-  { name: "Ratings: High to Low", href: "#", current: false },
-  { name: "Ratings: Low to High", href: "#", current: false },
-];
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
-
 const ProductLayout = () => {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const {
     filtersState: { priceSlider, ratingSlider },
     filtersDispatch,
-    handleFilterReset
+    handleFilterReset,
   } = useContext(BooksContext);
 
-  const {category}=useParams()
+  const { category } = useParams();
 
-  useEffect(()=>{
-    category && filtersDispatch({type:FILTERS_ACTION.UPDATE_CATEGORY,payload:[category]})
-  },[category, filtersDispatch])
+  useEffect(() => {
+    category &&
+      filtersDispatch({
+        type: FILTERS_ACTION.UPDATE_CATEGORY,
+        payload: [category],
+      });
+  }, [category, filtersDispatch]);
 
   const ratingsRange = {
     value: ratingSlider,
     dispatch: filtersDispatch,
-    heading: ratingSlider===5?`Ratings (${ratingSlider})`:`Ratings (${ratingSlider} and above)`,
+    heading:
+      ratingSlider === 5
+        ? `Ratings (${ratingSlider})`
+        : `Ratings (${ratingSlider} and above)`,
     max: 5,
     step: 0.5,
     dispatchType: FILTERS_ACTION.UPDATE_RATING_SLIDER,
@@ -99,7 +94,7 @@ const ProductLayout = () => {
                   <h2 className="text-lg font-medium text-gray-100">Filters</h2>
                   <span className="w-px h-6 bg-gray-700" aria-hidden="true" />
                   <button
-                  onClick={handleFilterReset}
+                    onClick={handleFilterReset}
                     className="flex items-center p-2 text-sm text-gray-400 rounded-lg bg-gray-50 bg-opacity-10"
                     type="button"
                   >
@@ -132,48 +127,6 @@ const ProductLayout = () => {
 
           <div className="flex items-center">
             <Menu as="div" className="relative inline-block text-left">
-              <div>
-                <Menu.Button className="inline-flex justify-center text-sm font-medium text-gray-100 group-hover:text-white">
-                  Sort
-                  <ChevronDownIcon
-                    className="flex-shrink-0 w-5 h-5 ml-1 -mr-1 text-gray-400 group-hover:text-gray-100"
-                    aria-hidden="true"
-                  />
-                </Menu.Button>
-              </div>
-
-              <Transition
-                as={Fragment}
-                enter="transition ease-out duration-100"
-                enterFrom="transform opacity-0 scale-95"
-                enterTo="transform opacity-100 scale-100"
-                leave="transition ease-in duration-75"
-                leaveFrom="transform opacity-100 scale-100"
-                leaveTo="transform opacity-0 scale-95"
-              >
-                <Menu.Items className="absolute right-0 z-10 w-40 mt-2 origin-top-right bg-gray-900 rounded-md shadow-2xl ring-1 ring-black ring-opacity-5 focus:outline-none">
-                  <div className="py-1">
-                    {sortOptions.map((option) => (
-                      <Menu.Item key={option.name}>
-                        {({ active }) => (
-                          <a
-                            href={option.href}
-                            className={classNames(
-                              option.current
-                                ? "font-medium text-gray-100"
-                                : "text-gray-500",
-                              active ? "bg-gray-100" : "",
-                              "block px-4 py-2 text-sm"
-                            )}
-                          >
-                            {option.name}
-                          </a>
-                        )}
-                      </Menu.Item>
-                    ))}
-                  </div>
-                </Menu.Items>
-              </Transition>
             </Menu>
             <button
               type="button"
@@ -205,7 +158,7 @@ const ProductLayout = () => {
                   </span>
                   <span className="w-px h-6 bg-gray-700" aria-hidden="true" />
                   <button
-                                    onClick={handleFilterReset}
+                    onClick={handleFilterReset}
                     className="flex items-center p-2 text-sm text-gray-400 rounded-lg hover:bg-gray-50 hover:bg-opacity-10"
                     type="button"
                   >
@@ -214,7 +167,7 @@ const ProductLayout = () => {
                   </button>
                 </div>
                 <h3 className="sr-only">Categories</h3>
-                <div className="mt-12 space-y-4">
+                <div className="mt-6 space-y-4">
                   <Range {...priceRange} />
                   <Radio />
                   <Range {...ratingsRange} />

@@ -7,7 +7,9 @@ import {
 } from "react";
 import axios from "axios";
 
-import { filtersInitialState } from "./initialStates/FilterInitialState";
+import {
+  filtersInitialState,
+} from "./initialStates/FilterInitialState";
 import { booksInitialState } from "./initialStates/BooksInitialState";
 import filters from "./reducers/Filters";
 import books from "./reducers/Books";
@@ -29,7 +31,6 @@ import { getProducts } from "../services/products-service";
 import {
   changeItemQuantity,
   deleteCartItems,
-  getCartItems,
   postCartItem,
   postCartItemInBulk,
 } from "../services/cart-service";
@@ -109,11 +110,15 @@ const BooksProvider = ({ children }) => {
 
   const changePriceSort = (paylaod) => {
     if (priceSort === "") return paylaod;
-    return paylaod.sort((a, b) =>
-      priceSort === "ASC"
-        ? a.price - a.discount - (b.price - b.discount)
-        : b.price - b.discount - (a.price - a.discount)
-    );
+    return paylaod
+      .slice()
+      .sort((a, b) =>
+        priceSort === "ASC"
+          ? (a.price - a.discount) - (b.price - b.discount)
+          : (b.price - b.discount) - (a.price - a.discount)
+      );
+
+    
   };
 
   const handleFilterReset = () => {
@@ -201,7 +206,7 @@ const BooksProvider = ({ children }) => {
     }
   };
 
-  const saveOrderHistory = (items, totalAmount,orderId) => {
+  const saveOrderHistory = (items, totalAmount, orderId) => {
     const placedOrder = {
       products: items,
       totalBill: totalAmount,
@@ -211,20 +216,6 @@ const BooksProvider = ({ children }) => {
       type: BOOKS_ACTIONS.SAVE_PURCHASED_ITEMS,
       payload: placedOrder,
     });
-  };
-
-  const initializeCartItems = async () => {
-    try {
-      const {
-        data: { cart },
-      } = await getCartItems();
-      booksDispatch({
-        type: BOOKS_ACTIONS.SAVE_CART,
-        payload: cart,
-      });
-    } catch (error) {
-      console.error(error);
-    }
   };
 
   const generateDateTimeAndId = (orderId) => {
@@ -238,12 +229,11 @@ const BooksProvider = ({ children }) => {
     return {
       date: `${day}/${month}/${year}`,
       time: `${hours}:${minutes}`,
-      orderId:orderId?? `ORD#00${currentDate.getTime()}`,
+      orderId: orderId ?? `ORD#00${currentDate.getTime()}`,
     };
   };
 
   const moveToWishlistHandler = async (product) => {
-    
     try {
       addWishlistHandler(product, false).then(() => {
         removeFromCartHandler(product, "Item moved to wishlist");
@@ -264,7 +254,7 @@ const BooksProvider = ({ children }) => {
         action === "increment"
           ? toast.success("Quantity Increased")
           : toast.success("Quantity Decreased");
-          setDisableQuantityButtons(false)
+        setDisableQuantityButtons(false);
       });
     } catch (error) {
       handleError(error);
@@ -295,6 +285,7 @@ const BooksProvider = ({ children }) => {
       payload: wishlist,
     });
   };
+
   useEffect(() => {
     getCategories(ENDPOINTS.CATEGORIES, booksDispatch);
     const addBooksData = async () => {
@@ -310,7 +301,6 @@ const BooksProvider = ({ children }) => {
       }
     };
     addBooksData();
-    // getCart() && getCart().length > 0 && initializeCartItems();
     getCart() && getCart().length > 0 && syncCartData(getCart());
     getWishlist() &&
       getWishlist().length > 0 &&
@@ -342,9 +332,6 @@ const BooksProvider = ({ children }) => {
         setSearchTerm,
         disableQuantityButton,
         setDisableQuantityButtons,
-
-        // unused
-        initializeCartItems,
       }}
     >
       {children}
