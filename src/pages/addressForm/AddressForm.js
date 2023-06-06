@@ -63,15 +63,15 @@ export default function AddressForm() {
     setAddressForm(DUMMY_ADDRESSES[randomIndex])
   }
   return (
-    <div className="px-6 py-24 isolate sm:py-32 lg:px-8">
-      <div className="max-w-2xl mx-auto text-center">
+    <div className="px-6 py-24 isolate sm:py-40 lg:px-8">
+      <div className="max-w-2xl mx-auto mt-20 text-center sm:mt-0">
         <h1 className="font-bold tracking-tight text-gray-100 md:text-xl lg:text-4xl">
           Addresses
         </h1>
       </div>
       <form
         onSubmit={handleFormSubmit}
-        className="max-w-xl mx-auto mt-16 sm:mt-20"
+        className="max-w-xl mx-auto mt-8 sm:mt-20"
       >
         <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-6">
           <div className="sm:col-span-3">
