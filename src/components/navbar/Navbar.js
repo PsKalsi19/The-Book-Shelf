@@ -1,11 +1,11 @@
 import { NavLink } from "react-router-dom";
-import "./Navbar.css";
 import {
   ShoppingBagIcon,
   HeartIcon,
   UserCircleIcon,
-  ShoppingCartIcon,
 } from "@heroicons/react/24/outline";
+import {MdOutlineExplore} from "react-icons/md"
+
 import { BiLogIn } from "react-icons/bi";
 import { useContext, useEffect } from "react";
 import { AuthContext } from "../../contexts/AuthProvider";
@@ -58,9 +58,10 @@ const Navbar = () => {
                   <div className="hidden sm:block">
                     <NavLink
                       to="products"
-                      className="flex items-center p-2 -m-2 group"
+                      className="flex items-center p-2 -m-2 text-gray-100 rounded-md hover:bg-gray-700 group"
                     >
-                      <ShoppingCartIcon className="flex-shrink-0 w-6 h-6 text-gray-100 group-hover:text-white" />
+                      Explore
+                      <MdOutlineExplore className="flex-shrink-0 w-6 h-6 ml-2 text-gray-100 group-hover:text-white" />
                       <span className="sr-only">products explore</span>
                     </NavLink>
                   </div>
@@ -163,7 +164,7 @@ const Navbar = () => {
                 to="products"
                 className="flex items-center p-2 -m-2 group"
               >
-                <ShoppingCartIcon className="flex-shrink-0 w-6 h-6 text-gray-100 group-hover:text-white" />
+                <MdOutlineExplore className="flex-shrink-0 w-6 h-6 text-gray-100 group-hover:text-white" />
                 <span className="sr-only">products explore</span>
               </NavLink>
             </span>

@@ -1,10 +1,12 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import Mockman from "mockman-js";
 
 // layouts
 import RootLayout from "./layouts/RootLayout";
 import ProductLayout from "./layouts/ProductLayout";
+
+// auth
+import CanActivate from "./components/routegurad/CanActivate";
 
 // pages
 import Home from "./pages/home/Home";
@@ -14,16 +16,15 @@ import SignUp from "./pages/sign-up/SignUp";
 import User from "./pages/user/User";
 import Cart from "./pages/cart/Cart";
 import Wishlist from "./pages/wishlist/Wishlist";
-import CanActivate from "./components/routegurad/CanActivate";
 import AddressForm from "./pages/addressForm/AddressForm";
 import Checkout from "./pages/checkout/Checkout";
 import ThankYou from "./pages/thank-you/ThankYou";
-import ProductOverview from './pages/productOverview/ProductsOverview';
+import ProductOverview from "./pages/productOverview/ProductsOverview";
+import PageNotFound from "./pages/pageNotFound/PageNotFound";
 
 function App() {
   return (
     <>
-     
       <Routes>
         <Route path="/" element={<RootLayout />}>
           <Route index element={<Home />} />
@@ -102,8 +103,8 @@ function App() {
             <Route index element={<Products />} />
             <Route path=":category" element={<Products />} />
           </Route>
+          <Route path="*" element={<PageNotFound />} />
         </Route>
-        <Route path="mocks" element={<Mockman />} />
       </Routes>
     </>
   );

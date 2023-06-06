@@ -9,6 +9,7 @@ const ProductOverview = () => {
   const { id } = useParams();
   const [showLoader, setShowLoader] = useState(true);
   useEffect(() => {
+    document.title = "Product Overview | The Book Shelf";
     setTimeout(() => {
       setShowLoader(false);
     }, 2000);
@@ -17,8 +18,8 @@ const ProductOverview = () => {
     booksState: { booksData },
   } = useContext(BooksContext);
   const product = booksData.find((ele) => ele._id === id) ?? {};
-  
-  if(showLoader) return <Loader/>
+
+  if (showLoader) return <Loader />;
 
   return (
     <section className="overflow-hidden text-gray-100">
@@ -30,12 +31,12 @@ const ProductOverview = () => {
               className="object-cover object-center w-full rounded h-1/2 lg:w-1/4"
               src={product.imgUrl}
             />
-            
+
             <div className="w-full mt-6 lg:w-2/3 lg:pl-10 lg:py-6 lg:mt-0">
               <h2 className="relative text-sm tracking-widest text-gray-500 title-font">
                 {product.author}
                 <div className="absolute right-0 sm:bottom-4 sm:relative bottom-24">
-                  <WishlistButton product={product}/>
+                  <WishlistButton product={product} />
                 </div>
               </h2>
               <h1 className="mb-1 text-3xl font-medium text-gray-100 title-font">

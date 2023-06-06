@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { BiLogOut } from "react-icons/bi";
 import { handleLocalStorageLogOut } from '../../../services/localstorage-service';
 import { BooksContext } from '../../../contexts/BooksProvider';

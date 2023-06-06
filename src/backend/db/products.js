@@ -12,7 +12,7 @@ export const products = [
     price: 350,
     discount: 50,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/en/c/c1/Thinking%2C_Fast_and_Slow.jpg",
+      "https://m.media-amazon.com/images/I/71m+kC4vOxL.jpg",
     pages: 499,
     rating: 4.8,
     isBestSeller: true,
@@ -44,7 +44,7 @@ export const products = [
     price: 500,
     discount: 70,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/en/9/91/TheBodyKeepstheScore.jpg",
+      "https://m.media-amazon.com/images/I/71-OnTj8N8L.jpg",
     pages: 480,
     rating: 4.9,
     isBestSeller: true,
@@ -75,7 +75,7 @@ export const products = [
     category: "Non-Fiction",
     price: 350,
     discount: 150,
-    imgUrl: "https://upload.wikimedia.org/wikipedia/en/f/fc/Ggas_human_soc.jpg",
+    imgUrl: "https://m.media-amazon.com/images/I/81RdveuYXWL.jpg",
     pages: 480,
     rating: 4.6,
     isBestSeller: true,
@@ -107,7 +107,7 @@ export const products = [
     price: 700,
     discount: 20,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/en/e/e4/Steve_Jobs_by_Walter_Isaacson.jpg",
+      "https://m.media-amazon.com/images/I/51ovTzIeV1L.jpg",
     pages: 688,
     rating: 4.7,
     isBestSeller: true,
@@ -139,7 +139,7 @@ export const products = [
     price: 600,
     discount: 0,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/en/5/56/TheNameoftheWind_cover.jpg",
+      "https://m.media-amazon.com/images/I/51UBY8uTacS.jpg",
     pages: 736,
     rating: 3.9,
     isBestSeller: false,
@@ -171,7 +171,7 @@ export const products = [
     price: 350,
     discount: 0,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/en/7/73/Thetippingpoint.jpg",
+      "https://m.media-amazon.com/images/I/6173QRIGTtL.jpg",
     pages: 298,
     rating: 4.6,
     isBestSeller: true,
@@ -203,9 +203,9 @@ export const products = [
     price: 999,
     discount: 300,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/2/2d/Thomas_Keene_in_Macbeth_1884_Wikipedia_crop.png",
+      "https://m.media-amazon.com/images/I/81HPJGIketL.jpg",
     pages: 108,
-    rating: 4.7,
+    rating: 5,
     isBestSeller: false,
     reviews: [
       {
@@ -235,7 +235,7 @@ export const products = [
     price: 500,
     discount: 20,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/en/f/fb/The_Exorcist_1971.jpg",
+      "https://m.media-amazon.com/images/I/81q-n+f7cKL.jpg",
     pages: 448,
     rating: 4.6,
     isBestSeller: true,
@@ -266,7 +266,7 @@ export const products = [
     category: "Horror",
     price: 500,
     discount: 50,
-    imgUrl: "https://upload.wikimedia.org/wikipedia/en/6/62/Silence3.png",
+    imgUrl: "https://m.media-amazon.com/images/I/814fRILnbnL.jpg",
     pages: 320,
     rating: 4.8,
     isBestSeller: true,
@@ -297,7 +297,7 @@ export const products = [
     category: "Drama",
     price: 400,
     discount: 50,
-    imgUrl: "https://upload.wikimedia.org/wikipedia/en/c/c5/RaisinInTheSun.JPG",
+    imgUrl: "https://m.media-amazon.com/images/I/71n3U+vh6FL.jpg",
     pages: 96,
     rating: 4.5,
     isBestSeller: true,
@@ -329,7 +329,7 @@ export const products = [
     price: 350,
     discount: 10,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/en/e/ec/Outliers_%28book_cover%29.png",
+      "https://m.media-amazon.com/images/I/71hq+FB1jJL.jpg",
     pages: 288,
     rating: 4.5,
     isBestSeller: false,
@@ -360,7 +360,7 @@ export const products = [
     category: "Fantasy",
     price: 900,
     discount: 250,
-    imgUrl: "https://upload.wikimedia.org/wikipedia/en/9/93/AGameOfThrones.jpg",
+    imgUrl: "https://m.media-amazon.com/images/I/71JsMvAcmmL.jpg",
     pages: 864,
     rating: 3.8,
     isBestSeller: true,
@@ -392,7 +392,7 @@ export const products = [
     price: 800,
     discount: 130,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/0/05/Martin_Luther_King%2C_Jr..jpg",
+      "https://m.media-amazon.com/images/I/61Ik6mL7ZtL.jpg",
     pages: 864,
     rating: 4.7,
     isBestSeller: true,
@@ -424,7 +424,7 @@ export const products = [
     price: 450,
     discount: 66,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/en/2/20/DeathOfASalesman.jpg",
+      "https://m.media-amazon.com/images/I/51i+ZHlnt4L.jpg",
     pages: 108,
     rating: 2.8,
     isBestSeller: false,
@@ -455,7 +455,7 @@ export const products = [
     category: "Drama",
     price: 600,
     discount: 200,
-    imgUrl: "https://upload.wikimedia.org/wikipedia/en/7/75/Cruciblecover.jpg",
+    imgUrl: "https://m.media-amazon.com/images/I/81-tbD97VRL.jpg",
     pages: 128,
     rating: 2.6,
     isBestSeller: false,
@@ -481,15 +481,15 @@ export const products = [
   },
   {
     _id: "1994eafa-e010-4a10-b42b-7655dba2b67d",
-    title: "The Power of Habit",
+    title: "Power of Habit",
     author: "Charles Duhigg",
     category: "Non-Fiction",
     price: 500,
     discount: 30,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/en/7/7f/The_Power_of_Habit.jpg",
+      "https://m.media-amazon.com/images/I/71ONWR6eXDL.jpg",
     pages: 288,
-    rating: 4.7,
+    rating: 2.7,
     isBestSeller: true,
     reviews: [
       {
@@ -518,7 +518,7 @@ export const products = [
     category: "Horror",
     price: 500,
     discount: 0,
-    imgUrl: "https://upload.wikimedia.org/wikipedia/en/4/4c/Shiningnovel.jpg",
+    imgUrl: "https://m.media-amazon.com/images/I/71tekF9GOkL.jpg",
     pages: 444,
     rating: 3.7,
     isBestSeller: true,
@@ -550,7 +550,7 @@ export const products = [
     price: 850,
     discount: 100,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/en/1/17/TheWrightBrothers.jpg",
+      "https://m.media-amazon.com/images/I/81+O-3L5rYL.jpg",
     pages: 528,
     rating: 4.6,
     isBestSeller: true,
@@ -582,7 +582,7 @@ export const products = [
     price: 500,
     discount: 100,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/4/45/Dracula_1st_ed_cover_reproduction.jpg",
+      "https://m.media-amazon.com/images/I/61vljH0K3gL.jpg",
     pages: 342,
     rating: 4.7,
     isBestSeller: true,
@@ -614,9 +614,9 @@ export const products = [
     price: 760,
     discount: 100,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/1/1c/Hamlet_et_Horatio_au_cimeti%C3%A8re_-_Eug%C3%A8ne_Delacroix_-_Mus%C3%A9e_du_Louvre_Peintures_RF_1942.jpg",
+      "https://m.media-amazon.com/images/I/51cJqvkcdlL.jpg",
     pages: 127,
-    rating: 4.9,
+    rating: 5,
     isBestSeller: false,
     reviews: [
       {
@@ -646,7 +646,7 @@ export const products = [
     price: 460,
     discount: 100,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/en/b/bd/H2G2_UK_front_cover.jpg",
+      "https://m.media-amazon.com/images/I/61p2GtNZ0tL.jpg",
     pages: 256,
     rating: 3.7,
     isBestSeller: false,
@@ -677,7 +677,7 @@ export const products = [
     price: 600,
     discount: 20,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/en/c/cb/The_Chronicles_of_Narnia_box_set_cover.jpg",
+      "https://m.media-amazon.com/images/I/61AiYw92f+L.jpg",
     pages: 256,
     rating: 3.8,
     isBestSeller: true,
@@ -707,7 +707,7 @@ export const products = [
     price: 700,
     discount: 60,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/en/f/fe/Cover_of_Walter_Isaacson%27s_biography_of_Einstein.jpg",
+      "https://m.media-amazon.com/images/I/81aYAGAlP7L.jpg",
     pages: 504,
     rating: 4.5,
     isBestSeller: false,
@@ -736,9 +736,9 @@ export const products = [
     title: "Freakonomics",
     authors: "Steven D. Levitt and Stephen J. Dubner",
     category: "Non-Fiction",
-    price: 350,
-    discount: 60,
-    imgUrl: "https://upload.wikimedia.org/wikipedia/en/6/63/Freakonomics.jpg",
+    price: 1350,
+    discount: 160,
+    imgUrl: "https://m.media-amazon.com/images/I/51L4dDH0fOL.jpg",
     pages: 288,
     rating: 4.5,
     isBestSeller: false,
@@ -767,10 +767,10 @@ export const products = [
     title: "It",
     author: "Stephen King",
     category: "Horror",
-    price: 500,
+    price: 1500,
     discount: 60,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/en/7/78/It_%28Stephen_King_novel_-_cover_art%29.jpg",
+      "https://m.media-amazon.com/images/I/71BIM1n25FL.jpg",
     pages: 1138,
     rating: 4.9,
     isBestSeller: true,
@@ -801,7 +801,7 @@ export const products = [
     price: 900,
     discount: 60,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/en/8/8e/The_Fellowship_of_the_Ring_cover.gif",
+      "https://m.media-amazon.com/images/I/81YyraOaX1L.jpg",
     pages: 416,
     rating: 3.9,
     isBestSeller: true,
@@ -833,7 +833,7 @@ export const products = [
     price: 700,
     discount: 54,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/en/a/a6/Malcolm_X_Life_of_Reinvention.jpg",
+      "https://m.media-amazon.com/images/I/81cJV9U1VRL.jpg",
     pages: 704,
     rating: 4.5,
     isBestSeller: false,
@@ -865,7 +865,7 @@ export const products = [
     price: 600,
     discount: 100,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/en/5/5c/Harry_Potter_and_the_Chamber_of_Secrets.jpg",
+      "https://m.media-amazon.com/images/I/81S0LnPGGUL.jpg",
     pages: 384,
     rating: 3.7,
     isBestSeller: true,
@@ -896,7 +896,7 @@ export const products = [
     category: "Fantasy",
     price: 600,
     discount: 100,
-    imgUrl: "https://upload.wikimedia.org/wikipedia/en/3/30/Hobbit_cover.JPG",
+    imgUrl: "https://m.media-amazon.com/images/I/6196+-JPf0L.jpg",
     pages: 312,
     rating: 3.9,
     isBestSeller: true,
@@ -925,12 +925,12 @@ export const products = [
     title: "Pet Sematary",
     author: "Stephen King",
     category: "Horror",
-    price: 500,
-    discount: 0,
+    price: 1600,
+    discount: 100,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/en/5/52/StephenKingPetSematary.jpg",
+      "https://m.media-amazon.com/images/I/71XaPSTmUyL.jpg",
     pages: 352,
-    rating: 3.6,
+    rating: 5,
     isBestSeller: true,
     reviews: [
       {
@@ -961,7 +961,7 @@ export const products = [
     price: 460,
     discount: 100,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/5/55/Romeo_and_juliet_brown.jpg",
+      "https://m.media-amazon.com/images/I/711TxX8cdlL.jpg",
     pages: 159,
     rating: 3.8,
     isBestSeller: false,
@@ -993,7 +993,7 @@ export const products = [
     price: 550,
     discount: 80,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/en/6/6b/Harry_Potter_and_the_Philosopher%27s_Stone_Book_Cover.jpg",
+      "https://m.media-amazon.com/images/I/81YOuOGFCJL.jpg",
     pages: 332,
     rating: 4.8,
     isBestSeller: true,
@@ -1024,7 +1024,7 @@ export const products = [
     price: 650,
     discount: 120,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/en/a/a0/Harry_Potter_and_the_Prisoner_of_Azkaban.jpg",
+      "https://m.media-amazon.com/images/I/91uix57X+jL.jpg",
     pages: 448,
     rating: 4.9,
     isBestSeller: true,
@@ -1055,7 +1055,7 @@ export const products = [
     price: 700,
     discount: 150,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/en/b/b6/Harry_Potter_and_the_Goblet_of_Fire_cover.png",
+      "https://m.media-amazon.com/images/I/810jKiNChxL.jpg",
     pages: 734,
     rating: 4.8,
     isBestSeller: true,
@@ -1086,7 +1086,7 @@ export const products = [
     price: 750,
     discount: 180,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/en/7/70/Harry_Potter_and_the_Order_of_the_Phoenix.jpg",
+      "https://m.media-amazon.com/images/I/81a4yXpXjnL.jpg",
     pages: 870,
     rating: 4.7,
     isBestSeller: true,
@@ -1118,7 +1118,7 @@ export const products = [
     price: 800,
     discount: 200,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/en/b/b5/Harry_Potter_and_the_Half-Blood_Prince_cover.png",
+      "https://m.media-amazon.com/images/I/81p2+4nYtkL.jpg",
     pages: 607,
     rating: 4.9,
     isBestSeller: true,
@@ -1149,7 +1149,7 @@ export const products = [
     price: 850,
     discount: 220,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/en/a/a9/Harry_Potter_and_the_Deathly_Hallows.jpg",
+      "https://m.media-amazon.com/images/I/81Whkax7IGL.jpg",
     pages: 607,
     rating: 4.9,
     isBestSeller: true,
@@ -1181,7 +1181,7 @@ export const products = [
     price: 650,
     discount: 120,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/en/a/a0/Harry_Potter_and_the_Prisoner_of_Azkaban.jpg",
+      "https://m.media-amazon.com/images/I/91uix57X+jL.jpg",
     pages: 448,
     rating: 4.9,
     isBestSeller: true,
@@ -1213,7 +1213,7 @@ export const products = [
     price: 800,
     discount: 200,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/en/b/b5/Harry_Potter_and_the_Half-Blood_Prince_cover.png",
+      "https://m.media-amazon.com/images/I/81p2+4nYtkL.jpg",
     pages: 607,
     rating: 4.9,
     isBestSeller: true,
@@ -1245,7 +1245,7 @@ export const products = [
     price: 1200,
     discount: 200,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/4/4f/To_Kill_a_Mockingbird_%28first_edition_cover%29.jpg",
+      "https://m.media-amazon.com/images/I/81gepf1eMqL.jpg",
     pages: 324,
     rating: 4.5,
     isBestSeller: true,
@@ -1277,7 +1277,7 @@ export const products = [
     price: 1050,
     discount: 150,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/7/7a/The_Great_Gatsby_Cover_1925_Retouched.jpg",
+      "https://m.media-amazon.com/images/I/516qPs6NcqL.jpg",
     pages: 180,
     rating: 4.6,
     isBestSeller: true,
@@ -1309,7 +1309,7 @@ export const products = [
     price: 950,
     discount: 100,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/en/0/09/Brock_Pride_and_Prejudice.jpg",
+      "https://m.media-amazon.com/images/I/61J8NJB9dTL.jpg",
     pages: 432,
     rating: 4.8,
     isBestSeller: false,
@@ -1338,12 +1338,12 @@ export const products = [
     title: "A Streetcar Named Desire",
     author: "Tennessee Williams",
     category: "Drama",
-    price: 900,
+    price: 1600,
     discount: 150,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/en/6/66/StreetcarNamedDesire.JPG",
+      "https://m.media-amazon.com/images/I/91ctMEKnWEL.jpg",
     pages: 142,
-    rating: 4.8,
+    rating: 5,
     isBestSeller: false,
     reviews: [
       {
@@ -1373,7 +1373,7 @@ export const products = [
     price: 950,
     discount: 100,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/en/f/f9/CatOnAHotTinRoof.JPG",
+      "https://m.media-amazon.com/images/I/3173NyVIkzL.jpg",
     pages: 190,
     rating: 3.9,
     isBestSeller: false,
@@ -1405,7 +1405,7 @@ export const products = [
     price: 850,
     discount: 120,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/en/f/f8/Equusplaybookcover2.JPG",
+      "https://m.media-amazon.com/images/I/81i3FidfTHL.jpg",
     pages: 124,
     rating: 3.8,
     isBestSeller: false,
@@ -1437,7 +1437,7 @@ export const products = [
     price: 1200,
     discount: 200,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/en/0/06/%E1%B8%B2itsur_toldot_ha-enoshut.jpg",
+      "https://m.media-amazon.com/images/I/713jIoMO3UL.jpg",
     pages: 443,
     rating: 4.8,
     isBestSeller: true,
@@ -1469,7 +1469,7 @@ export const products = [
     price: 1100,
     discount: 180,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/en/0/09/Becoming_%28Michelle_Obama_book%29.jpg",
+      "https://m.media-amazon.com/images/I/819YLKVUOhL.jpg",
     pages: 426,
     rating: 4.9,
     isBestSeller: true,
@@ -1498,11 +1498,11 @@ export const products = [
     title: "The Power of Now: A Guide to Spiritual Enlightenment",
     author: "Eckhart Tolle",
     category: "Non-Fiction",
-    price: 950,
+    price: 250,
     discount: 150,
-    imgUrl: "https://upload.wikimedia.org/wikipedia/en/6/66/TPON_Cover_LG.jpg",
+    imgUrl: "https://m.media-amazon.com/images/I/81rTrhtGDvL.jpg",
     pages: 236,
-    rating: 4.6,
+    rating: 2.6,
     isBestSeller: false,
     reviews: [
       {
@@ -1532,7 +1532,7 @@ export const products = [
     price: 1050,
     discount: 160,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/en/5/5f/The_Immortal_Life_Henrietta_Lacks_%28cover%29.jpg",
+      "https://m.media-amazon.com/images/I/91Xsy7U27RL.jpg",
     pages: 384,
     rating: 4.7,
     isBestSeller: true,
@@ -1564,7 +1564,7 @@ export const products = [
     price: 1150,
     discount: 190,
     imgUrl:
-      "https://m.media-amazon.com/images/I/51kkgdDmtfL._SX306_BO1,204,203,200_.jpg",
+      "https://m.media-amazon.com/images/I/71i+U0qfKQL.jpg",
     pages: 334,
     rating: 4.8,
     isBestSeller: true,
@@ -1596,7 +1596,7 @@ export const products = [
     price: 1050,
     discount: 170,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/en/d/de/House_of_leaves.jpg",
+      "https://m.media-amazon.com/images/I/61J5D3kxAwL.jpg",
     pages: 709,
     rating: 2.9,
     isBestSeller: false,
@@ -1625,10 +1625,10 @@ export const products = [
     title: "The Alchemist",
     author: "Paulo Coelho",
     category: "Fiction",
-    price: 670,
+    price: 1490,
     discount: 100,
     imgUrl:
-      "https://m.media-amazon.com/images/I/41e+TR4xPDL._SX328_BO1,204,203,200_.jpg",
+      "https://m.media-amazon.com/images/I/31Jo+vKgwEL.jpg",
     pages: 197,
     rating: 4.6,
     isBestSeller: true,
@@ -1659,7 +1659,7 @@ export const products = [
     category: "Fiction",
     price: 780,
     discount: 130,
-    imgUrl: "https://upload.wikimedia.org/wikipedia/en/6/62/Kite_runner.jpg",
+    imgUrl: "https://m.media-amazon.com/images/I/81IzbD2IiIL.jpg",
     pages: 371,
     rating: 4.8,
     isBestSeller: true,
@@ -1698,7 +1698,7 @@ export const products = [
     reviews: [
       {
         username: "WealthBuilder",
-        rating: 4.8,
+        rating: 1.8,
         comment:
           "Rich Dad Poor Dad is an eye-opening book that challenges traditional beliefs about money and financial literacy. Robert Kiyosaki's personal stories and practical advice provide valuable insights for achieving financial independence.",
         date: "2022-11-30",
@@ -1720,10 +1720,10 @@ export const products = [
     title: "The Diary of a Young Girl",
     author: "Anne Frank",
     category: "Biography",
-    price: 450,
+    price: 1450,
     discount: 80,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/en/4/47/Het_Achterhuis_%28Diary_of_Anne_Frank%29_-_front_cover%2C_first_edition.jpg",
+      "https://m.media-amazon.com/images/I/61pekVSBRhL.jpg",
     pages: 283,
     rating: 4.7,
     isBestSeller: true,
@@ -1756,7 +1756,7 @@ export const products = [
     price: 450,
     discount: 70,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/en/thumb/3/32/Rye_catcher.jpg/220px-Rye_catcher.jpg",
+      "https://m.media-amazon.com/images/I/7108sdEUEGL.jpg",
     pages: 224,
     rating: 4.6,
     isBestSeller: true,
@@ -1788,7 +1788,7 @@ export const products = [
     price: 580,
     discount: 100,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/en/thumb/7/72/The_Girl_on_the_Train_%28novel%29.jpg/220px-The_Girl_on_the_Train_%28novel%29.jpg",
+      "https://m.media-amazon.com/images/I/41dScwmqYJS.jpg",
     pages: 336,
     rating: 4.5,
     isBestSeller: true,
@@ -1820,7 +1820,7 @@ export const products = [
     price: 550,
     discount: 90,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/DaVinciCode.jpg/220px-DaVinciCode.jpg",
+      "https://m.media-amazon.com/images/I/71DAQuN7jhL.jpg",
     pages: 454,
     rating: 4.7,
     isBestSeller: true,
@@ -1852,7 +1852,7 @@ export const products = [
     price: 420,
     discount: 80,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/en/thumb/3/39/The_Hunger_Games_cover.jpg/220px-The_Hunger_Games_cover.jpg",
+      "https://m.media-amazon.com/images/I/71yD5q10AaL.jpg",
     pages: 374,
     rating: 4.6,
     isBestSeller: true,
@@ -1884,7 +1884,7 @@ export const products = [
     price: 380,
     discount: 70,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/en/thumb/f/fb/HandmaidsTale.jpg/220px-HandmaidsTale.jpg",
+      "https://m.media-amazon.com/images/I/91HYSx+bP5L.jpg",
     pages: 311,
     rating: 4.8,
     isBestSeller: true,
@@ -1916,7 +1916,7 @@ export const products = [
     price: 290,
     discount: 50,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/en/thumb/1/18/The_Fault_in_Our_Stars.jpg/220px-The_Fault_in_Our_Stars.jpg",
+      "https://m.media-amazon.com/images/I/817tHNcyAgL.jpg",
     pages: 313,
     rating: 4.6,
     isBestSeller: true,
@@ -1948,7 +1948,7 @@ export const products = [
     price: 400,
     discount: 80,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Gone_Girl_Book_Cover.jpg/220px-Gone_Girl_Book_Cover.jpg",
+      "https://m.media-amazon.com/images/I/41aEQgTFPoL.jpg",
     pages: 432,
     rating: 4.7,
     isBestSeller: true,
@@ -1980,7 +1980,7 @@ export const products = [
     price: 350,
     discount: 70,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/en/thumb/c/c0/The_Girl_with_the_Dragon_Tattoo_cover.jpg/220px-The_Girl_with_the_Dragon_Tattoo_cover.jpg",
+      "https://m.media-amazon.com/images/I/81NzFbZMpNL.jpg",
     pages: 590,
     rating: 4.6,
     isBestSeller: true,
@@ -2012,7 +2012,7 @@ export const products = [
     price: 420,
     discount: 80,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/en/thumb/8/8e/The_Silent_Patient_Cover.jpg/220px-The_Silent_Patient_Cover.jpg",
+      "https://m.media-amazon.com/images/I/51oVTRsjcqL.jpg",
     pages: 336,
     rating: 4.8,
     isBestSeller: true,
@@ -2044,7 +2044,7 @@ export const products = [
     price: 520,
     discount: 100,
     imgUrl:
-      "https://upload.wikimedia.org/wikipedia/en/thumb/3/32/The_Bourne_Identity_cover.jpg/220px-The_Bourne_Identity_cover.jpg",
+      "https://m.media-amazon.com/images/I/51e5lIz7sFL.jpg",
     pages: 544,
     rating: 4.6,
     isBestSeller: false,
@@ -2066,5 +2066,253 @@ export const products = [
     ],
     description:
       "The Bourne Identity is a thrilling novel by Robert Ludlum. It introduces the character of Jason Bourne, a man with amnesia who must uncover his true identity while evading dangerous enemies. With its non-stop action and suspense, this book will leave you wanting more.",
+  },
+  {
+    id: "66",
+    _id: "2c3d4e5f-6g7h-8i9j-0k1l2m3n4o5p",
+    title: "1984",
+    author: "George Orwell",
+    category: "Classic",
+    price: 410,
+    discount: 90,
+    imgUrl:
+      "https://m.media-amazon.com/images/I/91sKUE5wwOL.jpg",
+    pages: 328,
+    rating: 4.5,
+    isBestSeller: true,
+    reviews: [
+      {
+        username: "DystopiaFan",
+        rating: 4.7,
+        comment:
+          "George Orwell's 1984 is a chilling dystopian novel that serves as a stark warning about the dangers of totalitarianism. The book's themes of surveillance, government control, and the power of language are still relevant today.",
+        date: "2023-05-19",
+      },
+      {
+        username: "BigBrotherWatcher",
+        rating: 4.4,
+        comment:
+          "1984 is a thought-provoking masterpiece that explores the concept of an oppressive regime and its impact on individual freedom. George Orwell's writing is both compelling and disturbing.",
+        date: "2023-05-17",
+      },
+    ],
+    description:
+      "1984 is a dystopian novel by George Orwell. Set in a totalitarian society, it follows the life of Winston Smith as he navigates a world dominated by government surveillance and propaganda. This book is a haunting portrayal of the dangers of authoritarianism and the importance of preserving individuality.",
+  },
+  {
+    id: "67",
+    _id: "3d4e5f6g-7h8i-9j0k1l2m3n4o",
+    title: "Moby-Dick",
+    author: "Herman Melville",
+    category: "Classic",
+    price: 480,
+    discount: 70,
+    imgUrl:
+      "https://m.media-amazon.com/images/I/61+KbxkEhJL.jpg",
+    pages: 720,
+    rating: 4.3,
+    isBestSeller: false,
+    reviews: [
+      {
+        username: "WhaleLover",
+        rating: 4.4,
+        comment:
+          "Moby-Dick is an epic tale of obsession and adventure on the high seas. Herman Melville's poetic prose and vivid descriptions make it a literary masterpiece that delves into themes of man's struggle against nature.",
+        date: "2023-05-21",
+      },
+      {
+        username: "BookishSailor",
+        rating: 4.2,
+        comment:
+          "Herman Melville's Moby-Dick is an ambitious and challenging novel that explores the depths of human nature and the pursuit of a mythical white whale. It's a philosophical journey that captivates the reader.",
+        date: "2023-05-19",
+      },
+    ],
+    description:
+      "Moby-Dick is an American classic by Herman Melville. It tells the story of Captain Ahab's relentless quest for revenge against the elusive white whale, Moby Dick. This novel is a complex exploration of humanity, obsession, and the destructive power of unchecked ambition.",
+  },
+  {
+    id: "68",
+    _id: "4e5f6g7h-8i9j-0k1l2m3n4o5p",
+    title: "Jane Eyre",
+    author: "Charlotte Bronte",
+    category: "Classic",
+    price: 300,
+    discount: 20,
+    imgUrl:
+      "https://m.media-amazon.com/images/I/41FFyJrLslL.jpg",
+    pages: 624,
+    rating: 4.6,
+    isBestSeller: true,
+    reviews: [
+      {
+        username: "VictorianReader",
+        rating: 4.8,
+        comment:
+          "Charlotte Bronte's Jane Eyre is a timeless classic that explores themes of love, independence, and societal expectations. The characters are vividly drawn, and the story is both emotional and empowering.",
+        date: "2023-05-23",
+      },
+      {
+        username: "BookwormJane",
+        rating: 4.5,
+        comment:
+          "Jane Eyre is a captivating novel that showcases Charlotte Bronte's brilliant storytelling. The protagonist's journey of self-discovery and her pursuit of love make it a must-read for classic literature fans.",
+        date: "2023-05-21",
+      },
+    ],
+    description:
+      "Jane Eyre is a renowned classic by Charlotte Bronte. It follows the life of Jane Eyre, an orphaned governess, as she faces trials and tribulations in her quest for independence and love. This novel is a powerful exploration of feminism, morality, and the human spirit.",
+  },
+  {
+    id: "69",
+    _id: "80d2a3fd-df1b-4c1c-9f43-82ce6b011d71",
+    title: "The Picture of Dorian Gray",
+    author: "Oscar Wilde",
+    category: "Classic",
+    price: 320,
+    discount: 40,
+    imgUrl:
+      "https://m.media-amazon.com/images/I/51tSAJoRYZL.jpg",
+    pages: 254,
+    rating: 4.4,
+    isBestSeller: false,
+    reviews: [
+      {
+        username: "WildeEnthusiast",
+        rating: 4.7,
+        comment:
+          "Oscar Wilde's The Picture of Dorian Gray is a captivating novel that explores the consequences of vanity and the pursuit of eternal youth. The prose is witty, and the story is both dark and thought-provoking.",
+        date: "2023-06-04",
+      },
+      {
+        username: "BookishDorian",
+        rating: 4.1,
+        comment:
+          "The Picture of Dorian Gray is a brilliant work that delves into the corrupting influence of beauty and hedonism. Oscar Wilde's writing is sharp, and the moral questions raised are still relevant today.",
+        date: "2023-06-03",
+      },
+    ],
+    description:
+      "The Picture of Dorian Gray is a philosophical novel by Oscar Wilde. It tells the story of Dorian Gray, a young man who remains eternally youthful while a portrait of him ages and reflects the moral decay of his soul. This book explores themes of art, beauty, and the consequences of immorality.",
+  },
+  {
+    id: "70",
+    _id: "80d2a3fd-df1b-4c1c-9f43-82ce6b011d70",
+    title: "Mansfield Park",
+    author: "Jane Austen",
+    category: "Classic",
+    price: 350,
+    discount: 50,
+    imgUrl:
+      "https://m.media-amazon.com/images/I/71nOda5kFNL.jpg",
+    pages: 560,
+    rating: 4.3,
+    isBestSeller: false,
+    reviews: [
+      {
+        username: "AustenFanatic",
+        rating: 4.5,
+        comment:
+          "Mansfield Park is a compelling novel that showcases Jane Austen's wit and keen observation of social manners. The complex characters and social commentary make it a worthwhile read.",
+        date: "2023-06-03",
+      },
+      {
+        username: "BookwormFanny",
+        rating: 4.1,
+        comment:
+          "Jane Austen's Mansfield Park is a thought-provoking novel that highlights the social constraints faced by women in the 19th century. The moral dilemmas and character development are engaging.",
+        date: "2023-06-02",
+      },
+    ],
+    description:
+      "Mansfield Park is a classic novel by Jane Austen. It follows the story of Fanny Price, a young girl from a poor family who is sent to live with her wealthy relatives at Mansfield Park. This book explores themes of social class, morality, and the power of love.",
+  },
+  {
+    id: "71",
+    _id: "80d2a3fd-df1b-4c1c-9f43-82ce6b011d6f",
+    title: "Wuthering Heights",
+    author: "Emily Bronte",
+    category: "Classic",
+    price: 420,
+    discount: 80,
+    imgUrl:
+      "https://m.media-amazon.com/images/I/51xXBhcPX9L.jpg",
+    pages: 416,
+    rating: 4.7,
+    isBestSeller: false,
+    reviews: [
+      {
+        username: "MoorsEnthusiast",
+        rating: 4.8,
+        comment:
+          "Emily Bronte's Wuthering Heights is a haunting and passionate novel that delves into the depths of human emotions. The tumultuous love story and atmospheric setting make it a literary masterpiece.",
+        date: "2023-06-02",
+      },
+      {
+        username: "BookwormCatherine",
+        rating: 4.6,
+        comment:
+          "Wuthering Heights is a timeless classic that explores themes of love, revenge, and the destructive power of obsession. Emily Bronte's vivid storytelling and complex characters make it a must-read.",
+        date: "2023-06-01",
+      },
+    ],
+    description:
+      "Wuthering Heights is a gothic novel by Emily Bronte. It revolves around the tempestuous love between Heathcliff and Catherine Earnshaw, set against the backdrop of the Yorkshire moors. This book is a powerful exploration of passion, revenge, and the enduring nature of love.",
+  },
+  {
+    id: "72",
+    _id: "a1b2c3d4-e5f6-g7h8-i9j0k1l2m3n4",
+    title: "Catching Fire",
+    author: "Suzanne Collins",
+    category: "Fiction",
+    price: 1450,
+    discount: 70,
+    imgUrl: "https://m.media-amazon.com/images/I/51HurzyBBOL.jpg",
+    pages: 391,
+    rating: 5,
+    isBestSeller: true,
+    reviews: [
+      {
+        username: "DystopiaFanatic",
+        rating: 4.8,
+        comment: "Catching Fire is an intense sequel to The Hunger Games. Suzanne Collins continues to deliver a thrilling story that keeps readers hooked. The characters and the world-building are exceptional.",
+        date: "2023-01-15",
+      },
+      {
+        username: "Bookworm101",
+        rating: 4.6,
+        comment: "I couldn't put Catching Fire down! The twists and turns kept me guessing until the very end. Suzanne Collins' writing style is captivating, and the story delves deeper into the themes introduced in The Hunger Games.",
+        date: "2023-01-10",
+      },
+    ],
+    description: "Catching Fire is the second book in the Hunger Games trilogy by Suzanne Collins. It continues the story of Katniss Everdeen after her victory in the Hunger Games. As rebellion simmers in the districts, Katniss becomes a symbol of hope and a target of the oppressive Capitol. With its suspenseful plot and engaging characters, Catching Fire builds upon the success of its predecessor.",
+  },
+  {
+    id: "73",
+    _id: "b5a4c3d2-e1f6-g7h8-i9j0k1l2m3n4",
+    title: "Mockingjay",
+    author: "Suzanne Collins",
+    category: "Fiction",
+    price: 400,
+    discount: 90,
+    imgUrl: "https://m.media-amazon.com/images/I/81TJJR6+cIL.jpg",
+    pages: 390,
+    rating: 4.5,
+    isBestSeller: true,
+    reviews: [
+      {
+        username: "DystopiaFanatic",
+        rating: 4.7,
+        comment: "Mockingjay is a thrilling conclusion to the Hunger Games trilogy. Suzanne Collins masterfully concludes the story, with heart-wrenching moments and a realistic portrayal of the consequences of war.",
+        date: "2023-05-01",
+      },
+      {
+        username: "Bookworm101",
+        rating: 4.4,
+        comment: "I loved how Mockingjay tied up the loose ends and delivered an emotionally charged finale. Suzanne Collins doesn't shy away from the darkness and complexity of war, making it a powerful conclusion to the series.",
+        date: "2023-04-28",
+      },
+    ],
+    description: "Mockingjay is the third and final book in the Hunger Games trilogy by Suzanne Collins. As the rebellion against the Capitol reaches its climax, Katniss Everdeen finds herself at the center of a revolution. With the stakes higher than ever, she must make difficult choices that will shape the future of Panem. With its thrilling action and exploration of themes like power and sacrifice, Mockingjay brings the Hunger Games series to an unforgettable close.",
   },
 ];
