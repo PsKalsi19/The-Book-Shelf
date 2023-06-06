@@ -65,9 +65,9 @@ const AddressCard = ({ address, setAddressHandler }) => {
         </svg>
       </button>
 
-      <div className="flex flex-row items-start justify-between sm:w-full">
+      <div className="flex flex-row items-start justify-between w-full">
         <div>
-          <div className="flex flex-col items-start">
+          <div className="flex flex-col items-start w-full">
             <h2 className="text-lg text-gray-100 sm:text-xl">
               {name}, {number}
             </h2>

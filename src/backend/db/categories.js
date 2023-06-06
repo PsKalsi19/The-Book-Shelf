@@ -59,4 +59,11 @@ export const categories = [
     description:
       "Thriller is suspenseful, action-packed genre with unexpected twists and danger.",
   },
+  {
+    _id: "98765432-1234-5678-9876-543210abcdef",
+    categoryName: "Classic",
+    imgUrl: "https://ik.imagekit.io/pb97gg2as/E-Commerce-Assets/Categories/Classic.webp?updatedAt=1685980971579",
+    description:
+      "Classic books are Enduring masterpieces across genres, timeless tales that inspire readers.",
+  },
 ];

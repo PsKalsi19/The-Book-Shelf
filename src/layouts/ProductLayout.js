@@ -12,7 +12,7 @@ import { FILTERS_ACTION } from "../constants/dispatchTypes";
 
 const sortOptions = [
   { name: "A to Z", href: "#", current: true },
-  { name: "Best Sellers", href: "#", current: false },
+  { name: "Z to A", href: "#", current: false },
   { name: "Ratings: High to Low", href: "#", current: false },
   { name: "Ratings: Low to High", href: "#", current: false },
 ];

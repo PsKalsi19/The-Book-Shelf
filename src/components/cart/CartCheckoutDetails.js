@@ -93,7 +93,7 @@ const CartCheckoutDetails = ({ cart }) => {
       const paymentObject = new window.Razorpay(options);
       paymentObject.open();
     } catch (error) {
-      console.log(error);
+      console.error(error);
       toast.error("Something Went Wrong, Try Later.");
     }
   };

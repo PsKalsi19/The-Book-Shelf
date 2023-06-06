@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { BooksContext } from "../../contexts/BooksProvider";
 import ProductCard from "../../components/products/ProductCard";
 import { Link } from "react-router-dom";
@@ -10,6 +10,10 @@ const Wishlist = () => {
   const wishListedItems = booksData.filter((ele) =>
     wishlist.find(({ _id }) => ele._id === _id)
   );
+
+  useEffect(()=>{
+    document.title="Wishlist | The Book Shelf"
+  },[])
   return (
     <section>
       <h1

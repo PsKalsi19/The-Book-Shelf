@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   getUserEmail,
   getUserName,
@@ -10,6 +10,10 @@ import { useParams } from "react-router-dom";
 const User = () => {
   const { tab } = useParams();
   const [selectedTab, setSelectedTab] = useState(tab ?? "address");
+
+  useEffect(()=>{
+    document.title="User | The Book Shelf"
+  },[])
   return (
     <div className="mx-4 mt-32">
       <ul className="flex flex-wrap max-w-4xl mx-auto text-sm font-medium text-center text-gray-400 border-b border-gray-700">
