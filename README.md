@@ -54,9 +54,10 @@
   * Add / Remove / Set Primary
 * Checkout
   * Apply Coupon
-* Payment On-Screen
+* Payment Gateway
 * Fully Responsive
 * 404 Page
+* Experimental: Wishlist and Cart items persist after reload for only existing user and not for the users created through sign up.
 
 > ### Built using
 * React
