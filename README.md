@@ -78,10 +78,10 @@
 
 <div align="center">
 
- <span>Home </span>
+ <h3>Home </h3>
 <img style="text-align:center" src="https://ik.imagekit.io/pb97gg2as/E-Commerce-Assets/Screenshots/Home_Page.png?updatedAt=1686130311993" alt="Home Page" height=450 width=650>
 
-  <span>Page Not Found </span>
+  <h3>Page Not Found </h3>
 <img style="text-align:center" src="https://ik.imagekit.io/pb97gg2as/E-Commerce-Assets/Screenshots/Pagee_not_Found.png?updatedAt=1686130750909" alt="Page not Found" height=450 width=650>
  
  
