@@ -7,9 +7,7 @@ import {
 } from "react";
 import axios from "axios";
 
-import {
-  filtersInitialState,
-} from "./initialStates/FilterInitialState";
+import { filtersInitialState } from "./initialStates/FilterInitialState";
 import { booksInitialState } from "./initialStates/BooksInitialState";
 import filters from "./reducers/Filters";
 import books from "./reducers/Books";
@@ -24,6 +22,7 @@ import { toast } from "react-hot-toast";
 import {
   getCart,
   getWishlist,
+  isExistingUser,
   updateCart,
   updateWishlist,
 } from "../services/localstorage-service";
@@ -114,11 +113,9 @@ const BooksProvider = ({ children }) => {
       .slice()
       .sort((a, b) =>
         priceSort === "ASC"
-          ? (a.price - a.discount) - (b.price - b.discount)
-          : (b.price - b.discount) - (a.price - a.discount)
+          ? a.price - a.discount - (b.price - b.discount)
+          : b.price - b.discount - (a.price - a.discount)
       );
-
-    
   };
 
   const handleFilterReset = () => {
@@ -290,17 +287,20 @@ const BooksProvider = ({ children }) => {
     getCategories(ENDPOINTS.CATEGORIES, booksDispatch);
     const addBooksData = async () => {
       try {
-        const data = await getProducts();
-        const updatedData = getUpdatedData(data?.data?.products);
+        const {
+          data: { products },
+        } = await getProducts();
+        const updatedData = getUpdatedData(products);
         booksDispatch({
           type: BOOKS_ACTIONS.SAVE_BOOKS_DATA,
-          payload: updatedData,
+          payload: !isExistingUser() ? products : updatedData,
         });
       } catch (error) {
         handleError(error);
       }
     };
     addBooksData();
+    if (!isExistingUser()) return;
     getCart() && getCart().length > 0 && syncCartData(getCart());
     getWishlist() &&
       getWishlist().length > 0 &&

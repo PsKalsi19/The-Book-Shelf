@@ -7,29 +7,21 @@ import {
 import {MdOutlineExplore} from "react-icons/md"
 
 import { BiLogIn } from "react-icons/bi";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthProvider";
-import { getAuth, getUser } from "../../services/localstorage-service";
 import Logout from "./logout/Logout";
 import { BooksContext } from "../../contexts/BooksProvider";
 import SearchBar from "../search-bar/SearchBar";
 const Navbar = () => {
   const {
     userState: { isUserValid },
-    setUserState,
   } = useContext(AuthContext);
 
   const {
     booksState: { wishlist, cart },
   } = useContext(BooksContext);
 
-  useEffect(() => {
-    if (isUserValid) return;
-    setUserState({
-      user: getUser(),
-      isUserValid: !!getAuth(),
-    });
-  }, [isUserValid, setUserState]);
+
 
   return (
     <header>
