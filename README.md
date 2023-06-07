@@ -12,6 +12,9 @@
 > ### Demo
 >  https://www.loom.com/share/23691ca63968468cbd4c4c2939c8c76a
 
+> ### Mobile View
+> https://www.loom.com/share/68c2ff21c6e94b28a6481603d99bbefd
+
 
 ### How to use on Local Machine:
 
@@ -68,4 +71,11 @@
 * React Hot Toast
 * Razorpay Payments 
 * React Icons
+
+
+
+> ### Screen Shots
 > 
+> Home Page
+https://ik.imagekit.io/pb97gg2as/E-Commerce-Assets/Screenshots/Home_Page.png?updatedAt=1686130311993
+
