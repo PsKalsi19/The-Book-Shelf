@@ -1,6 +1,6 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import getLoginDetails from "../services/login-service";
-import {  setAuth, setUser } from "../services/localstorage-service";
+import {  getUser, handleLocalStorageLogOut, isExistingUser, setAuth, setUser } from "../services/localstorage-service";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router";
 import signupUser from "../services/signup-service";
@@ -22,6 +22,17 @@ const AuthProvider = ({ children }) => {
       isUserValid: !!getAuth(),
     });
   };
+
+  useEffect(() => {
+    if (userState.isUserValid) return;
+    if(!isExistingUser()){
+      handleLocalStorageLogOut()
+    }
+    setUserState({
+      user: getUser(),
+      isUserValid:!!getAuth(),
+    });
+  }, [userState.isUserValid]);
 
   const handleLoginFn = async (payload) => {
     try {
